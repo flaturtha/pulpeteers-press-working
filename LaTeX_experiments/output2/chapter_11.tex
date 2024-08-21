@@ -1,0 +1,381 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{TITLE}
+\SetAuthor{AUTHOR}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{AUTHOR}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{CHAPTER_TITLE}{STARTING_PAGE}
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 11}
+\ChapterTitle[l]{## Poker}
+\end{ChapterStart}
+\FirstLine{\noindent ### Chapter 11
+
+## Poker
+
+They were playing two-dollar stud, which was twice the usual limit. That was the Art Masterson influence. He was a traveling salesman for a dress jobber and had been a close friend of August Hennessey. Whenever he was within driving distance of West Amber on a Saturday night, he came in for a game. He was a fat man who liked to sit whenever possible, but there was nothing relaxed about his poker. He played a vigorous and nervous game, though basically not foolish.
+
+“How’s the hero?” he said, reaching out a pudgy hand to me. His other hand waved toward a stranger. “Meet Dietz.”
+
+Dietz nodded briefly. His face was a cipher with a cigar in it. Occasionally Masterson brought a friend, but never the same one. Or not a friend; merely a fellow salesman who liked a good game.
+
+Dietz was backing an ace-king to the limit on the fourth card. George Winkler, high man with sixes showing, folded. Bevis Spencer and Kerry rode along on nothing apparent. Masterson raised. His cards showed no sense to the raise, but he was investing to drive out enough players to increase his chances if anything came along on the last turn. Kerry fled, but Bevis’ clung and Dietz merely called. Then Bevis paired with threes, which proved good enough in view of the fact that George had folded with his sixes.
+
+“You deserve it, Spencer,” Masterson told Bevis graciously. He fingered his chips—two stacks of blues and one of whites. “Here’s your chance to take some of these away from me, Alec.”
+
+“I’m not playing,” I said.
+
+It was Bevis’ deal. He sat at the left of Miriam and placed the pack in front of her to cut. She did not see it; she was looking at me. She had only one blue chip left. It served her right for taking a hand in such fast company. Kerry sat on her right, and then Dietz, George Winkler, Oliver Spencer, Ursula, Masterson. There were two empty seats next to Masterson.
+
+“Come on, Alec,” Oliver Spencer urged. “I haven’t played against you in years.”
+
+He was trying to make peace. He looked at me with a rather anxious smile. I returned it pleasantly to show him that I didn’t bear a grudge because of what he’d said to me in his store that afternoon.
+
+“I’ve got to leave right away,” I said. “I stopped off to borrow some money.”
+
+Ursula rose.
+
+“No, wait,” I told her. “I want to borrow from all of you. I need a lot and in cash.”
+
+Ursula said: “I have a couple of hundred in cash.”
+
+“Not enough. And a check won’t do because the bank is closed tomorrow.
+
+***
+
+They were all very still, watching me. I felt anger rise in me. If anybody else had said that, they would have thought nothing of it. Why was I different?
+
+Kerry rose from his chair and started around the table. “What is it, Alec? What’s come up?”
+
+“My God, do I have to—” My voice was too high. I lowered it. “I’ve got some money in a savings account and some in war bonds. The rest Ursula will make good.”
+
+Kerry had stopped where he was, his hand on the back of George’s chair. It was unusual for a man to want a lot of cash on a Saturday night, but not so unusual that they had to stare at me like that.
+
+“Ursula, you’ll give them your checks for their cash, won’t you?” I persisted. “I’ll pay you part of it back next week, but the rest will take time.” Ursula turned to Mr. Spencer on her left. “Oliver, how much have you got?”
+
+He pulled out a roll that he could barely get two hands around. Evidently he had come here directly from the store. “How much do you want?” he asked me.
+
+“You won’t have enough, but maybe we can get close to it if everybody here cashes Ursula’s checks. I knew Art Masterson always carried a wad. Five thousand dollars.”
+
+It was as if a bucket of cold water had been poured down from the ceiling. Even Masterson and Dietz looked startled.
+
+Ursula was the first to recover. She made her voice as casual as if she held a straight flush and was luring suckers. “If you need that much money, Alec, of course you can have it. What do you want it for?”
+
+“I can’t tell you.”
+
+George Winkler stood up and stepped around Kerry who hadn’t moved. “Let’s go upstairs and have a talk, Alec.”
+
+“There’s nothing to talk about. Don’t any of you trust me?” Sweat trickled under my Basque shirt.
+
+“George is your friend and lawyer,” Ursula said placatingly. “I’d certainly ask his advice if I considered spending that much money.”
+
+With the back of my hand I wiped sweat from my upper lip. Confiding in George, or in any of them, would ruin whatever chance remained of borrowing the cash. From their point of view the deal was fantastic. Schneider couldn’t have a name worth buying for two cents because to them the name could only be my own.
+
+“Ursula, I asked a simple favor,” I said, striving to keep my voice even. “I can’t tell you why I must have that cash tonight, but I need it desperately. Do I get it?”
+
+“If you’ll tell George or me what you want it for.”
+
+I was up against a wall. I opened my mouth. I felt I was going to shout and snapped it shut. I ran up the stairs. Feet came after me. In the hall I turned. George Winkler appeared through the door.
+
+“Alec,” he panted, “if you’re thinking of leaving town—”
+
+***
+
+It should have occurred to me that they would pounce on that idea. I was a psychoneurotic. Instead of getting the rest I needed when I returned home, I’d gone through the terrific strain of a murder trial, and my questioning of them this afternoon had shown them that I was brooding over it. So now I was planning to cut and run. It was their duty to prevent me.
+
+“I’m not leaving home,” I said. “If I do, it will be only for a few days to follow a trail.”
+
+“Trail?”
+
+“To Lily’s murderer, maybe.”
+
+George’s small, sharp eyes probed me. “Five thousand dollars is a lot of money for a few days.”
+
+“I don’t want it for that. Damn it, how can you expect me to be frank and open if you keep thinking—” I choked the rest off. I’d been shouting into his ear.
+
+“Never mind,” I said and went upstairs.
+
+I took a stinging cold shower. That washed off the sweat and loosened the nerves. I sat on the edge of the tub smoking a cigarette and let the air dry me. They were so sympathetic, so knowing, so smart. I grinned suddenly at the tiled wall. All right, I’d show them what smart really was. I dressed in fresh clothes and went down.
+
+In the cardroom I found a studied attempt to forget the scene I’d made twenty minutes ago. Take me for granted, in stride, just another guy. They must have agreed among themselves that that was the proper treatment for somebody who was rocky on his mental base.
+
+I sat down in the empty chair beside Bevis and spread a smile around the table. “I’m sorry I cut up, folks,” I said. “Let’s have a stack of chips.”
+
+Ursula, as always, was the banker. She gave me a stack of blues and a stack of whites and marked the total down on a pad.
+
+They were glad to have me. “Now we’ll see some action,” Masterson gloated, and Ursula, doubtless thought the game would be good for me.
+
+The game ran into doldrums. It happens now and then for no reasons. The cards forgot how to match or did at the wrong time. There was too much private conversation around the table, a sure sign of lagging interest.
+
+“Limit stud poker isn’t poker,” I said in disgust. “How about pepping it up with some table stakes?”
+
+Masterson’s eyes glittered. “Now you’re talking.”
+
+Nobody objected, though Ursula, who didn’t like the games to go too high in her house, stipulated that the stacks be limited to twenty-five dollars. Miriam wisely dropped out, leaving eight players.
+
+***
+
+At the end of a couple of rounds I owed Ursula for seven stacks of chips. Puzzled glances were directed at me.
+
+Bevis asked: “What’s happened to your game while you were away?”
+
+“Play your game,” I said. “I’ll play mine.”
+
+It wasn’t that I was losing. It was the way I lost. I played high and wild, tapping an opponent with only angles to back me up. I took one pot and got caught on all the rest. A housewife would have shown better acumen in a penny-ante game.
+
+Ursula came around to my chair and suggested that maybe I was too tired to play.
+
+“Let me alone,” I said, and saw Dietz on the last turn when he had an obvious cinch on board. I pulled a case seven to make two pair and raked in the chips with a nasty chuckle. “I’d like to be tired like this all the time,” I told Ursula.
+
+“Hell, I heard you were a player,” Dietz growled. “That was nothing but damn fool luck.”
+
+Nobody else commented. The anxious shaded glances were again being directed at me. They were getting the idea. I was still obsessed by five thousand dollars and was making these frantic and impossible attempts to get it.
+
+At midnight Masterson opened strongly with an ace on the first turn. Ursula folded. Oliver Spencer, showing a seven, hesitated and then saw George hung on with a four. Dietz and Kerry blew. Bevis Spencer kicked vigorously with a queen. And I, with an insignificant five showing, tagged along.
+
+It was back to Masterson. He reraised Bevis’ reraise, and Mr. Spencer, no longer hesitant, kicked it once more. George decided that he was out of his depth and turned his nine down. Bevis saw.
+
+It was my turn. There had been enough action to indicate what was what. If Masterson had held aces back to back, he would have sat tight, merely dragging along for the first couple of turns to keep the others in and make a pot for himself. I figured him for a picture against his ace, probably a king. Mr. Spencer very likely held a pair of sevens. He wouldn’t have reraised on less, and yet wasn’t too confident with a low pair against an open ace and an open queen. Bevis’ queen bothered me somewhat. I’d have to feel him out.
+
+I raised. Mutters rose from those at the table who were out of the hand. This looked as if it would build up to something.
+
+“Your backed fives don’t mean a thing, Alec,” Masterson said. “How many chips have you? I’m tapping you.”
+
+I had the lowest stack on the table, seven dollars. Oliver and Bevis Spencer both matched the tap and I shoved in my stack, which ended the round.
+
+***
+
+Kerry was dealing. He slapped a nine down beside my five and scowled. He was obviously rooting for me; so were Miriam and Ursula. They had a notion that a nice pot would be good for my morale. Masterson bought a queen which Bevis needed, Mr. Spencer a jack, Bevis a tray.
+
+Masterson fingered his chips and looked at the bare space behind my cards.
+
+I sat back and smiled. “I’m getting a free ride for the rest of this hand. That’s the trouble with table stakes. Too bad the wraps aren’t off.”
+
+“You mean no limit?” Mr. Spencer said. He turned up a corner of his hole card, as if to reassure himself, and shrugged. “It suits me. What do you say, Masterson?”
+
+Masterson grinned lovingly down at his open ace and queen. “To me no limit means no limit. Let’s use the yellow chips at fifty bucks each.”
+
+“I’m blowing anyway,” Bevis said, “so do what you like.”
+
+Ursula protested, though not vigorously. Poker was in her blood. “But only this hand,” she conceded. “At the end of it you’ll settle up for your yellow chips and we’ll go back to table stakes.”
+
+Masterson, still high man on board, chipped two yellows. Mr. Spencer, like me, had decided not to believe in Masterson’s ace-queen, but all the same he was shaky. He saw without re-raising.
+
+I said, “I’m bluff-proof,” and upped it two hundred dollars.
+
+In the sudden silence I could hear my heart thump, though I wasn’t nervous. I wasn’t sweating. This was poker. All the faces but two were featureless blobs circling the table, and the two that concerned me wore the blankness of long poker experience.
+
+“Wait a minute,” Masterson said. “I expect to pay off at the end of this hand if I lose. Can you Alec?”
+
+I told him that I had fifteen hundred dollars and that if it went higher Ursula would back me. Ursula wet her lower lip and gave a searching look and nodded.
+
+Masterson said: “Good enough. Let’s play for real money. I’ll go two hundred bucks better.”
+
+It was a good play by the high man on board who was certain the other two held small pairs. It should have chased us to cover.
+
+Mr. Spencer pondered. Poker to him was a Saturday night’s relaxation at which he won or lost a top sum of one hundred dollars, usually a lot less. He was scared beneath that deadpan. I didn’t worry him; he couldn’t see me as more than fives against his sevens. But Masterson could be holding another queen out of sight or even have aces backed up from the first. On the other hand, it was just as likely that Masterson, with two cards still to be seen, was speculating on pairing an ace or king or queen.
+
+Mr. Spencer asked Ursula for ten more yellow chips and counted out eight of them—four hundred dollars covering my re-raise and Masterson’s. Then he sat tight, holding his nerves together.
+
+I raised it five hundred. Masterson looked momentarily shocked, which told me beyond doubt that he had only angles. He did no more than see me, and Mr. Spencer, afraid of Masterson and not at all of me, did the same.
+
+Kerry had to be spoken to twice before he roused himself sufficiently to deal. All three of us bought. I caught a second open nine, Masterson a king, Mr. Spencer a second open jack.
+
+***
+
+The silence dissolved. Everybody but the three players started to talk it up to relieve the tension. I sat with a five and two nines, indicating two pair; Masterson, showing an ace, queen, king, indicated a high pair; Mr. Spencer’s seven and two jacks were obviously a pair of sevens and a pair of jacks.
+
+Mr. Spencer, high now with an open pair of jacks, negligently bought more yellow chips and dropped ten of them into the pot. He didn’t expect a return. It was pure show, an expression of triumph.
+
+I asked Ursula for more chips. She said in bewilderment: “Alec, do you know what you’re doing?”
+
+“I’ve played poker before,” I said dryly. “I’ll either win or lose. May I have a thousand dollars worth? I’m kicking.”
+
+The silence returned. Ursula’s hands shook as she pushed the chips to me. I continued them in motion into the pot. Masterson folded as silently as the Arabs folding their tents. His high pair had no meaning.
+
+Mr. Spencer took at least a minute to make up his mind. The way he fumbled with his stacks of blue and white chips, which were practically worthless in this hand, showed how puzzled he was: if I hadn’t had fives backed up originally, why had I ridden along? To speculate. I’d bought a second pair, but so had he, and his two pairs were higher.
+
+Slowly he nodded. “You’re bucking the odds without reason, to get the money you want. You’ve been playing like that all night. You’re not in the right frame of mind for poker. Let’s call this hand off and return all the money.”
+
+He was being gracious. He could only see me taking one chance in twelve to draw another five or nine for a full house. The odds went higher because he had just as good chance to buy. Those weren’t odds a poker player in his right mind would accept if it cost as much as I was investing, except a player who was frantic for money and not in his senses. He—and they—had me all figured out. They were so damn smart.
+
+“There’s no law against you going out,” I said.
+
+He scowled angrily at me. He didn’t like this at all. He had too much money invested to be noble and let me take the pot, and at the same time there would be no triumph in winning from a crackpot. He counted out ten yellow chips. “If you insist on being foolish, I’ll just see you,” he said.
+
+On the final turn Kerry gave me a four and Mr. Spencer a ten. He remained high man on board. He was elaborately kind, checking with a tired paternal smile. I wiped it off his face by chipping a thousand dollars.
+
+“No!” Ursula said. “This is a ridiculous bluff. Oliver, the poor boy—”
+
+“Chip or get out, Mr. Spencer,” I said.
+
+The tired smile returned. I could see the noble gesture in the offing. He’d call the debt off when the hands were shown. It wasn’t ethical to take candy from a baby or a madman. He saw me.
+
+I turned up my hole card. It was a nine.
+
+***
+
+For long seconds they were dazed.
+
+Masterson leaned sideways, past Ursula, to make sure my three nines weren’t spots before his eyes. Mr. Spencer looked sick. He was a rich man, as rich men went in West Amber, but it was a lot of money to lose.
+
+I raked in the chips and started to stack them—yellows and blues and whites, mostly yellow. I heard Dietz say in wonder: “Holy cats! You backed those first raises with only a nine in the hole and a five showing! Of all the dumb luck! ”
+
+“Luck?” Kerry was washing the deck and grinning broadly. “You’ve just seen poker played, mister.”
+
+“Like my missus plays it,” Dietz said sourly. “She goes in on an impossible nothing and sometimes she wins. That doesn’t make it poker.”
+
+I had lost track of the number of chips in the pot, but there should be more than enough. I started to count them.
+
+“You have to understand what was happening,” Kerry told Dietz. “Alec played for five thousand dollars. The small losses didn’t concern him; only the one big killing. Didn’t you notice the way he was playing, looking at one or two cards to see if he was in the right position? Sometimes he speculated wildly to put us off guard, to make us think he hadn’t any brains left. When he caught a nine in the hole and a five showing, he played the open five like a pair. Why not? What did he have to lose except for a few dollars to get a look at the next card? He’d tried it before and it hadn’t worked, but sooner or later it would. He pulled a nine to match his hole card and he was set! Did you notice how he sucked them in to remove the limit? That was part of the master plan. From that time on the odds were on his side. Mr. Spencer bought a second pair, but Alec caught a third nine, and then he really went to town on a cinch. Don’t tell me you’ve seen better poker.”
+
+I was over five thousand in my counting. I heard Mr. Spencer ask: “How many yellows did I buy, Ursula?”
+
+I looked up. He was writing a check.
+
+“I’d like as much as possible of that in cash, if you don’t mind,” I said.
+
+Mr. Spencer patted his dome. “My checks are good.”
+
+“I know, but you have a lot of cash on you and I need it. It won’t make any difference to you.”
+
+“I never pay out large sums in cash.” His hairless head dipped to the checkbook.
+
+I turned to Masterson. “What about you, Art?”
+
+“I’ve got around three hundred bucks, but I need it over the weekend,” Masterson said. “I’ll have to make it a check, too.”
+
+I stood up and looked down at Ursula. She was sitting between Masterson and Mr. Spencer. She averted her eyes.
+
+I felt the shakes coming. I ran my tongue over my lips, but my tongue was just as dry. Then Miriam was on one side of me and Kerry on the other. “Are you sick?” Miriam asked anxiously.
+
+“I feel wonderful,” I said. “What’s better than to be with the people you can turn to when you need them?” There was dull silence behind me as I went up the stairs.
+
+
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+

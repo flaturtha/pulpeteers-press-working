@@ -1,0 +1,18 @@
+---
+title: "[BOOK_TITLE]"
+author: "[AUTHOR]"
+publisher: "Tales of Murder Press, LLC"
+genre: "[GENRE]"
+original_publication:
+  magazine: ""
+  date: "Jan. 1946"
+  volume: 2
+  issue: 1
+isbn: ""
+copyright:
+  status: "Public Domain"
+  additional_elements: "Copyright © 2019 Tales of Murder Press, LLC"
+chapters:
+  1: [CHAPTER_NAME]
+  2. [CHAPTER_NAME]
+---

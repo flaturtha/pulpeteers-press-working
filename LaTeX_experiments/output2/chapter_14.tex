@@ -1,0 +1,315 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{TITLE}
+\SetAuthor{AUTHOR}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{AUTHOR}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{CHAPTER_TITLE}{STARTING_PAGE}
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 14}
+\ChapterTitle[l]{## Shadows and Specters}
+\end{ChapterStart}
+\FirstLine{\noindent ### Chapter 14
+
+## Shadows and Specters
+
+Mango struck the roof and woke me. I lay listening for it to start rolling. For a long time now I had resented that huge mango tree above the barracks, as if its bombardment of the roof at night were the ultimate indignity of the conspiracy to deprive us of sleep. What with jackals howling and rats running through the thatched roof and sometimes snakes slithering on the beams and the eternal bugs and the outrageous wet summer heat, there was enough to keep you awake without a mango going through its routine of dropping to the roof with a bang, rolling down the incline with agonizing slowness, and then the dull plop when it finally hit the ground.
+
+The routine paused unendurably after the first stage. My breath waited for the mango to start rolling. Light lay against my eyelids. It was day, and outside some of the men were calling to each other in shrill, oddly immature voices, and nearby an engine was warming. But what about the mango? It should have rolled to hell and back by now.
+
+My arm flung out over the edge of the cot, and there was no mosquito net to impede it. I pried my eyes open and saw a flat plaster ceiling and came fully awake.
+
+This wasn’t India. Mosquito nets were not considered essential on West Eighty-second Street; in New York City. Under my window a car motor sputtered and coughed and suddenly caught and roared. The shrill voices of boys playing on the sidewalk moved off. Again I heard the thump overhead. A second shoe, probably, dropped by a night-shift worker going to bed.
+
+I dug my watch out from under the crumpled pillow and saw that it was past noon. Nine hours of sleep, but I felt unrested. The process of getting out of bed and dressing seemed complicated and unnecessary. This was Friday, the beginning of my fourth day in New York, and seven million people remained between myself and Don Yard. I had got no closer to him, and perhaps during this time the police had got closer to me.
+
+They were after me. That was definite now. There had been a single paragraph deep inside yesterday’s World-Telegram. It had taken until Thursday for the news to reach New York, or more likely for the police to be ready to name names. All that those few lines had said was that Alexander Linn, former Air Force lieutenant, who last week had been tried and acquitted for the murder of his wife, was being sought in connection with the murder of Emil Schneider in West Amber.
+
+So the police were looking for me and I was looking for a gambler named Don Yard and a woman named Bertha Kaleman and a man named Walter something. A merry-go-round on which the horses we sat on moved up and down and not at all forward. So far.
+
+***
+
+I climbed out of bed and shed my pajamas on the way to the shower. This was a deluxe apartment, with a private bathroom and a tiny alcove containing a midget refrigerator, a chipped porcelain sink and a two-burner gas range. I could afford it. I’d reached New York with better than two thousand dollars in cash, and in two sessions at downtown public poker clubs I’d increased it by two hundred dollars.
+
+The shower was stinging cold. I came out of the bathroom dripping and opened the package of shirts and socks and underwear I’d bought last night. Enough to keep me supplied for a considerable stay. If the police would let me. If I didn’t happen to run into anybody who knew me.
+
+When I was dressed, I stuck a cigarette between my lips and went downstairs a lot more jauntily than I felt. Mrs. Egan, the oversized landlady, was poring over the mail on the long mahogany table in the hall. She glanced sideways at me descending the stairs and returned her attention to the letters.
+
+“Are you expecting mail, Mr. Berkowitz?” she asked.
+
+Nobody was behind me or in the hall. I kept coming down. Mrs. Egan gave me a sharp look. “Doesn’t anybody write you, Mr. Berkowitz?”
+
+She meant me. I was Berkowitz—Jeffery Berkowitz. I’d had a score of names since Sunday morning and I’d forgotten most of them. Tuesday I’d used another one to register at this rooming house; since then I hadn’t seen Mrs. Egan or been anywhere in New York where it had been necessary to give a name or be called by one, so it had eased out of my consciousness. This was a name I must not forget. This one must stick. When people said Berkowitz or Jeffery or Jeff, I had to respond in a split-second, the way I did to Linn or Alexander or Alec. Only I mustn’t respond at all to the names I’d had since birth. They were no longer mine. They were dangerous.
+
+I clamped a grin on my face. “I sent my folks this address only a couple of days ago, and they’re all the way out in Utah.”
+
+Mrs. Egan’s vast bosom heaved.
+
+“The way this war separates families! I haven’t heard from my boy Peter in three weeks. I think I asked you when you first came. Didn’t you run across my Peter? He’s in the Pacific somewhere—a sergeant in the Air Force. In the ground crew. Peter Egan. He’s only twenty, but he looks—”
+
+“No, ma’am,” I slipped in. “I was an Army private in the CBI theatre.”
+
+“Isn’t that in the Pacific? My Peter is somewhere—”
+
+“No, ma’am. CBI means China-Burma-India. That’s thousands of miles from where your son would be. And I was in the infantry while he’s in the Air Force.” I moved past her.
+
+“Mr. Berkowitz,” she said, “you told me you were looking for a job. Mr. Marcus in 3-C works in a radar place in Long Island City. He says they’re looking for men to train and pay good wages while they learn.”
+
+My hand turned the knob without opening the door. “I’m seeing a man in an advertising agency today. That’s the line I’d like to get into.” I pulled the door toward me.
+
+“I hope you get it,” Mrs. Egan called after me.
+
+“Thanks.”
+
+***
+
+It had turned cool in the first week of September. A pleasant breeze swirled from Central Park. It was a nice street, brownstone rooming houses on this side, swank apartment buildings on the other, and even the boys playing box-ball a few doors away were somewhat subdued about it, for boys. I started down the stoop and came to an abrupt halt and twisted halfway around. Almost I fled back into the house. A patrolman was coming down the street, peering at the numbers of the brownstone houses he passed.
+
+He was coming for me. Somehow they had traced me.
+
+I placed unsteady hands behind my back and stood poised between freedom and doom, my eyes only capable of motion as they shifted in their sockets to follow the inexorable approach of the cop. Somewhere along the line I’d made a mistake. Somewhere along that cautious, roundabout journey I had taken between three A.M. Sunday and 10 A.M. Tuesday the widely scattered links had come together.
+
+From West Amber I had walked until daylight. The driver of a twelve-wheel trailer gave me a lift. He was burning up the road to make Buffalo by evening. I was bound there myself, but I left him at Trevan and took a lift southwest with a man in a Tennessee coupe. That day I took twenty-three short-hop lifts in all, weaving toward Rochester. Five miles outside the city I spent the night in a tourist cabin. Next day, Monday, six lifts brought me to Buffalo by noon. I hung around Buffalo until evening and took a sleeper to New York. Some time during the night the train passed through West Amber. In those two days I had not used the same name twice.
+
+The cop was on the sidewalk directly below me. He looked up at me and then went on toward Columbus Avenue, still studying house numbers for whatever reason he had for doing it.
+
+My insides fell back into place. Soundless laughter quivered in my throat. The links remained scattered. I had time, but time was all I had.
+
+I walked to Central Park West and turned south. Today was Friday and the Hale County Weekly Star came out on Wednesday. It would have reached New York by now, if any copies for sale reached New York. There were newsstands on Times Square where I might get it.
+
+“Shine ’em up, mister?”
+
+He was a bright-looking black boy of ten or twelve. I leaned against a building bounding Columbus Circle and put a foot on his box.
+
+***
+
+If I were a cop and had a notion that Alec Linn had come to New York City, would it occur to me to have newsstands which sold out-of-town papers watched on the chance that Alec Linn would want to buy his local paper. The metropolitan papers had carried nothing about the murder except for those very few lines in the World-Telegram, but the Star would be full of it. Where else could Alec Linn, if he were in New York, get the information?
+
+The polishing cloth gave a final flip to the toe of my second shoe. I handed the boy a quarter and waved the change aside. “How’d you like to earn a dollar” I asked.
+
+The bright black eyes regarded me cautiously. “Doing what?”
+
+“Do you know where there’s a newsstand which sells out-of-town papers?”
+
+“Huh?”
+
+“Newspapers from other cities.”
+
+His gaze was openly suspicious. “Buy a paper for you for a buck, mister?”
+
+“Look,” I said patiently. “I’m sure you know where Times Square is.”
+
+“You bet. Forty-second Street.”
+
+I wrote on a slip of paper: “An out- of-town newsstand—the Hale County Star.” Then I said: “Show this paper to somebody on Times Square. Maybe the first few people won’t know, but keep showing it till somebody tells you to go to a certain newsstand. If he has the newspaper, he’ll sell it to you.” I indicated a restaurant two doors away. “I’ll be in there waiting for you.”
+
+He kept his doubting eyes fixed on me. “Suppose you ain’t there when I get back? I’ll be out the price of the paper and the carfare.”
+
+“You’ll get ahead in life,” I told him. “I’ll give you a dollar now and a dollar when you come back.”
+
+He snatched the dollar from my hand and scurried to the subway kiosk.
+
+I’d eaten in that restaurant twice before. The plump waitress gave me a dimpled nod. I carried an Old Fashioned from the bar to the table and waited for my order and the return of the shoeshine boy. The afternoon was ahead of me and the night and days and nights after that. Yesterday and the day before I had tried to get to Don Yard through the only thing we had in common besides the fact that we had both been married to Lily, and that was poker. I’d played at two different poker clubs and had tried to make conversation about gamblers and slip Don Yard’s name in. No soap. At the first club only a couple of men had heard of him. He wasn’t, it appeared, a terrific big shot. At the second club, a swankier place, I’d been cut short twice by the house dealer because I’d held up the game with my talking.
+
+I’d got a response from only one man—a tight-smiling, tight-playing man named Locust. “I was present last year when Yard dropped thirty grand on the cut of a card,” Locust had said. “Of course that doesn’t compare with what Arnold Rothstein used to bet on a card or win or lose in one night, but Yard will never be a Rothstein.”
+
+“Do you know Yard well?” I asked.
+
+Locust had shrugged delicately and had turned to the dealer who was growling at us. And later Locust had slipped away before I’d had a chance to speak to him in private.
+
+My soup arrived. I picked up the spoon and put it down. There was a phone booth at the rear of the restaurant and a pile of directories on a shelf. Tuesday I had looked up Don or Donald or D. Yard in the Manhattan book and had drawn a blank. But Manhattan wasn’t all of New York. Most of the population lived in Brooklyn or the Bronx or Queens or Staten Island. Why not a gambler?
+
+I went to the booth and looked in the other city directories. More blanks. He might live in the suburbs or at a hotel or have an unlisted number. I returned to my soup.
+
+And if I found his number, what would I do about it? I could hardly ring him up on the phone or call on him in person and say: Mr. Yard, I am Alec Linn. You have no doubt heard of me in connection with a recent unpleasantness up at West Amber concerning Lily, and news may already have reached you of an even more recent unpleasantness concerning one of her lovers. We should get together. We have a great deal in common. We are the two men who made legitimate love to Lily. I need your help. Possibly you or Bertha Kalenan or a man named Walter or somebody else in your circle is involved in the murders of Lily and Schneider. If so, I’d like to know, please. And if not, do you or any of the others have knowledge or information which will help me find the murderer? I will greatly appreciate any cooperation you can give me in this matter.
+
+And Don Yard would throw me out or turn me over to the police or kill me because to him I was the murderer myself, in person, of the woman he had loved.
+
+So there I was, a fugitive in a restaurant in Columbus Circle, with the police of the nation looking for me to burn me in an electric chair or shut me away in a nuthouse, and no weapons to fight back with except what I had inside my head. Well, had I had more in India when we’d completed a tough bombing run and gas was running low and ten men were depending on my knowledge of navigation to take them home? Even that last time, when we’d got lost for a while and then had to step out on a cloud, I’d brought them to where we could reach ground with the loss of only one man and a couple of others banged up. Ezra Bilkin was killed, one out of eleven, when we might all have gone that way. I’d kicked myself around long enough. I’d done a good job bringing them back at all. I’d got a medal for it, hadn’t I? They don’t hand out medals for mistakes or failures unless you’re a lot higher up in the ladder than a first lieutenant.
+
+I’d done it once. I’d brought ten out of eleven men home against terrific odds. I could bring myself home now.
+
+***
+
+I was up to my coffee and the shoe-shine boy hadn’t returned. It shouldn’t have taken him more than five minutes to get down to Times Square, ten to locate the newsstand and buy the paper, five minutes to return. Call it thirty minutes in all, and he was already gone forty-five.
+
+Maybe they didn’t; have the Star and he decided to keep the dollar. Maybe—
+
+Panic hit me in the pit of the stomach. It twisted me in the chair, toward the door. So I was smart! I was a brainy guy who’d sent a strange kid instead of going myself. But if the police were watching newsstands which sold out-of-town papers, they’d check on everybody who bought the Star. They’d compel the kid to take them to me.
+
+I beckoned to the waitress for the check. She was busy at another table. She displayed her dimples for me, but she did not come over.
+
+And then he was coming in, holding the shoeshine box in one hand and the paper under his other arm. He wasn’t followed in. But they might be outside, waiting for him to point me out to them.
+
+He saw me at once. “Here you are, mister,” he said and spread the paper out in front of me on the table.
+
+I almost jumped out of my skin. My face looked up at me from the paper. It was a two-column photo beside one of Emil Schneider. I was in uniform, wearing a careless smile and an overseas cap at a rakish angle. To my knowledge the same photo had appeared three times in the Star—before I’d been sent overseas, after I’d been indicted for the murder of Lily, and now.
+
+“That it?” the boy asked anxiously.
+
+“Sure,” I said. “Fine.” I folded the newspaper over my photo and fumbled my wallet out.
+
+The boy’s bright black eyes were glued to the wallet. He hadn’t connected me up with the photo. I had been hundreds of years younger when it was taken and I had been in uniform and the Star’s halftones were always blurred.
+
+“Boy!” he said. “Five bucks!”
+
+I’d taken out a five by mistake. I shoved it into his hand. “I just came into a lot of money,” I explained weakly. “You’re a fine, intelligent boy and I want you to share a little of it.”
+
+“Gee, thanks, mister!” he said ecstatically and raced out of the restaurant.
+
+As soon as he was gone, I regretted having let him keep the five. Six dollars was too much for a nickel newspaper. He would talk about it and remember the name of the paper. I got out of there as quickly as I could.
+
+***
+
+I walked downtown on Ninth Avenue where there was less chance of meeting anybody who knew me. When I reached the middle fifties I stopped beside a cigar store and read the paper.
+
+George Winkler had called the turn. In fact, the police had even more than he had anticipated.
+
+At dawn Monday morning Emil Schneider had been found on his porch by the milkman who made deliveries every other day. Saturday afternoon Schneider had bought a railroad ticket to Chicago and had told the station agent that he planned to leave the following morning. Evidently it had been a sudden decision, for he hadn’t had a chance to tell the milkman to stop deliveries and give him a bill. The medical examiner had established the time of death as sometime Saturday night or Sunday morning.
+
+Two .257 caliber bullets fired from a medium power rifle had entered his body.
+
+There were witnesses—not to the murder itself, but they may as well have been as far as the district attorney was concerned.
+
+First, Sheriff Owen Dowie. On Saturday afternoon I had stopped to speak to him on Division Street and had asked questions about Schneider and had made certain statements which had impressed him as having been threats against Schneider. He had been sufficiently worried by my attitude to have warned me to keep away from the man who had been my wife’s lover.
+
+And Mr. Rosenberg, about whom I had completely forgotten. At about eight-thirty Saturday evening I had stopped at his house and inquired the direction to Schneider’s house. Mr. Rosenberg said that at the time he had thought it odd that I would want to call on my wife’s lover, but had given me the information. He had seen my car turn up Schneider’s driveway.
+
+Finally Oliver Spencer—reluctantly, as the reporters put it, but compelled by a sense of duty. The others at the game—evidently Masterson and Dietz hadn’t been questioned—had tried to keep quiet about it, but when Mr. Spencer brought it out in the open, they were forced to string along. Mr. Spencer was the only one to insist that I had been frantic in my demand for five thousand dollars in cash. The others merely said that I’d asked for it, and that when I hadn’t got it I’d joined the game and won it.
+
+What had I wanted the money for? Mr. Spencer didn’t know. Miriam thought I had mentioned something about needing a rest. Ursula was more definite. She stated that when she had gone up to my room with the money I had told her that I couldn’t face my fellow townsfolk and wanted to get away where nobody knew me. So early that morning I had left. She didn’t know where. I hadn’t told her. I’d been anxious to cut myself off from everybody who had heard of the murder and the trial.
+
+District Attorney Hackett didn’t believe her. He said so in bold type. He said that I had planned to murder Schneider, and knowing that I wouldn’t be able to get away with this one, I had prepared getaway money in advance. He said that I had been desperate to get the money Saturday night because I had found out that Schneider was planning to slip out of my reach in the morning. He said that my flight was an admission of guilt. He said that Schneider was dead because a soft-hearted jury had permitted a glib New York lawyer to turn it aside from duty and let me to go free to kill again.
+
+The police of three states were hunting for me.
+
+I rolled the newspaper up and carried it as far as the corner and dropped it into a waste can.
+
+
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+

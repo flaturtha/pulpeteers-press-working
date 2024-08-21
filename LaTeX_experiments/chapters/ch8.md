@@ -1,0 +1,242 @@
+### Chapter 8
+
+## The Sympathetic People
+
+That Saturday morning I took two showers. During the second shower I heard Ursula go out to the back yard and Miriam wasn’t home, so I walked naked up the hall to my room.
+
+I sat at one of the windows and let what breeze there was wrap itself around my damp body.
+
+It was now one o’clock, and since I’d awakened at eight I hadn’t dressed or left the room except to take the showers and at around ten to duck down to the kitchen in my pajamas for an orange and milk. The late August heat wasn’t responsible. It was nothing to what I had taken in my stride in India. I should be up and doing—sending out feelers for a job, tinkering with the car, mowing the lawn. I didn’t even read. I sat naked at the window.
+
+At one-thirty Bevis Spencer’s sedan pulled into the driveway below my window. Sitting behind the wheel, he appeared to be as unclothed as I except for a rolled towel over his shoulders. The right front door opened and Miriam got out. She was wearing too little for anywhere but a public beach or the privacy of her own room. A white terrycloth robe was over her arm. In the back seat were Kerry Nugent and Helen Spencer, both wearing beach robes. They were home early, probably because this was Saturday and Bevis had to get back to his store.
+
+Before the war we took those outings often—a bunch of young boys and girls piling into one or two cars and driving eleven miles in bathing suits to Corde Lake where the county had built a public beach. The girls put up picnic lunches, and if the weather was particularly hot we’d build a fire when it got dark and sprawl around it singing and telling stories and making mild love and occasionally drifting off two by two for another dip or to put ourselves beyond the revealing glow of the fire. In those days Helen Spencer had usually been my partner.
+
+They had been fine times, and in India Kerry and I used to talk about them in fits of nostalgia and how one of the first things we’d do if and when we got back and if it was summer would be to go out to Corde Lake, I taking Lily and he any girl who was around and pleased him.
+
+Well, we were back and Kerry had been out to Corde Lake with a girl and I was sitting at my window watching them return. Nobody had asked me to come along. I was out of it.
+
+The car drove away. The semi-circular driveway lay empty under the fierce sun. I heard Miriam enter the house and stop to talk to Ursula in the downstairs hall.
+
+Sitting became impossible. I walked back and forth across the room twice before I remembered that I wanted to dress. I put on ducks and a white Basque shirt and left the room.
+
+Miriam was coming up the stairs. She looked wonderful in a bathing suit—or more likely she was one of the few women who, objectively, looked better without any clothes on. She had long thighs and no belly and her skin was burnished tawny-gold, contrasting with the very white of the two negligible strips of satin lastex.
+
+I stood looking at her, waiting for her to speak first. She plucked uneasily at a loose thread in her terry-cloth robe over her arm. Then she said: “We’ve been swimming.”
+
+“Obviously,” I said.
+
+She attempted a smile. “I was going to ask you to come along, Alec, but you were still asleep when we left.”
+
+“What you mean,” I said, “is that nobody wants a crazy murderer at a swimming party or at any other kind.”
+
+I moved past her down the stairs. She remained silent. It wasn’t until I was turning into the living room that I heard her feet resume their ascent.
+
+Ursula was in the dinette, setting the table for lunch. She studied my face anxiously and seemed pleased at what she saw. “You look rested, Alec. I thought sleep would be better for you than breakfast.”
+
+I leaned against one of the posts of the dinette arch. “After I left the house that night—the night Lily was killed—what did you do?”
+
+“For heaven’s sake, Alec, isn’t there anything pleasanter to talk about?”
+
+“Ursula, where did you go after Kerry drove away to look for me?”
+
+“I didn’t go anywhere.”
+
+“All the men left,” I persisted. “You and Miriam and Helen remained in the house. Were you all together?” Ursula straightened a fork beside a plate and took time to reply. Evidently she decided to humor me. Somebody must have told her or she had read in a book that with people who were psychologically off balance the placating technique was in order. So she said amenably: “I went downstairs to the cardroom and counted out the chips at everybody’s place. You see, they’d left without figuring up. Then I played solitaire until Kerry came with the news that you had been arrested.”
+
+I could have guessed that. When Ursula was upset or bored she played solitaire.
+
+“Where was Miriam?” I asked.
+
+“I believe she went upstairs to her room.”
+
+“Was your car in the driveway all that time?”
+
+“After Kerry returned with the terrible news. I could hardly think of putting the car away. It was outside all night.”
+
+“Did you hear a car drive away when you were in the cardroom?”
+
+The placating technique was too much for Ursula’s temperament. Her tone sharpened. “Alec, you’ve got to stop brooding over the—the death.”
+
+“You can call it the murder,” I said. “That’s what it was.”
+
+“What have these questions got to do with it?”
+
+“You can’t solve an equation without knowing all the terms.”
+
+***
+
+Ursula went into the kitchen and seconds later returned with three glasses of tomato juice. “Will that bring her back to life?” she said irritably, as if there had been no break in the conversation. “You’ve been acquitted, so why worry about it?”
+
+“I don’t like to be considered a killer,” I retorted. “Did you hear a car leave the house a few minutes after you went down to the cardroom?”
+
+My voice had risen, and her last few sentences hadn’t been calmly spoken. It was becoming an argument, and that, in Ursula’s book, was bad for me.
+
+She took a breath and returned to humoring me. “If I did hear a car, I didn’t pay attention. So many cars had been leaving at the time. I remember hearing a car arrive some time later and a man came into the house and call Miriam. I assume that it was Bevis because he was in the living room with Miriam when I came; up quite a while after that.” She couldn’t resist a mildly sarcastic dig. “I suppose all this is of vast importance.”
+
+“Probably not,” I said.
+
+I sat down at the table and drank my tomato juice. Ursula went through the swinging door. I heard Miriam come down the stairs and go up the hall into the kitchen. She and Ursula deliberately kept their voices low so that I wouldn’t be able to hear what they said. I took four soundless steps across the dinette and listened at the door.
+
+Miriam was saying: “After what’s been done to him, he has all the right in the world to ask questions.”
+
+“He’ll never get over it if he doesn’t get his mind on something else,” Ursula replied.
+
+I was back in my chair before Miriam came into the dinette. Without looking at me, she took the chair opposite me and reached for her tomato juice. She was sore at me, she had a right to be.
+
+“I’m sorry for what I said on the stairs,” I told her. “Naturally you wouldn’t want an odd man to horn in on your party of two couples.”
+
+“All of us were anxious to have you with us,” Miriam insisted. The door swung inward and Ursula stuck her head through the opening. “You’ll have to blame me, Alec. Miriam was going to wake you, but I wouldn’t let her. You need all the rest you can get.” Her head disappeared.
+
+I buttered a roll and took a bite. “So the night of the murder you went up to your room after the men drove away,” I said.
+
+Ursula must have prepared Miriam for my questions. She replied readily: “I lay on my bed. I was—upset. Then Bevis returned after having driven his father home and called me from downstairs. I went down and we sat in the living room until Kerry arrived.”
+
+“With Helen?”
+
+“No. She was in the living room when I went upstairs, but I didn’t see her again until she came into the house with Kerry when he returned.”
+
+“Did you hear a car drive away right after you went up to your room?”
+
+“The road is so close that if I’d heard any I would have assumed it was passing,” Miriam’s dark eyes widened.
+
+“Alec, you don’t think that any of us—” I saw how my questions were frightening her. The implication of them frightened me, too, but I had become used to it gradually. She was getting it suddenly, right between the eyes.
+
+“Right now I’m after all the informational can get,” I told her. “Most of it won’t be of any use. None of it might.”
+
+***
+
+Miriam nodded in a remote sort of way. She wore black slacks and a yellow blouse. She looked almost as good in them as she had while practically undressed in that negligible white bathing suit. Bevis would get more than any man I knew when he got her.
+
+“When are you and Bevis getting married?” I asked, trying to cheer up the talk.
+
+“I’m not sure we will,” Miriam said unhappily.
+
+“Is it fair to keep the poor guy dangling in midair?”
+
+“I suppose not. But I couldn’t give him an answer while you were in jail. Now I have to face the problem again.”
+
+“If you loved him enough, there wouldn’t be a problem.”
+
+The kitchen door swung open and Ursula entered with three plates of creamed eggs on toast. “If Miriam is going to marry anybody, she should marry you,” she declared briskly.
+
+I felt suddenly cold. I’d had a wife and there wasn’t anybody who didn’t think I’d killed her. I said bitterly: “Nobody wants to marry a man she believes likes to stick knives into his wives.”
+
+Miriam gasped. I turned my head to her in surprise. She was on her feet. Her lips were quivering and her high boned cheeks had gone hollow. She strode out of the room.
+
+“What’s come over her?” I asked Ursula.
+
+Ursula dropped one of the plates in front of me so that it rattled. “I hope you choke on that! What fun do you get out of hurting her?”
+
+“I didn’t say anything to her. It was to you.”
+
+“She’s gone through hell since you came back from India. It’s not only that she loves you—”
+
+“Everybody loves me,” I cut in. “Everybody tries to shelter me. I murdered my wife—or you’re all convinced I did—but I’m a sick man and must be treated like a child.”
+
+Ursula plumped her big body down into her chair. “I wish you were a child so I could put you across my knees and spank you. Miriam is the only person who doesn’t doubt you at all.”
+
+“But you do.”
+
+Too late Ursula realized that she had brought it out into the open. But she didn’t hedge.
+
+“I don’t know,” she gave it to me frankly. “It doesn’t make any difference to me one way or another as long as you’re a free man. Or to Miriam either. That’s why what you just said to her was so cruel.” Abruptly her voice and face softened. “Alec, why don’t you marry her? It’s the best thing you could do.”
+
+“So that’s it,” I said. “You’re working to get my mind off Lily and the murder. You think marrying Miriam would do it. Besides, it would be cozy for you. It wouldn’t break up the household; it would keep us all together. How’ll you bully Miriam into it?”
+
+“You idiot! She’ll marry you the moment you ask her.”
+
+I started to eat. I was hungry. After a minute I said: “I suppose she would out of pity or because she thinks it her duty.”
+
+“You’re so clever,” Ursula said scornfully. “You know everything.”
+
+“I don’t know the one thing I must know, I said, “and that’s who murdered Lily.”
+
+***
+
+After lunch Ursula sent me downtown with a grocery list. She preferred to do her own shopping, but she was anxious to give me something to occupy me.
+
+I drove downtown in the car. The curbs were jammed solid with Saturday afternoon shoppers. I rolled along Division Street, hunting for parking space close to Spencer’s Food Market. A small man was getting out of a car on the gutter side. I almost brushed him with my left front fender and stopped. “Mr. Dowie,” I called.
+
+He peered at me through his thick lenses. “Well, Linn, I’m glad to see you’re a free man,” he said, somewhat embarrassed. “I hope you don’t hold anything against me.”
+
+“You did your duty.”
+
+Sheriff Dowie nodded. “I couldn’t do anything else. Fact is, I was sure you’d get off. Under the circumstances, no jury could find you guilty for what you’d done.”
+
+I opened my mouth, but I didn’t say it. Repeating to everybody that I hadn’t killed her was a waste of breath.
+
+“You’re sister is angry at me,” Dowie went on. “She told me so before the trial. Maybe I shouldn’t be sorry she isn’t inviting me to any more poker games. It was costing me too much money. Those two Spencers are sharks, and your sister and Winkler play a mean game. Well, glad you take it that way.” He started to move toward the rear of my car to get around it.
+
+“Wait a minute,” I said. “Did the police check on Schneider’s phone call to my wife that night?”
+
+Dowie came back to the window. “The telephone company can’t tell which of eight parties on a rural line makes the call.”
+
+“But a call was made?”
+
+“The company doesn’t make a record of a local call.”
+
+“Then there’s only Schneider’s word that Lily was alive at ten o’clock,” I said.
+
+Dowie leaned against the door to get a better perspective of my face. “What would Schneider gain by lying about the phone call? Don’t forget, he went to Hackett of his own free will to tell him he’d spoken to your wife at ten o’clock.”
+
+“I’m not disputing that he spoke to her,” I said. “But I wonder if he didn’t speak to her in person at her bungalow at ten o’clock.”
+
+Dowie missed it completely. “Look here, Linn, don’t you start up with Schneider because he fooled around with your wife.”
+
+It wouldn’t do any good to suggest that perhaps Schneider had done something beside make love to Lily that night. So I said, “Don’t worry,” and put the car into gear. Dowie stepped back against his own car.
+
+Ahead, the driver of a light truck was getting behind the wheel. I shot forward and eased in at the curb as the truck rolled out, and I was parked within a hundred feet of Spencer’s Food Market.
+
+***
+
+Bevis Spencer, in his long white coat, was behind one of the three checking counters. He was too busy to see me. I wheeled a basket wagon through the mob.
+
+Somebody said: “Congratulations, Mr. Linn.” Les Shayne, who delivered Ursula’s laundry, was beaming at me.
+
+I looked down at his gnarled outstretched hand and then up at his face. “Congratulations for what?”
+
+He withdrew his hand. “They were taking five to one at the barber shop you’d be acquitted,” Les Shayne said cheerfully. “I took two bucks’ worth—on you, of course. I told the boys they’d never—”
+
+I swung my wagon away from him and one of the wheels nicked a woman’s heel. She glared at me, but I had no apology for her. I hated her and Les Shayne and everybody in the world. The trial had been a circus, a sporting event on which to bet, and the fact that I had beaten the law was cause for congratulations. If they had despised me for a murderer it would have been easier to take.
+
+I stopped beside the refrigerator and looked at the shopping list. It was shaking in my hand; the words on it blurred. I wiped mist out of my eyes. There was butter on the list. By the time I had it out of the refrigerator I wanted to kick myself. It wasn’t Shayne’s fault; he’d only tried to be nice to me, like everybody else. I looked around for him and saw Oliver Spencer coming toward me.
+
+Mr. Spencer didn’t try to congratulate me. He said amiably: “I hope we’ll have some poker tonight with you, Alec.”
+
+“I’m not sure I’ll play,” I muttered. “I hear Masterson will be there. He always makes a fast game.”
+
+“I guess I have nothing else to do.” Then I remembered the thing I had to do twenty-four hours a day until the end, if I ever reached it. “Can I see you alone, Mr. Spencer?”
+
+He looked at me speculatively, then nodded. I trundled my wagon to the rear of the store and followed him into his office.
+
+“Why was Helen afraid of you when she was on the witness stand?” I asked.
+
+Mr. Spencer pressed the back of his thighs against his cluttered desk and patted his bald pate. “Afraid of me?”
+
+“That’s the idea I got. It seemed to me that she left out a lot in her testimony.”
+
+He said sourly: “I’m glad she had the sense not to drag the Spencer name in the mud more than she did.”
+
+“So she did leave a lot out?”
+
+“My daughter is a good girl and that woman you married wasn’t.”
+
+“And you objected to Helen’s being friends with Lily?”
+
+“I intended to see that my daughter remained a good girl.” He was roused to anger. “There’s another thing. You and Helen used to go out together. I didn’t object at the time. I even looked forward to you—well, it would have been a good match.” Suddenly ill at ease, he fumbled at a button on his white coat. “I always liked you, Alec. I can’t excuse what you did to your wife, no matter what she was, but I’m glad you weren’t found guilty.” His eyes lifted defiantly. “But now I want you to stay away from Helen.”
+
+I held myself together, fighting to keep my voice under control. “All that was when Helen and I were kids.”
+
+“That may be. But now you have no wife and she is very pretty and perhaps you are still fond of each other. You’re not the man for her.”
+
+“Afraid that it’ll become a habit?”
+
+I said, feeling my voice go to pieces. “That any time I don’t like the way a wife of mine acts I’ll stick a knife into her?”
+
+Mr. Spencer’s eyes dropped. I turned to the door.
+
+“Alec,” he said gently, “perhaps I put it too crudely. I have nothing against you personally. But my only daughter—”
+
+“I understand,” I said and kept going.
+

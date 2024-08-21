@@ -1,0 +1,379 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{TITLE}
+\SetAuthor{AUTHOR}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{AUTHOR}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{CHAPTER_TITLE}{STARTING_PAGE}
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 19}
+\ChapterTitle[l]{## The Return}
+\end{ChapterStart}
+\FirstLine{\noindent ### Chapter 19
+
+## The Return
+
+The white dress revealed her seated on the top porch step. Her hand lifted to the darker shadow that was her face. The cigarette glowed as she drew on it, momentarily highlighting her features in a soft blur.
+
+It was forty-five hours since Don Yard had been killed. Next day I had checked out of the rooming house at noon—yesterday. I had ridden the subway to the north Bronx and thumbed the rest of the way. I could have made West Amber by this morning, but I had tried to time it to arrive under cover of darkness. That hadn’t quite worked out. My last lift, a salesman bound for Cleveland, would have passed through West Amber a couple of hours before twilight. I had dropped off three miles before the town and had hidden in woods until darkness permitted me to walk unseen.
+
+The lights of the house were bright and hospitable and cozy. I hadn’t had real sleep in two nights, I was grimy and unshaven, I was still a fugitive—but I felt more secure and rested and looser inside than in months. In years. I was home. That first homecoming nearly two months ago had been a continuation of the horror, subdued usually, sometimes bursting in your brain like shrapnel, that was war and living in time of war. This was home now with all I wanted in it—a girl waiting for me on a porch step.
+
+I cut across the lawn.
+
+She saw me when I crossed the driveway. She stood up, poised on the step as if to plunge off it. I couldn’t have appeared more to her than a human form without identity or distinguishable shape, but suddenly she dropped her cigarette and raced down the steps. Then she was in my arms, and I was kissing her as I had never kissed any woman but Lily. Not even Lily, for there was a consuming yearning in the meeting of our mouths that was passion and beyond passion.
+
+“Darling, I knew you’d come back,” Miriam said at last, the words rushing from her in a flow of emotion. “I’ve been waiting for you. Ursula has been keeping a lot of cash in the house for you. We’ll go away together. To South America. Anywhere you say.”
+
+“West Amber is a good place to live,” I told her.
+
+“Please, darling, don’t be flippant or stubborn now. I couldn’t stand it. And don’t go into the house. We’ll wait in the garden until they leave.”
+
+I stiffened. “The police?”
+
+“Almost as bad. Kerry and George Winkler are having a conference with Ursula. George just returned from New York. He wants to tell the police. I couldn’t stay in there listening to him. That’s why I was sitting outside.”
+
+“George wants to tell the police what?”
+
+“About Don Yard. He knows.”
+
+***
+
+I couldn’t see her face, but her voice was broken and hopeless. “For God’s sake, speak in a complete sentence. What do the police know?”
+
+“Nothing. But George and Robin Magee know.”
+
+The knots that had started to form untied. It was all right. I was safe and Bertha was safe. Or were we?
+
+“I didn’t kill Yard or anybody else,” I said. “With luck, I’ll be able to clear this up tonight. Then we’ll get married and I’ll find a job and we’ll live decent, normal lives. I’ll work it out. Do you hear me?—I’ll work it out tonight.”
+
+Her face was against my chest. “Darling, I love you so,” her voice came muffled. “I can’t think of anything except how much I want you.”
+
+“If I ever stop being a model husband, remind me what a dope I’ve been all these years,” I said. “I love you. That’s rhetoric, but I’ll spend the rest of my life showing you what I mean. All I ask is that you have faith in me for just a little while longer.”
+
+“Yes, Alec,” she replied with nothing at all in her voice.
+
+It was unfair to demand too much from faith. I left it at that. I put my arm about her waist and turned her toward the house and together we went in.
+
+Everything stopped dead when Miriam and I entered the living room. A ghost couldn’t have done it better.
+
+Ursula was the first to move. She threw her arms about my neck, and words spewed from her in a half-sob. “Alec, I’ve money here, waiting for you. You’ll have to leave at once—tonight. Miriam insists on going with you, but she mustn’t. If you care for her at all, you can’t, let her throw herself away like this.”
+
+“Don’t worry about either of us,” I said. I stepped around her and over to Kerry.
+
+His two-month leave had done him a lot of good. He looked ruddy and fit, though he was bulging a trifle around the middle. He attempted a grin and gave it up and fumbled at his belt in embarrassment. I stuck out my hand. He looked down at it and wet his lips and then accepted it. His grip lacked its usual heartiness.
+
+“How’s the boy?” I said.
+
+“All right,” Kerry mumbled.
+
+“There can’t be much of your leave left.”
+
+“I’m reporting back in a couple of days. I’m hoping they’ll let me out soon.”
+
+“How’s with you and Helen?”
+
+“We’re engaged.”
+
+It wasn’t a satisfactory dialogue. The words dribbled out of him as if there were no thought behind them.
+
+***
+
+George Winkler’s bear body was deep in a chair. From it he watched me angrily. I extended my hand to him. He ignored it, keeping his fists at his jowls.
+
+“Don Yard was shot,” he said.
+
+“I read about it in the paper,” I said. “There was little detail. I guess Don Yard wasn’t as big a big-shot as he liked to believe. Merely another gambler killed.”
+
+“So you admit you knew him?”
+
+“What did Magee tell you?”
+
+“What the hell did you come back for?” George burst out. “Every time you kill somebody, you come running home. Why don’t you put a bullet in your head and let Ursula and Miriam alone?”
+
+Behind me there was a gasp of horror—Miriam or Ursula. I didn’t look around.
+
+“I’ll answer your questions after I get some details,” I said to George. “How much does Magee know?”
+
+“Enough to phone me this morning to drop everything and rush to New York. He didn’t dare tell me over the phone. A few days ago he’d met you with a fast poker crowd in New York. You were going under the name of Berkowitz. After he read that Yard was murdered, he got in touch with the man whose house he met you in—Earl Locust. From Locust he learned that you had been anxious to meet Yard and that you had met him during a game in his place.”
+
+“Is that all Locust told him?”
+
+“He doesn’t know that Berkowitz is Alec Linn, if that’s any satisfaction to you. It isn’t to me.”
+
+He was angry clear through. Angry with me for having put him in this position, and with himself because he hated to do what he felt he had to.
+
+“It’s the pattern that gets you,” I said. “I killed Lily and am out to get everybody who ever made love to her. I suppose my next victim will be Bill Beaty when he comes back from the wars.”
+
+“Alec!” Ursula cried. “Alec, don’t talk like that!”
+
+“He’s stark, raving mad,” George said heavily.
+
+“All right, so I’m mad,” I told him. “Even so, I’m entitled to details. The papers carried very few.”
+
+George looked up at me with his lips drawn in. He pushed them out. “Magee has an in at police headquarters. The police received an anonymous phone call which they couldn’t trace that shots were heard in Yard’s apartment. I suppose you made that call. They found Yard dead with an unfired gun in his hand and with the doorknobs and light-switches and some of the furniture wiped clean of fingerprints. Yard had been at a show with Bertha Kaleman and Walter Herring. When the show was over, he told them he was to meet somebody at the apartment and hurried away without telling them who it was. They said he was pretty grim throughout the show. Magee and I know, of course, that it was you he had gone home to meet.”
+
+“You don’t know anything,” I said. “Where were Bertha and Walter?”
+
+“You can’t shunt it off on them. They proved they were at a party when you shot Don Yard.”
+
+“What do the police think?”
+
+“You were smarter this time than the first two times. You get that way with experience. After your fourth or fifth killing you’ll develop the art of murder to a high degree of perfection.”
+
+***
+
+The gasp came again. This time I knew it was Miriam, because Ursula said: “George, I won’t let you say such things in my house.”
+
+“It’s my fault,” George told her bitterly. “I helped him get away with the first one. I pray to heaven he’s insane. It would be too terrible if he did these things while sane.”
+
+He was scourging himself as well as me with words. If he’d talked less, he would be more dangerous at the moment.
+
+“What does the shooting look like to the police?” I persisted.
+
+Talk was what he wanted to get some of his bitterness out from inside him and into the open. “Like the murder of a gambler by somebody who owed him a lot of money. The police figure that Yard and the other man quarreled over money and that Yard drew his gun, but that he was beaten to the shot by the other man. Or that the murder was planned ahead and Yard was shot down from behind. All three bullets had come from behind—two in his back and one in the back of the skull. Yard probably drew his gun after he was hit the first time, or after he was dead the gun was placed in his hand by the murderer. The police suspect it was an underworld character because of the careful attention given to removing fingerprints and because Yard, who, it seems, never wore a gun, took care to wear one when he prepared to meet the killer,” George glowered. “You’ve always been a scholar, Alec. You learn quickly how to do such things right.”
+
+“Do the police suspect the existence of Jeffery Berkowitz?”
+
+“They don’t, according to Magee. Nor that Alec Linn was in New York that night.”
+
+Walter had done a very nice job. He knew how to handle such matters thoroughly and convincingly. Possibly that was the perfection of experience George had mentioned.
+
+“And Magee is frightened,” I said. “If I’m picked up for the shooting and it comes out that Magee had seen me the night before and had kept his mouth shut, his goose is cooked. That was why he sent the frantic call to you. He has to protect himself by protecting me.”
+
+George thumped the arm of his chair. “I don’t give a damn what happens to Magee. I have a certain amount of responsibility to society, if nobody else has.”
+
+Kerry said weakly: “There ought to be some way of handling it without giving Alec away to the police.”
+
+“Not again!” George roared. “Every time we let him get away from us somebody else is murdered.”
+
+“May I have a cigarette, George?” I asked quietly.
+
+***
+
+He stared at me in surprise, then lumbered up to his feet and took out a pack. I struck my own match because I knew that my hands would be steady. I was showing off. I should have been going to pieces, but George was the one who was shouting. What George had told me about the police had propped up a base under my feet. I had something to grip with my toes and stand erect. Whatever had been done to me by the war and Lily was over, past, finished—if I got safely through tonight.
+
+“I didn’t shoot Yard,” I said. “He was killed in self-defense. Never mind why or by whom, but it wasn’t murder. I had to be sure that I was clear on the Yard shooting as far as the police are concerned, and now that I’m sure, I can go on. George, will it convince you that I didn’t kill Yard if I prove to you that I didn’t kill Lily and Schneider?”
+
+I felt Miriam against my side. She reached for my hand and I squeezed hers. Ursula and Kerry watched me with a kind of breathless hope. And George, suddenly, looked more curious than angry.
+
+“What sort of proof?” George asked skeptically.
+
+“I’ve a beginning here—an equation worked out against each suspect.” Out of a pocket I pulled a sheet of paper torn from a notebook. “I wrote it out neatly this morning in an Albany beer joint.” I extended the paper to George.
+
+“Mathematics!” he grunted. “So that’s all you have!” And he did not accept the paper.
+
+Kerry came forward to take it from me. Once more he was the skipper, the man of action. Here was something tangible to be looked at, examined. They crowded about him, Miriam and Ursula on either side, and then even George. Kerry held the paper out so that they could all read the marks on paper which said:
+
+Which of the suspects will satisfy the linear equation with a single unknown which results from the following hypotheses?
+
+Let X = the Suspect.
+
+Let KL = Knowledge of Alec’s movements before Lily’s murder.
+
+Let KS = Knowledge of Alec’s movements before Schneider’s murder.
+
+Let OL = Opportunity to murder Lily.
+
+Let OS = Opportunity to murder Schneider.
+
+Let ML = Motive to murder Lily.
+
+Let MS = Motive to murder Schneider.
+
+Let MA = Motive to frame Alec for both tnurders.
+
+Therefore:
+
+X = KL + KS + OL + OS + ML + MS + MA.
+
+***
+
+Kerry raised his eyes from the paper, frowned at me, and continued to read or reread it. Ursula appeared to be concentrating furiously, trying to make something out of what was beyond her scholastic knowledge. Miriam gave it up. She came to me and hugged my arm and waited for the answer which would mean life to both of us.
+
+“Let me explain it,” I said into the silence. “I’m no longer bitter because you believed I was a murderer and that you still believe it. You, George, put it into words weeks ago—that the odds against me being so completely implicated in Lily’s murder through coincidence or accident were too great. When Schneider was murdered under similar circumstances, the odds were multiplied with each other and became overwhelming. As I knew that I was innocent, I concluded that both murders were deliberately planned to implicate me. There you have the terms, KL and KS, which limit X, the suspect, to those persons who were in this house during the card games on the two Saturday nights of the murders. Which brings us to OL and OS. Everybody who was here the night Lily was murdered could have beaten me to the bungalow. OS eliminated Miriam and Ursula; they were here when I drove away, but the rest had already departed. As for ML and MS—a number of you had reason to hate Lily or want her out of the way, and there could have been other motives that I was unaware of. ML was the least fixed of all the terms, just as MS was the most definitely fixed on the reasonable assumption that Schneider’s murder flowed out of Lily’s, that he was killed because he had seen who murdered Lily and tried to capitalize on it. In effect, ML and MS are connected terms. Satisfy the first and the second is automatically satisfied.”
+
+“Symbols and words!” George exploded. “Anybody can write an equation.”
+
+“Give Alec a chance,” Kerry snapped at him. He looked at me. “Where does the MA term come in. I can’t see it.”
+
+“That was the crux of the equation,”
+
+I said. “It had me stumped for a long time. MA flows inevitably from the other terms. Motive for mortally hurting me. Not killing me. George once pointed out to me that it would have been simpler to kill me than to erect an elaborate framework of guilt around me. Conceivably the killer slated me as the scapegoat, the fall-guy, but the delicate timing involved made it a lot more dangerous than killing me—or both Lily and me, if that was the idea—and then sitting tight. That’s still the most foolproof way to murder somebody—shoot or stab and go home. No, X was somebody who hated me, but had reason for not wanting me dead or not wanting me dead by his own hands.”
+
+George sneered: “Q. E. D. But obviously you didn’t have confidence in this equation. You fled after you shot Schneider.”
+
+“After Schneider was shot,” I corrected him mildly.
+
+“You fled. An innocent man doesn’t.”
+
+“He does if he has to depend only on himself to fight for his life. I had had a taste of what lawyers did to me once I was in jail. I needed time and I needed more information. I wasn’t dealing with fixed values, but I could try to fix them as nearly as possible.”
+
+“How did you fix values by going to New York and killing Don Yard?”
+
+***
+
+I refused to let his anger get under my skin. “I went to New York because I had to go somewhere. It was as good as anywhere else, and Don Yard was there. I didn’t think that he—or even less likely, Bertha Kaleman—had murdered Lily. KL and KS excluded them, but not wholly. Coincidences occur, however improbable. They both had plenty of reason to do away with Lily, and at the time Yard was the only one I could think of who hated me enough to frame me. I had to be sure of facts concerning him before I could limit the equation to KL and KS. And I learned that he and Bertha were on Cape Cod the night of the murder. But that was only part of what I was after—the least part. Yard had maintained some sort of contact for all I knew, intimacy—with Lily while I was overseas, and there was a chance that he or Bertha or Walter could supply me with information which would help. I did get something from Bertha, a sort of proof of the equation. Somebody in West Amber threatened Lily’s life a couple of days before she was murdered—somebody who was not a lover or had any personal relationship with her.”
+
+My throat was dry. I swallowed and sent a smile to Miriam. She leaned against me, hugging my arm. Her face, lifted to me, was filled by her grave black eyes.
+
+“Who is it?” she whispered.
+
+“That’s it—who?” George said. “And giving me a name won’t be enough. There’ll have to be a lot more than mathematical gymnastics to stop me from going to the police.”
+
+All at once my new-found self-assurance was gone. I felt tired, drained of emotion. I had thought that Kerry would help me and that George, a lawyer, would advise me. But that was no good. I had to depend wholly on myself, as I had all along. I couldn’t be sure that the thing I needed was there, and I had to be before I brought the police in. It was still exclusively my job.
+
+“I’d like you to try to work out that equation,” I said. “You should be able to do it with what explanation I’ve given you. If you get the same answer I did, it will be some sort of proof. Meanwhile, I’ll go upstairs to shave and change my clothes.”
+
+George didn’t protest. He stood on one side of Kerry and Ursula on the other, all three absorbed in the paper. Miriam went upstairs to me.
+
+“Listen—I’m sneaking out of the house,” I said to her when we stood in front of my door. “I don’t know how long I’ll be gone. Thirty minutes or a lot longer.”
+
+She pressed against me. “Darling, can you really convince the police that you’re innocent?”
+
+“I think so. There are two ways of doing it. I’ll try the easiest first. If I fail in both—”
+
+“What will you do?”
+
+“I don’t know. But I’ll come back here before I decide.”
+
+“Who is it? Why can’t you tell me?” It would hurt her. Time enough for that later—if there would be a later for us.
+
+“You’ll find out soon enough,” I said. “What I want you to do is watch George. Keep him here until I return. Don’t let him go to the police or phone them.”
+
+“Ursula will help me if necessary. She could always handle him. He’s so devoted to her that he came here tonight to talk it over instead of going straight to the police. He’s going through hell wanting to do the right thing.”
+
+“George is a good guy,” I said. “Now go downstairs and tell them I’m shaving and dressing.”
+
+She would not release me. I kissed her and gently unwound her arms from about me and went into my room.
+
+I stopped only to get a flashlight from my drawer. As I had several weeks ago, I climbed through a window and down the ground by way of the porch roof. Kerry’s and George’s cars were in the driveway. I could have borrowed either, but George would hear the motor and think I was fleeing a second time. It was a nice night for walking.
+
+
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+

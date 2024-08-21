@@ -1,0 +1,607 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{TITLE}
+\SetAuthor{AUTHOR}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{AUTHOR}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{CHAPTER_TITLE}{STARTING_PAGE}
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 5}
+\ChapterTitle[l]{## For the People}
+\end{ChapterStart}
+\FirstLine{\noindent ### Chapter 5
+
+## For the People
+
+Sunlight poured in through one of the tall courtroom windows and lay warmly over the long table at which I sat. When I held my hands in the dusty streamers, shadows formed on the table, and with my fingers I fashioned animated images of ducks and goblins.
+
+George Winkler strode over from the jurybox where District Attorney Hackett and Robin Magee were examining talesmen.
+
+“Don’t do that,” he said.
+
+“Do what?” I asked.
+
+“Those tricks with your fingers. You look too nonchalant. You might give the jury the impression that you’re hard-boiled.”
+
+“What’s taking them so long?” George chuckled. “It’s a delight to see Magee work. He’s challenging everybody who hasn’t at least one son in the service. Wives of soldiers won’t do, obviously, because Lily was the wife of one. Magee insists on sons, parents of boys like you. Hackett is challenging those Magee accepts, but it’s a losing game for him because our armed forces are so large. They’re up to the twelfth juror. I realize this is dull, Alec, but whatever you do don’t act indifferent to the proceedings.”
+
+I felt the grim and passionless bulks of my two nursemaids at either shoulder. They had guns on their hips and handcuffs dangling from their belts. They conducted me to and from my cell in the county jail and for lunch to the daytime cell behind the judge’s chamber. In the courtroom they were frozen beef planted behind my chair. Four walls made me feel freer than they did.
+
+I said to George: “If I act the way I feel, I’ll start chewing the table.”
+
+“That mightn’t be a bad idea,” George said.
+
+County Judge Farrier leaned his gray mane toward the jury box. “Is the jury satisfactory to the defendant?”
+
+Instantly the courtroom was silent. “The jury is satisfactory,” Magee said loudly.
+
+“Is the jury satisfactory to the People?”
+
+“The jury is satisfactory,” Hackett said.
+
+“The jury will stand and be sworn.”
+
+***
+
+This was it. There was a stifling hush, as before a storm. I felt the emptiness in the pit of my stomach that I used to feel when we took off on a particularly tough mission with weather conditions uncertain. Only this would be tougher than the worst of them.
+
+The clerk droned the roll. I twisted around in my chair. Between the solidity of the guards, I could see Ursula and Miriam in the front row of benches. Ursula caught my eyes and managed a wan, smiling-through-tears smile. Miriam’s profile was strained and tight as she listened intently to the jurors being sworn in.
+
+Near the rear of the room Kerry Nugent and Helen Spencer sat together. Bevis Spencer came down the aisle and whispered briefly to his sister and Kerry.
+
+“Quiet! ” the bailiff at the railing gate snapped. Bevis flushed and moved on to sit beside Miriam. There were others in the room I recognized, men and women I had known half of my life. It was quite a party.
+
+I turned back to listen to the district attorney who was rising to address the jury. He was a plump, soft-spoken man whom I would have liked under different circumstances. He told the jury that for weeks and months I had planned the murder of my wife and that only a few hours after returning to West Amber I had rushed to the bungalow and plunged a knife into her heart.
+
+Then it was Robin Magee’s turn. He had a voice that thundered and wept and sneered and whispered within a single sentence. He said that Lily had been an evil woman and that I was a decent and patriotic boy. And he sat down.
+
+There wasn’t much for the first couple of hours. The county medical examiner said that a sharp instrument, commonly known as a steak knife, was driven into the body at a point approximately three and a half inches below the left shoulder blade anteriorally and penetrated the heart to a point an inch above the apex, imbedding itself directly between the fifth ttad sixth ribs without emerging from the body. In his opinion, she had not been dead more than an hour when he had first seen the body at eleven o’clock the night of the murder and his post mortem at Willlowby’s Funeral Parlor the following day had verified the time of death. Approximately, anyway.
+
+Magee let him step down without cross-examination. A state police lieutenant told how he and Sheriff Dowie had taken me to the county jail.
+
+A buxom woman named Mrs. Josephs stated that she had rented the bungalow to Mrs. Lily Linn on July 5th. The bungalow had come completely furnished, including a set of six steak knives, of which Exhibit A was one.
+
+A sergeant from the State Bureau of Criminal Investigation testified that the only fingerprints on Exhibit A were mine.
+
+***
+
+Robin Magee rose to cross-examine for the first time. Languidly he sauntered to the witness stand; almost I expected him to suppress a yawn. He must have seen a great criminal lawyer act like that in a movie.
+
+“Tell me, Sergeant,” he drawled, “did you test the five other steak knives in the kitchen for fingerprints?”
+
+“Yes, sir, I did.”
+
+“Why?”
+
+“It’s routine. You can never tell what’ll be important, so we dust everything in the place.”
+
+“Laudable diligence, I’m sure. Did you find fingerprints on the five steak knives in the kitchen drawer?”
+
+“Well, on one was a smear of Mrs. Linn’s right thumb and on another a pretty good impression of—”
+
+“No prints on the other three knives?”
+
+“No, sir. Washing them had removed the prints.”
+
+“Wouldn’t whoever dried the knives have replaced prints on them?”
+
+“It depends on how they’re dried. Most women hold a few pieces of cutlery in a towel and take one end of the towel and dry them like that. Then they drop the cutlery into the drawer without having touched it except with the towel.”
+
+“In short, there were probably no prints on the murder knife when the murderer removed it from the drawer?”
+
+“Probably not. But as soon as he took the knife out of the drawer he put his prints on it.”
+
+“But not if he wore gloves,” Magee said. “In that case the knife could have been plunged into Mrs. Linn’s heart without fingerprints appearing on it until the defendant, Alexander Linn, entered and touched the knife.”
+
+“If he wore gloves, I guess so.”
+
+“One more question, Sergeant. Could fingerprints have been wiped from the knife-handle while it protruded from Mrs. Linn’s breast?”
+
+The silence in the courtroom deepened.
+
+“You mean,” the sergeant said slowly, “take a rag or a handkerchief and wipe the prints off the knife-handle without removing the knife from the body?”
+
+“Exactly.”
+
+“I don’t see why not,” the sergeant said.
+
+Magee strolled back to our table.
+
+“That’s the way it happened,” I told him excitedly. “The murderer either wore gloves or wiped off the prints after he killed her.”
+
+Magee shrugged. “At best it’s a negative point, but it helps confuse the jury.”
+
+***
+
+The sight of that sleek face streamlined by a narrow mustache made me think of bars at a bank teller’s window and a name-plate reading, “MR. E. SCHNEIDER,” and a mechanical remark about the weather as he passed Ursula’s bankbook back to me.
+
+His loose-jointed body lounged in the witness chair as it had never dared in the stiff formality of the bank cage. His full name was Emil Schneider. He was thirty-seven years old and had worked at the West Amber National Bank for eleven years. He had become acquainted with Mrs. Lily Linn when she had come to the bank to cash her Army allotment checks.
+
+“How well acquainted?” Hackett asked.
+
+Schneider crossed his legs. The jurors leaned forward. Magee and George looked at each other. I felt my hands clench.
+
+“It was like this,” Schneider said after a pause. “One morning a year ago last April Mrs. Linn came in to make a deposit and asked me casually if I knew of a house for sale in the neighborhood. She said if she found just the right thing she’d like to buy it and have it ready when her husband came home from the war. I was about to recommend a real estate broker, but suddenly I saw the chance to make a good commission for myself. I knew of a house for sale out in the Big Oaks section, so I told her I’d be glad to drive her around late that afternoon to take a look at it.”
+
+“Was she interested in that house?”
+
+“It was too big for her. I promised her that I’d keep my ears open. In a bank you hear a lot about houses for sale, and whenever I heard of one I took her to see it. But the ones we saw didn’t satisfy her or were too expensive.”
+
+“What happened on the night of July 21st?”
+
+“That morning I heard of a good buy near New Hollow. It was farther from town than Mrs. Linn wanted, but it was worth a try. I phoned her in the afternoon, but couldn’t get her home. Mrs. Hennessey told me she’d moved out that morning. In the evening I heard Mrs. Linn had rented the Josephs’ bungalow and had moved in already. I phoned her there.”
+
+“At what time?”
+
+“Around ten o’clock.”
+
+“Can you be more exact?”
+
+“I remember looking at my watch to see if it wasn’t too late to call her up. It was five to ten when I picked up the phone.”
+
+“Who answered?”
+
+“Mrs. Linn.”
+
+I looked at George and then at Magee. Neither of them appeared to be greatly disturbed. In my statement to Hackett I had said that I had reached Lily’s house shortly after ten o’clock; besides, Dowie had found me there a few minutes later. Didn’t they realize how bad Schneider’s testimony was for me?
+
+“You are absolutely certain that it was Mrs. Linn at the other end of the wire?” Hackett said.
+
+Magee drawled: “Objection on the grounds that no proper foundation has been shown that he knew her voice.”
+
+“He called her house, didn’t he?” Hackett said angrily.
+
+“And spoke to a woman. That’s all that’s certain. It could have been any woman at the house at the time.” Hackett turned to the judge. “Let the counsel show no proper foundation in the cross-examination.”
+
+“Suits me,” Magee said smugly and sat down.
+
+“What was the substance of your telephone conversation?” Hackett asked Schneider.
+
+“I told her about the New Hollow house and she asked me to pick her up next afternoon when I knocked off work.”
+
+“What time was it when you hung up?”
+
+“Five minutes later. Ten o’clock.”
+
+“When did you next hear from or about Mrs. Linn?”
+
+“Next morning I heard at the bank that she’d been murdered. During my lunch hour I went to you to tell you I’d talked to her the night before.”
+
+“You were very cooperative, Mr. Schneider. That will be all.”
+
+***
+
+Robin Magee sauntered over to the witness. Almost he yawned in Schneider’s face. “You have a great deal of confidence in the accuracy of your watch.”
+
+“It’s the one I’m wearing now. It never loses a minute.” Schneider smiled. “Besides, as soon as I hung up I went into the living room and turned on the radio for the ten o’clock news. It had just come on.”
+
+“Was anybody with you when you made the phone call to Mrs. Linn?”
+
+“I was alone at home.”
+
+“You have a wife and two children, I understand.”
+
+“Yes.”
+
+“Were they at home at the time?”
+
+“They were visiting my wife’s mother in Vermont.”
+
+Magee rubbed his chin reflectively. “You say that Mrs. Linn consulted you about a house as long as fifteen months ago?”
+
+“About that long ago.”
+
+“And you showed her houses throughout that period?”
+
+“Whenever I heard of something which might interest her.”
+
+“Didn’t you get discouraged?”
+
+“I stood to make from five hundred to a thousand dollars commission. That kind of money is encouraging.”
+
+“Didn’t it seem to you excessively ardent salesmanship to see Mrs. Linn at least once a week for a period of fifteen months?”
+
+Schneider uncrossed his legs. “It wasn’t that often.”
+
+“Did your wife leave your bed and board last May and take your two children with her to her mother’s house in Vermont and not return to you?”
+
+Schneider’s nonchalance was gone. It all belonged to Magee now. I heard a stirring behind me among the spectators.
+
+“We had a fight,” Schneider said unhappily.
+
+“Because of Lily Linn?”
+
+“No. My wife and I hadn’t gotten along for years.”
+
+“What were your relations with Mrs. Linn?”
+
+“I—we—” Past Magee’s shoulder Schneider stared at me.
+
+Everybody stared at me. I had risen from my chair and stood with my knuckles pressed down on the table. The hand of one of my nursemaids fell on my shoulder and pressed me down to the chair. I ran my fingers through my hair. I was trembling.
+
+“What were your relations with Mrs. Linn?” Magee asked again.
+
+Schneider sat back. “I don’t know what you mean. We had a business relationship, of course.”
+
+“I am referring to an intimate personal relationship.”
+
+Hackett leaped to his feet to make a vigorous objection.
+
+“I wondered why you didn’t object before,” the judge said. He scowled down at Magee. “Objection sustained.”
+
+Breezily Magee waved a hand. “I withdraw the question for the present. I reserve the right to recall Schneider for the defense if necessary.”
+
+When Magee returned to the table, I leaned into his whiskey breath. “Schneider is lying,” I whispered. “Lily had no money to buy a house. She was always complaining in her letters about being broke. He murdered her. He lied about that phone call.”
+
+Magee patted my arm. “You leave him to me. He’s going to be a mighty sick man before the trial is over.”
+
+“You mean you can prove he murdered her?”
+
+“Hardly that. But as one poker player to another, watch the way I’ll call the D. A.’s hand.”
+
+***
+
+There were four women on the jury and eight men, all middle-aged or older. I tried to make something out of their set, attentive faces, separating each from the other, but they remained a blurred entity. A dozen faceless people you could have picked out of any crowd, but they would decide whether I burned in the electric chair or rotted in prison or walked once more among my fellow men.
+
+Hackett was reading from a sheet of paper. I yanked my mind away from the jury and heard:
+
+“… don’t see why you can’t manage on the allotment you receive as the wife of a first lieutenant, plus whatever else I send you out of my pay. Unlike most other officers’ wives, you don’t even have to pay rent.”
+
+“What’s that?” I asked George Winkler.
+
+“Don’t you recognize your own letters?” George said. “They’re the ones you wrote to Lily from India. Hackett found them in her bungalow and is reading excerpts into the record.”
+
+“Is he allowed to make public my private mail?”
+
+George motioned to me to let him listen.
+
+Hackett was reading:
+
+“Can’t you ever write about anything but that you’re bored or haven’t enough money? You don’t even bother any more to throw in a casual mention at the end that you love me. Oh, I understand. It’s being separated for so long. It must be even harder on you than on me. We’ll make up for it when I get back.”
+
+The next letter was dated a month later. It read:
+
+“Needless to say, the news in your last letter that you drove all the way to New York with Billy—whoever or whatever he may be—to a night club and Started back to West Amber at four in the morning and drove till noon, has brightened my days and made my nights restful. Now I face each mission with stalwart heart, confident that my wife is loyally keeping the home fires burning.
+
+I’m not jealous. I don’t expect you to shut yourself away from the world and make yourself sick pining away for me. I don’t mind your seeing other men now and then, though perhaps trips to New York with men named Billy is—
+
+Damn it, I am jealous! Not because of what you write, but because of what you don’t. I assume that you are faithful, but you might make as much mention in your letters of me as you do of your Billys. You might even say that you miss me.”
+
+I knocked my chair over as I jumped up. “You can’t read those!” I said. “They’re personal!”
+
+I dashed for Hackett. He put the letters behind his back and tried to hold me off with his free hand. Then my two guards reached me and each grabbed one of my arms. All twelve jurors were on their feet to see better, and the courtroom was in chaos. The judge banged his gavel. I was sputtering, unable to find words to express my outrage.
+
+***
+
+The judge said something and Magee and George collected my arms from the guards and led me to the bar.
+
+Gradually quiet resumed behind me. The judge gave me a lecture. He said that I was on trial for my life and that those letters were evidence and that he would not tolerate such conduct. I was wondering what more could be done to me, but he didn’t say. Magee led me back to my chair and I sat sweating and trembling and helpless.
+
+Hackett had more. He read:
+
+“Today everybody got mail from wives and sweethearts. There were letters for me, too—one from Miriam and one from George Winkler. The letter from Miriam was sent out airmail only eight days ago. She said that you were well. But no letter from you. None in seven weeks. Are you so busy with your various Billys that you can’t spare five minutes to drop a line to your husband? This morning Kerry Nugent asked me why I looked so glum lately. I told him that if I could get leave to go home and strangle my wife, I’d come back a new man.”
+
+George sent a frown past me to Magee. “Not so good. Hackett is trying to show that while still in India Alec planned to murder her.”
+
+“That’s only an expression men are always using about women, that they want to strangle them,” I said. “Can’t you make that clear?”
+
+Magee patted my shoulder. “I’ll take care of those letters when the time comes. Have you the letters your wife sent you? They would be useful on our side.”
+
+“They weren’t the kind of letters I’d want to keep,” I said fiercely. “And even if I had them, you wouldn’t get them.”
+
+Hackett was still reading. I kept my eyes fixed on the top of the table. I was ashamed to look at anybody.
+
+***
+
+Bevis Spencer stumbled over the oath, sent a startled glance at me, sat uneasily at the edge of the chair.
+
+“Is Bevis going to testify against me?” I asked George in surprise.
+
+“Hackett subpoenaed him. He was unhappy about it and had an idea I could get him out of it. I couldn’t, of course.”
+
+“You got Miriam off.”
+
+“Hackett wasn’t keen on having her to begin with,” George said. “He decided that her testimony would work against him. As a matter of fact, Magee wants her for the defense, but she refuses to take the stand. I stopped Magee from getting tough with her.”
+
+Bevis Spencer told how he had arrived for the Saturday night poker game half an hour after his father and George and Dowie. He had remained in the living room to spend a few minutes with Miriam. Then I had come in and asked to be alone with her.
+
+“What was the defendant’s demeanor when he entered?” Hackett asked.
+
+“Quiet, the way he usually was in all the years I’d known him. He looked a lot older, though, than two years ago. He didn’t get excited till later.”
+
+“How much later?”
+
+“Two or three minutes. I was in the hall, on the way downstairs to the card-room, when I heard my name and stopped to listen.” Bevis squirmed on the edge of the chair. “I’d just asked Miriam Hennessey to marry me, and I heard her tell Alec that. Alec has a lot of influence with her and I wanted to know how he felt about my marrying her.”
+
+“We can understand a perfectly human action,” Hackett said graciously. “Was anything said about Lily Linn?”
+
+“They started off by discussing me, then suddenly Alec wanted to know where Lily was staying. He said he’d found out that Lily wasn’t living with them any more and he got very excited.”
+
+“By ‘them’ you refer to his sister, Ursula Hennessey, and her ward, Miriam Hennessey?’’
+
+“Yes.”
+
+“You stated that the defendant became very excited,” Hackett said. “What do you mean by that?”
+
+“He started to shout.”
+
+“What did he say?”
+
+“I didn’t hear any more. I went downstairs to the cardroom because what I was listening to wasn’t any of my business.”
+
+Bevis went on to tell about the scene in the cardroom when I burst in a few minutes later. He tried to make it sound mild, but Hackett wouldn’t let him. He said that after the game broke up he had gone out on the porch with the others. His sister Helen and Kerry Nugent had pulled up in a car.
+
+“Did Captain Nugent remain long?” Hackett asked.
+
+“He left a few minutes later in his car. I heard Miriam ask him to try to bring Alec back.”
+
+“To prevent the defendant from going to his wife?”
+
+Bevis’ somber face was miserable. “Well, Alec had become psychoneurotic in the Air Force and he—”
+
+“Never mind that,” Hackett said quickly. “You’re not a psychiatrist.”
+
+Magee chuckled. I wondered why.
+
+“I was just telling you the reason they were worried about him,” Bevis said. “Alec’s nerves—”
+
+“Never mind. I’m interested in the defendant’s actions when he learned where his wife was staying.”
+
+“Well, he rushed out of the house.”
+
+“Without pausing?”
+
+“He was out of sight when I got to the porch.”
+
+Hackett smiled and walked away. Magee smiled also and waved Bevis off the stand.
+
+***
+
+Sheriff Owen Dowie peered about myopically and then brought his pale eyes to rest on Hackett who was waiting for a reply to a question. Noisily Dowie cleared his throat. “Properly speaking, I didn’t arrest the defendant. I handed him over to Lieutenant Searson of the state police. I’m only a peace officer.”
+
+“Tell us what happened the night of July 21st.”
+
+“I’d been invited to play a little poker at Mrs. Ursula Hennessey’s house. Just a harmless little game in a private home between friends. Nobody could call it gambling.”
+
+There were titters in the courtroom. The judge worked his gavel without passion.
+
+Hackett said dryly: “Poker is a great American institution and I am sure the sheriff is as human as the rest of us.”
+
+“Like I said, a friendly little game. Well, around eight o’clock that night Oliver Spencer phoned me and asked if I’d pick him up in my car on the way. His boy Bevis had taken the car over to the store; he was taking stock and would be late. So at eight-thirty I picked up Oliver Spencer. When we got to Mrs. Hennessey’s house, George Winkler had just arrived in his own car. We stood out on the driveway talking about Alec Linn, who’d just got home. Spencer and Winkler said Linn’s wife had been cutting up while he was away and they were worried he’d find out and—”
+
+Magee made a motion to strike out. The judge granted it. Hatkett said to Dowie: “Please confine yourself to facts.”
+
+“But everybody knew Lily Linn was running around with—”
+
+“Please. Hearsay is not admissible.”
+
+“Oh, all right. Then we went up to the house and the defendant himself opened the door for us. He didn’t want to come down to play with us. I’d heard that he was a whale of a poker player and I was anxious to play with him, but he didn’t want to. So the three of us went downstairs to the cardroom and played knock rummy till Mrs. Hennessey finished washing the dishes and then we started a four-handed game of stud. It wasn’t fun playing four hands, especially as Mrs. Hennessey, who’s a sharp player, wasn’t paying attention to her cards. Then around nine-thirty, or a little before, Bevis Spencer came down and joined the game. But it didn’t go much better because we could hear the defendant yelling—”
+
+“Yelling?”
+
+“Talking in a very loud voice. He was with Miriam Hennessey in the living room right over our heads.”
+
+“Did you hear what the defendant said?”
+
+“No. Just his voice, very loud. Suddenly he came dashing down into the room. His face was all twisted up and he yelled he wanted to know where his wife was. Mrs. Hennessey tried to quiet him, but he started swearing and yelled over and over he wanted to know where his wife was. It was mighty embarrassing for all of us.”
+
+“Can you recall definite words that the defendant uttered?”
+
+***
+
+Dowie removed his glasses. “He said: ‘I know what Lily was up to while I was away.’ George Winkler tried to reason with him, and the defendant told him to mind his own—pardon me—damn business, and the defendant said: ‘I know exactly what I’m going to do to my wife.’”
+
+“Are you sure those were his exact words?”
+
+“Maybe he said he knew what to do with his wife instead of to his wife. I didn’t take what he said down in shorthand. Ask the others. They’ll agree I’m close enough. Then Mrs. Hennessey told the defendant that his wife lived on James Street, and without another word he ran out like there was a fire. We could hear him running in the upstairs hall and slam the front door.”
+
+“What happened then?”
+
+“Mrs. Hennessey didn’t want to play any more, and I guess the rest of us didn’t either. We all went outside. I told Oliver Spencer I’d drive him back to his house, but he said his son Bevis would drive him home, so I got in my car and drove off by myself.”
+
+“What time was that?”
+
+“A quarter to ten. I looked at my dash clock when I got into my car. The defendant had left around five minutes before. I drove home. My wife hadn’t come back from her knitting club—it was still early—so I drove down to town and had a beer at Lou’s on Division Street. All the time I was thinking about what had happened at the house. I’d heard the stories—” Dowie hesitated. “You don’t let me tell the stories I’d heard.”
+
+“You can tell us why you went to Mrs. Linn’s bungalow.”
+
+“It was on account of what had happened in the Hennessey house and what I knew about Mrs. Linn and that boy running out of the house like a wild man. I’m a peace officer. It’s a twenty-four-hour job. After a while I made up my mind that that boy, the defendant, wasn’t in a fit state to go busting in on his wife. I don’t say I had any idea of murder, but just the same I was worried. I figured there was no harm driving past Mrs. Linn’s bungalow. When I got there, all the lights were on, but it was very quiet. Everything looked all right. I drove up that little dirt driveway at the side of the house so I could turn around. But I didn’t back up. I could see through one of the windows into the living room, and there was the defendant sitting with his head in his hands. I watched him. He didn’t move. I got out of the car and walked to the window and saw a woman on the floor. I ran around to the front door and went in.”
+
+“What time was this?”
+
+“Fourteen minutes after ten.”
+
+“According to Emil Schneider’s testimony, only fourteen minutes after Schneider had spoken to Mrs. Linn on the telephone. Did she appear to be dead?”
+
+“I’m no doctor, but a knife was in her heart and she had no pulse I could find.”
+
+“What did the defendant have to say?”
+
+“He didn’t say anything at first. Captain Nugent came in right after me. Then the defendant said he didn’t kill her.”
+
+“What else?”
+
+“He just sat there on the couch, his feet almost touching the dead woman, till the state police came and Lieutenant Searson led him out of the bungalow. Then the defendant said: ‘My fingerprints are on that knife.’ I said: ‘What do you expect?’ He said: ‘You don’t understand. I started to pull the knife out without thinking.’ I said: ‘Do you want to make a statement now?’ He said: ‘I’ve made my statement. I didn’t kill her.’ ”
+
+“Did you take a close look at the knife in the woman’s heart?”
+
+“Sure. It was just like Dr. Abies said he found it.”
+
+“How was that?”
+
+“I couldn’t see the blade. The handle was in up to that gown she was wearing.”
+
+“It wasn’t halfway out?”
+
+“Well, maybe a little way out. There was that thick gown, like I said, between it and her skin. But not, not halfway out.”
+
+“Thank you, Sheriff.” Hackett turned to Magee. “Your witness.”
+
+***
+
+Robin Magee tapped two fingers over a yawn. “Tell me, Sheriff, how long was it between the time you saw Lieutenant Linn on the couch and the time you entered the bungalow?”
+
+“Maybe forty seconds. No, I’d say at least a minute. I cut the ignition and got out of the car and looked in the window and went around to the front door.”
+
+“Had Lieutenant Linn moved in that interval of a minute?”
+
+Hackett came forward. “Your honor, there has been no Lieutenant Linn mentioned. Whom does Magee mean?”
+
+Magee beamed at the D.A. “You know very well I mean First Lieutenant Alexander Linn of the Army Air Force.”
+
+“If by that he means the defendant, he is not in any way any longer connected with the Air Force.”
+
+The judge clucked his tongue. “I don’t see where it matters. My father was called colonel for twenty-five years after he retired from the Army. Continue.”
+
+What difference did it make whether I was electrocuted as Lieutenant Alexander Linn or as plain Alec Linn? None if the battle of legal wits concerned my guilt or innocence, but I was beginning to get the idea that that wasn’t the point at the trial at all.
+
+Magee repeated: “Did Lieutenant Linn stir during the minute between the time when you first saw him and when you entered the bungalow?”
+
+“Not a muscle.”
+
+“Did you hear Captain Nugent’s car pull up into the driveway?”
+
+“Yes.”
+
+“How did Lieutenant Linn react when he heard that car?”
+
+“He looked up and listened.”
+
+“Let’s go back a few minutes. While you were in your car, after you had pulled into the driveway, was it possible for any person in the premises to leave without being seen by you?”
+
+“He could have gone out the door on the other side of the bungalow—the door out of the kitchen.”
+
+“But Lieutenant Linn remained in the bungalow?”
+
+“He just sat there with his head in his hands.”
+
+“That’s all.” Magee sauntered away. There was silence. Then Hackett stood up. “The People rest,” he said.
+
+
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+

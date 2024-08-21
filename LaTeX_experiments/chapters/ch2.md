@@ -1,0 +1,152 @@
+### Chapter 2
+
+## Yesterday and Today
+
+The dinette was separated from the living room by an arch and a step. When I raised my eyes from the table, I looked directly at the large framed photo of August Hennessey above the redbrick fireplace. 
+
+He had been a blonde giant, half-Irish, half-Swede, enough man for a woman like Ursula. In the photo he wore a grin as wide as his broad amiable face, and a yellow curl hung rakishly over his left eye. He could have passed for a romantic adventurer out of the more lurid pages of fiction. Actually he had been a salesman of glassware.
+
+Ursula married him when she was eighteen. I was three at the time; our mother had had her two children fifteen years apart. Ursula had been visiting an aunt in New York City, and one day she led that huge man into the house by the hand and announced that they were on the way to Mexico for their honeymoon.
+
+They visited us about once a year, but the first definite impression I have of August Hennessey was his excitement when I beat him at chess. I was seven, and he promised me that during his next visit he would teach me the fine points of poker. That was his game, he said—something like chess in that you must anticipate your opponent.
+
+But when August Hennessey and Ursula came next year it was to attend Ma’s funeral. So there were no games, chess or cards. They wanted to take me back to live with them in the home they had built in the upstate New York town of West Amber, but Pa refused to let me go. He was a meek, taciturn trolley car conductor whom I’d never got close to, not even when I had become old enough to share his passion for chess, but now he needed me in his loneliness.
+
+I never saw August Hennessey again. While on a selling trip to Buffalo, his car crashed into a truck and he was killed.
+
+He left Ursula the house clear of mortgage and, like most salesmen, a substantial insurance policy. I don’t know how much it was, but enough for her to live in comfort and later support Miriam and me. For years there was a rumor in West Amber that had quite an income from her Saturday night poker games, but, of course, there was no kitty for the house. Though she was very good, the men who played with her were no slouches, and I doubt if she won much more than she lost.
+
+Ursula wasn’t one to brood in an empty house. She could have married again; she had money and was young and attractive for a big woman. What she did was to pick out Miriam from an orphanage and adopt her as the daughter she had not had with August Hennessey.
+
+I was ten when Pa died of pneumonia. Ursula drove all night from West Amber to Cleveland. Miriam was with her—a skinny, black-eyed girl of eight who terrified me by throwing her toothpick arms around my neck and kissing me and calling me her big brother. I pointed out to her that, if anything, she was my niece by adoption, but that actually she was nothing at all to me. I also told her that I disliked girls, especially being kissed by them. Which was true at the time, but not for long.
+
+Ursula buried Pa and packed my things and the three of us drove east. When the car climbed Mandolin Hill and I saw the ivory-and-blue frame house, I felt that I was coming home, although I had never been there before. And in a few days it was home, and had been until four years ago when I had enlisted in the Air Force.
+
+***
+
+Now I was back, eating as I had so many hundreds of times in the pine-panelled dinette with Ursula and Miriam. But this was no longer all of my family. I had a wife who should be here or with whom I should be.
+
+Abruptly I put down my knife and fork.
+
+“Lily knew within a few days when I’d get in,” I said. “She’d hang around waiting for me. Or if she went away on a visit she’d leave word where I could find her.”
+
+Ursula reached for my plate to fill it with a second helping of roast lamb and apricots, which nobody in the world could cook the way she did. “I’m not responsible for your wife, Alec. We’ll discuss her after dinner.”
+
+“So there is something to discuss?” I said.
+
+She dipped her head to slice the meat. Miriam ignored the food on her plate to watch her intently. Then Ursula handed my plate to me and said to Miriam: “What have we ever done to him to make him snap at every word we say? Does he think we murdered his precious wife and buried her in the cellar?” She turned an angry face to me. “There’s a great deal to discuss. You’ll have to start planning for jour future.”
+
+It was an old trick of hers to turn my words back at me and making them mean something altogether different. “I never said you haven’t been swell to Lily and me. You’ve supported me for all those years and—”
+
+“Pa left his insurance to you.”
+
+“You saved it to see me through college. Then I brought my wife home, whom you’d never seen before, and you kept her here with you for two—”
+
+“You’ve been supporting her through your allotments,” Ursula said. “I made sure that she contributed to household expenses. Do you know that Kerry Nugent is back?”
+
+I finished the mashed potatoes in my mouth before answering. “He left later than I did, but he flew while I came by ship. Where is he stationed?”
+
+“He’s home on sick leave,” Miriam told me. “He’s been here several times and he looks fine. When you called yesterday that you’d be home tonight, I tried to get in touch with him to tell him. But his mother said he’d gone to New York.”
+
+“New York,” I muttered. Lily was in New York. Kerry had met Lily at the same party I had and he’d tried his best to make her. What the hell was the matter with me? Kerry wouldn’t pull anything like that. If he had had anything to do with Lily since his return, it would be to slap her ears off for the way she had treated me. Sure. That would be Kerry.
+
+“He told us all about that last flight you two were on,” Miriam was saying.
+
+The food turned to straw in my mouth. “Did he tell you how I smashed his ribs and killed Ezra Bilkin?”
+
+They stared at me.
+
+“What are you talking about?” Ursula said. “Who is Ezra Bilkin?”
+
+“He was our flight engineer. He died because I lost my nerve and lost my way home.”
+
+“Alec, that’s not what Kerry said.” Miriam leaned against the table, her grave black eyes filling her face. “Kerry was pilot; he ought to know. He said that after your radio was shot out no other navigator could have got the plane back to land. He said that if anybody else had been navigator everybody in the plane would have been killed.”
+
+“Ezra Bilkin was a swell guy,” I said. “He had a wife and two kids in Indiana. It was my job to bring the ship home safely and I muffed it.”
+
+“But you’d brought it back so many times before,” Miriam argued. “Kerry said you and he flew twenty-three combat missions before—”
+
+“Before I lost my nerve,” I said. “Before flak shook us like a cork in a storm and a Zero planted a bullet an inch from my ear. Suppose the radio was gone? A schoolboy can take a B-29 home on a beam. I went to pieces. Why do you think they grounded me?”
+
+***
+
+URSULA reached across the table and firmly gripped my hand. “There’s no need to shout, Alec.”
+
+So I was shouting again! I was shaking all over and the food I had eaten was bouncing in my stomach. I jerked my wrist away from Ursula and clutched the edge of the table with both hands. I’d never before had it as bad as this. Major Goldfarb, the chief flight surgeon, told me I’d be fine if I avoided undue excitement for a while, and that even if I got these attacks they were nothing to worry about. But Ursula and Miriam looked at me as if watching my dying convulsions.
+
+“I shout,” I said bitterly, “so I’m a mental case.”
+
+“Nobody ever said—” Miriam started to protest and then gave it up.
+
+I pushed back my chair and stood up and went through the swinging door into the kitchen. Then Miriam called: “Alec, please come back and finish eating.”
+
+“Let him go.” Ursula spoke in a half-whisper, but I heard it in the kitchen. “The trip upset him. He’ll be better after a rest.”
+
+“Trip nothing,” Miriam said. “It’s Lily. Ursula, aren’t you going to—”
+
+“Later,” Ursula said. “After he calms down.”
+
+Their voices dropped still lower and I couldn’t distinguish words. I crossed the kitchen to the door at the other end and went up the hall. The doorbell rang before I reached the foot of the stairs. I opened the front door and three men entered. Two of them I knew—Oliver Spencer, who had been at the station when I arrived, and George Winkler.
+
+Years ago Miriam and I decided that George Winkler would marry Ursula the moment she wanted him. He was a bear of a man, big and shaggy, with small bright eyes that crinkled readily and a broad nose that wrinkled when he was amused. He was the most prominent lawyer in West Amber, which sounded more imposing than it was. For a long time now his romance with Ursula had trickled on placidly, without change or interruption, if it was a romance. Perhaps Miriam and I were all wrong and he had dinner at our house once a week and was the mainstay of Ursula’s Saturday night poker games only because an aging bachelor needed an anchor somewhere.
+
+He greeted me as a father might, pounding my upper arms with his large open hands.
+
+“I see you were in a hurry to get back into civilian clothes,” Oliver Spencer observed. “How do you feel in them?”
+
+“Fine.”
+
+That’s the way it was when I came home from the last war,” George Winkler said. “I couldn’t wait to dress in something with color in it. Do you know Owen Dowie, Alec? I guess not. He comes from the other end of the county and was elected sheriff only last year.”
+
+***
+
+The third man stepped forward to shake my hand. Blame Western stories for the assumption that a sheriff is a gaunt, gimlet-eye man with a gun swinging from his hip. Sheriff Owen Dowie looked like a mild and somewhat scared bookkeeper. He had a pinched, rather intense face and pale, myopic eyes peering through thick shell-rimmed glasses.
+
+“Heard a lot about you, Linn,” he said. “I’m told you can make the cards stand on end and call you brother.” Mr. Spencer chuckled. “I’ll lay you ten to one Alec can deal you any hand you ask for and you’ll never guess how he did it.”
+
+“I’m out of practice,” I said.
+
+“What’s the matter, didn’t you find suckers in the Air Force?” Dowie asked with a shadowy smile.
+
+There was a silence. Then George handed Dowie a glare. “Alec never played a crooked hand in his life except to show how it was done.”
+
+“I was only kidding,” Dowie said hastily. “I mean, a player like you should’ve had a good thing with all the poker played in the Army. One man I know came back from Italy with five thousand dollars in winnings.”
+
+“I hardly played,” I said.
+
+Mr. Spencer patted his bald head. “Well, I’ve been able to take you over now and then, Alec, and I’m looking forward to bucking you again tonight.”
+
+“I’m sorry, but I’m not playing tonight,” I said.
+
+Ursula came into the hall and apologized for having finished dinner so late. Would they wait downstairs in the cardroom until she and Miriam cleaned up? The three men went down the hall to the basement door under the staircase, and for the first time since my return I was alone with Ursula.
+
+“All right, let’s discuss,” I said. Almost she seemed to squirm.
+
+“There’s no rush and I can’t keep my guests waiting. Why not take a hand in the game? It will take your mind off—” She stopped.
+
+“Off Lily?” I said. “No, thanks.”
+
+***
+
+I went outside. It was not quite dark yet and the moon was a squeezed lemon low in the sky above the lights of West Amber. I crossed the front of the house and walked up one of the gravel paths through the flowerbeds.
+
+It was the middle of July now, but it had been as mild as this on those two early May nights when Lily and I had walked here. We’d had our arms about each other and now and then we stopped to kiss. We walked all the way to the rickety bench where the grape arbor used to be before it fell apart, and we sat there and necked like two high school kids.
+
+The Lily I called her. She was like one, tall and slender and all of her so very white, even her hair which was platinum, and that night even her skirt and blouse were white. The smell of her hair was in my nostrils and my mouth tasted of the perfume that was in her lipstick. Her face was small, elfin, and lovelier in moonlight than I had ever seen it, and it was always turned up to me.
+
+That was what I had wanted to come home to. Not the Lily who wrote bored and often nasty hitters, when she bothered to write at all, but the white Lily of that night. My ardent wife with the elfin face and the sweet eager body.
+
+We had necked on the bench like two adolescents and then had gone up to our room. That was our last night together. There had been two other nights—the first in a New York hotel after we were married and the second here in my room.
+
+Walking alone in the garden now, I had almost reached the bench. I stopped dead and turned to look at the house. That side of it was dark except for light in the kitchen and in the basement cardroom. There were three bedrooms upstairs—Ursula’s and Miriam’s and mine. Lily, of course, had been given my room when I left. It had been our room for two days and nights.
+
+I found myself running back to the house. A minute or two would make no difference, but I ran and I was breathing hard when I burst into my room.
+
+My room. A man’s room. Obviously not a room in which a woman lived.
+
+I hadn’t guessed earlier that evening when I had changed my clothes. Because for so many years it had been exclusively my room, shared with nobody, it hadn’t occurred to me that it should have been different, that in twenty-two months it should have ceased to be a man’s room and should have become a woman’s room.
+
+I tore open the closet door. No dress, no skirt, nothing that was a woman’s. No cosmetics and brushes and combs on the dresser and no women’s stocking and undergarments in the dresser.
+
+Lily didn’t live in this room. She didn’t live anywhere in this house. They had lied to me. Ursula was afraid to tell me the truth, whatever it was.
+

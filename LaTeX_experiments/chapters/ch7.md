@@ -1,0 +1,58 @@
+### Chapter 7
+
+## The Verdict
+
+I kept my eyes fixed on an inkspot on the table, but there was no getting away from Robin Magee’s voice.
+
+I had to sit and take it, holding my shame inside of me.
+
+“Look at him, ladies and gentlemen of the jury,” Magee orated, impaling me with a pointing finger. “Do you see a vicious murderer seated there? No! You see a boy like your own boys—a boy raised right here among you, who went to school with your children, who played with them and fought with them. A boy you would have welcomed to your home and have been glad to have your daughter know. A small-town boy, if you will, not worldly, perhaps, not hardened to recognize evil in its most insidious form. That, I submit, was his only crime.
+
+“Had he ever before harmed a soul? The eminent prosecutor, much as he would have liked to, has not been able to indicate a single misstep, a single moral deficiency in his character. On the contrary, we have heard from Captain Nugent how this boy refused to take advantage of his comrades in arms through his superior poker skill, although that would have been perfectly legitimate. How many men could you find who would have acted with similar ethics? And yet the prosecutor has the hardiness to contend that this boy, with so highly developed a sense of fair play, could conceivably premeditate murder, no matter how great the provocation.
+
+“I have never, in all my years of experience before the bar, represented a client of whom I think so highly. I’d be proud to call Lieutenant Alexander Linn my son. And when his country called its young men to arms, he was among the first to respond, enlisting of his own free will, ladies and gentlemen, in perhaps the most hazardous of the services. Need I dwell on how he distinguished himself? Need I read a list of his citations for heroism? Need I detail the incomparable courage he shared with all our airmen, with all our soldiers and sailors and marines, with your own sons and daughters who are or were in the service?”
+
+“Ladies and gentlemen, Lieutenant Linn fought the good fight for his country. But always, riding in the bomber with him as he bent over his charts and maps, was his enemy. Not the Japs. They could be faced squarely and destroyed by guns and bombs. This enemy was more relentless, more heartless, and there was no defense against her, though she was fifteen thousand miles away. This enemy was the woman he had married.
+
+“The Japs could not bring him down, but his wife did. He became a casualty of her assault. Psychoneurotic, the Army doctors call it. A big word meaning that he was wounded in the mind. He became subject to violent outbursts of temper, and the responsibility lay clearly with the woman who caused it.
+
+“Need I tell you more about this woman? You have heard and your blood ran cold, as did mine. His hasty marriage to her may have been a foolishly impulsive act, but understandable when emotions are violently torn by war, when a boy is to go forth to battle not knowing whether he would ever again see his home and family and a desirable woman. He loved her for her face and figure and the mantle of deceptive virtue she wore to trick him. The Lily, he called her, no doubt for its age-old symbol of purity and loveliness. But if lily she were, it was no true lily, but a spider lily. You must have seen them in the woods, growing wild and untamed, the spiderwort called spider lily, which for all its superficial beauty has no right to the title. The lily—the spider lily. The lily who was a spider, weaving her insidious web to entangle whatever human fly came her way.
+
+“How she must have laughed to herself at his-blind adoration—this big-city temptress, at least once married and divorced, eager for the embrace of any man who would have her—this vampire bringing her wickedness to the good people of West Amber, to corrupt its nineteen-year-old youths like Ogden Garback, to break up its homes like the Schneider home.
+
+“Did she give a thought to the man with whom she had taken the sacred pledge to love and honor and who was hourly facing the untold dangers for the security of his country in a far and distant land? Yes, she thought of him. While in the arms of other men, she thought of the money she was receiving as the wife of an officer. While on drunken orgies, she thought of how convenient it would be if he were destroyed by a Japanese shell and his insurance would come to her.
+
+“Ladies and gentlemen of the jury, murder was done. It was done to this fine, clean-cut, heroic young lieutenant of our glorious Army Air Force. This vile temptress from a big city, this unspeakably evil woman, murdered his mind and soul as surely as if.”
+
+***
+
+The jury was out eighteen minutes.
+
+It filed back almost jauntily, and the foreman said happily: “We find the defendant not guilty.”
+
+There was a rush for me. Hands grabbed my right hand to shake it. Robin Magee thumped my back and put his whiskey breath against my face. “We did it, my boy, didn’t we?”
+
+District Attorney Hackett stood in front of me, extending a hand. “I tried my best, Linn, but I can’t say I’m sorry I took a licking this time.” Like a true sportsman. Like an opponent in a game of skill congratulating the victor.
+
+“I didn’t kill her,” I said.
+
+I spoke loudly, but nobody seemed to hear me, or else my words washed over them without meaning.
+
+Soft arms were flung around my neck; Ursula held me close to her bosom. “Everything will be all right now,” she said. Then Miriam kissed me or wanted to, but her mouth sobbed against my cheek. Over her shoulder I saw Kerry grinning as he worked his way toward me.
+
+George Winkler grabbed my arm. “Come over and thank the jury, Alec. They expect it.”
+
+I tore away from him and stood panting against the table. “I didn’t kill her! Damn it, listen to me! I didn’t kill her!”
+
+Abruptly the area around me became quiet. Magee reached out for my shoulder. I shook him off and pushed through the crowd about me, brushing Kerry aside and Ursula and others. I opened the rail gate and went up the aisle. People stood there. They moved back against the sides of the benches to make room for me to pass.
+
+The stillness had spread throughout the room. I heard feet behind me, following. I did not turn.
+
+“Can’t you let him alone!”’ Miriam’s voice burst out.
+
+I reached the double doors. They were open. I went through them. My footsteps were the only ones to echo down the long courthouse hall.
+
+It was late afternoon and the sun slanted down the broad courthouse steps. I could go where I pleased, do what I pleased, bio more bars. No four walls too close together.
+
+I was a free man. I was a man everybody thought had murdered his wife.
+

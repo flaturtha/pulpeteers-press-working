@@ -1,0 +1,361 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{TITLE}
+\SetAuthor{AUTHOR}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{AUTHOR}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{CHAPTER_TITLE}{STARTING_PAGE}
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 15}
+\ChapterTitle[l]{## The Gamblers}
+\end{ChapterStart}
+\FirstLine{\noindent ### Chapter 15
+
+## The Gamblers
+
+It was one of the better public clubs.
+
+It had carpeting instead of the usual battleship linoleum, and the voices of men were not boisterous in the air-conditioned atmosphere. At one corner leather lounge chairs fanned out from a tiny bar. In another corner stood the cashier’s cage. The rest consisted of cane-bottom chairs and five tables covered with white cloths. There were no line sheets tacked on the wall, no pool tables in the rear, no blackjack for suckers. This was strictly poker for gentlemen.
+
+Only one table was working, a moderate-limit draw game. I watched it for a while, then went to the bar.
+
+Willoughby, the proprietor, came to my side to say hello. He was the only man there in formal clothes. His thin, unbending frame ancl frozen face would have made him a natural for a butler’s job. “I see you are back, Mr.—” He let the pause hang delicately in the air.
+
+“Berkowitz,” I said. “Jeffery Berkowitz.”
+
+“Mr. Berkowitz, of course,” he said, as if I had told him my name when I had played there yesterday. “It is early, but there will be plenty of action soon. You do not care for draw?”
+
+“I prefer table stakes stud.”
+
+“Oh, yes, I remember. If you will make yourself comfortable for a little while—”
+
+“Do you expect Locust today?” I asked.
+
+“You are a friend of Mr. Locust?”
+
+“No, but I played with him yesterday. I’d like to come up against him again.”
+
+“Mr. Locust is an excellent player. He may be here today. He comes several times a week.”
+
+“Who is he?” I said. “I’ve heard his name before, but I can’t place it.”
+
+“Mr. Earl Locust is one of the automobile Locusts. He is well-known in poker circles. Pardon me.” He started to turn away.
+
+I said. “Does Don Yard ever come here to play?”
+
+Willoughby’s thin body stood a trifle straighter as he turned back to me. “We do not permit professional gamblers in this club, Mr. Berkowitz.”
+
+“I’m glad to hear that,” I said, trying to sound happy about it. “I suppose you can’t be too careful in a place like this.”
+
+“We protect our clientele, Mr. Berkowitz,” he said and moved off to the cashier’s cage.
+
+Presently a couple of more stud players arrived, and with two shills and the house dealer participating a table stakes game was started. It dragged. Everybody played only cinches. Few hands ran out to the last turn.
+
+***
+
+I turned in my chair and saw Earl Locust speaking to Willoughby. They were cut out of the same pattern, those two, though you could tell at a glance that Willoughby was the butler and Locust the master. He wore a tan summer gabardine suit and a cocoa-brown gabardine hat and carried himself with careless urbanity. He was perhaps in his forties. His pinched face was vigorously tanned, but his eyes were unhealthily tired and gray ran in narrow streaks through his thinning brown hair.
+
+Locust looked at me without expression, then said something to Willoughby and looked at me again. I sent him a little place with private booths. He sat nod and he received it with a lift of the back and regarded me quizzically, corners of his mouth. He slapped Willoughby’s shoulder lightly and came to the table.
+
+“How are you?” he asked me.
+
+“Fine,” I said. “I was hoping you’d show up. I want revenge for some pots you took from me yesterday.”
+
+He pulled up a chair and stacked his chips. “You didn’t do so bad, Berkowitz.”
+
+Yesterday I hadn’t mentioned my name to anybody here. That meant that Willoughby had told it to him. They had been discussing me.
+
+The game stepped up. Outside players took the chairs of the shills and the dealer devoted himself wholly to warm cup. “I suppose Willoughby dealing. Action became brisk. These lads were skillful technicians and shrewd psychologists, and Earl Locust was the best of them. Both he and I were winners.
+
+It was night when Locust cashed in his chips. A minute later I did the same. He left while I was assembling the money into my wallet. I shoved wallet and loose money into a pocket and hurried across the room and down “And yesterday you asked me questions the short flight of stairs. The street was empty.
+
+“What’s your hurry, Berkowitz?” Locust said.
+
+He was standing in shadow against the side of the doorway.
+
+“I—I—” I drew in breath. “I wasn’t hurrying. The fact is that I’ve nowhere to go.”
+
+“Then how about some coffee?”
+
+I tried not to show my eagerness, cup I’d ordered. I was, I hoped, a “Good idea. Do you know any place portrait of a man making up his mind, around here? I’m pretty much of a Locust waited patiently with his tired stranger.”
+
+He flagged a taxi. We drove three blocks and got out. He cupped my elbow in him palm, as if I were a woman or a child and steered me into a cozy little place with private booths. He sat back and regarded me quizzically.
+
+“Tell me,” he said conversationally, “when you tapped into my open jacks and drove me out, did you hold anything in the hold?”
+
+“No.”
+
+He uttered a restrained, pleased laugh. “At the time I could have sworn you held queens. That’s a nice game of poker you play.”
+
+“Thanks.”
+
+The coffee and sandwiches arrived. Thoughtfully he stirred the sugar in his cut. “What are you after, Berkowitz?”
+
+“After?” I said.
+
+“What’s your interest in Don Yard?”
+
+I wrapped my palms around the warm cup. “I suppose Willoughby told you I’d ask him if Yard came to the club.”
+
+“And that you questioned him about me. You’re a stranger and you came to the club for the first time yesterday and you were an excellent player. Willoughby is afraid you might be a professional.”
+
+“I’m no.”
+
+Locust went on with out break. “And yesterday you ask me questions about Don Yard during the game. Personally, I don’t’ give a hand whether or not you’re professional. They play a more exciting game than amateurs. But I asked you want you’re after.”
+
+***
+
+I drank my coffee and set fire to a cigarette and pulled an ashtray toward me and looked around to see if the waitress was bringing the second cup I’d ordered. I was, I hoped, a portrait of a man making up his mind. Locust waited patiently with his tired eyes fixed on my face.
+
+“I want to play poker with Don Yard,” I said.
+
+“Why Yard in particular?”
+
+“Not Yard and not in particular. For three years I’ve been in the infantry, one of the few American troops fighting in Burma. Five days ago I came out of an Army separation center. My home is in Utah. My father has a string of filling stations all over the state. I’m the only child and the business is waiting for me and so is the girl I’m going to marry. But here I am in New York with no responsibilities as yet and plenty of money. My mother left me a pile of securities, which is in the hands of a New York broker. I’m not saying I don’t want to go home to Utah and Marge and the business. I do. But here’s my chance for a fling, for doing for two weeks or a month what I’d rather do than almost anything else, and that’s play poker. The real stuff, I mean. The kind I thought I could find in New York.”
+
+Locust nodded. “Check. Some men take a drink or sports or drugs or women. I’ll pass up the best of any of that for top-notch poker. But where does Yard come in?”
+
+“I’m not sure. I’ve been going to poker clubs because I haven’t been able to find anything else. Willoughby’s is the best of them, but I object to the house rake-off. In the long run it puts impossible odds against the player. Besides, you don’t get the kind of action I’m after. I did very well tonight and ended up with only three hundred dollars. I can find bigger games than that in my home town. That’s where Don Yard comes in. We were discussing gamblers one night at a bull session in Calcutta, and Don Yard’s name came up. Actually I don’t know anything about him except that where he is there’s probably a big game.”
+
+“And so you think you will get a real play for your money with professionals?”
+
+“That’s it.”
+
+Locust took a bite out of a ham sandwich and chewed it before he spoke. “Why are the lambs so eager for slaughter?”
+
+“I’ve considered that,” I said, “but I think I can hold my own against anybody. As for crooked gamblers, card mechanics, I’ve been told that the real big-shot gamblers don’t go in for that sort of thing. They depend on their skill and on percentages. That’s true, isn’t it?”
+
+***
+
+He chewed some more. “In essence, yes. And you’re good enough from what I’ve seen of your playing. There will be a game at my house tomorrow night.”
+
+“With Yard?” I blurted.
+
+He gave me that tired, level stare. “What I mean is big-timers like Yard,” I added quickly. “The kind of men I’d like to have my fling against.”
+
+“Yard will be there,” Locust said. “It’s a quiet, private game in my apartment.” He studied what was left of his sandwich. “We’re quite particular about who participates.”
+
+“Oh.”
+
+I didn’t have to act out disappointment. I felt it all the way down to my shoes.
+
+Abruptly Locust discarded talk of poker. He had been an officer in the last war; he had spent a year in India and had visited Utah. Subtly he was pumping me, checking up on the story I’d told him. It was a good thing I had chosen the CBI theater as the one in which Jeffery Berkowitz had fought in, for I knew China and India and Burma, and after our second year at college Kerry and I had spent the summer driving tractors on the farm of a classmate in Utah. I passed Locust’s exam with flying colors.
+
+We were finished eating before he returned to poker. “You strike me as a decent sort of chap. I can understand exactly how you feel. Poker’s in my blood too. I can invite you to tomorrow’s game. My recommendation will satisfy the other players.”
+
+“Would you?” I said eagerly. “Those are fairly steep games.”
+
+My face fell. “I hope to win, but I can’t possibly afford to lose more than twenty thousand dollars.”
+
+Locust laughed. “You’ve been listening to wild tales. This is a friendly game. The stakes are only a thousand dollars each. We usually settle with checks, but I suggest that you, as a newcomer, bring cash.”
+
+***
+
+He was already there when I arrived at Locust’s apartment on Madison Avenue. At a glance I picked were in the oak-and-leather study him out of the four strange men who where the game was to be played.
+
+A squat, broad man, Schneider had told me. But Don Yard was not particularly short. The effect was produced by the disproportionate breadth of his shoulders which provided a proper base for a beefy neck. Under an unruly mop of dark hair his face was as wide and craggy as a clenched fist. He exuded physical power, like a bull. A wide and craggy as a clenched fist. He was a lot older than I, at least twice my age.
+
+His handshake was not hearty when Earl Locust introduced us. It was bonecrushing pressure applied and instantly relaxed. His incisive brown eyes, under shaggy, overhanging brows, slid quickly over me.
+
+“I’ve seen you before,” he said.
+
+My breath caught. How could I know that he hadn’t been among that blur of indistinguishable faces behind me during the trial?
+
+“I’ve been in New York only six days since my childhood,” I told him.
+
+“I guess lots of guys look alike,” he muttered and lost interest in me.
+
+Locust cupped my elbow and led me to the three other men. They accepted me without comment and almost no conversation. We sat down at the table and bought chips from Locust who, as the host, was banker. The others bought on the cuff, but I conspicuously paid my thousand dollar stack in cash.
+
+The game was table stakes draw. I had heard that on rare occasions it was played, but I never before participated in one. It was murder. My thousand dollars melted away.
+
+I didn’t know whether the three other players were professionals like Yard or wealthy amateurs like Locust, but I was sure there wasn’t anything crooked. Cards couldn’t be marked in any way I couldn’t spot and I had taught myself to recognize and duplicate all the tricks of card mechanics, nothing like that was being pulled here. The cards didn’t fall right for me or I was being outplayed. These players weren’t Ursula or Oliver Spencer or Art Masterson. This was the big league.
+
+I was halfway through my second stack of chips when a man and a woman came in. Yard greeted the woman as “Baby” and the other men called her Bertha. The man with her they called Walt. He pulled up a chair to the right of me and bought chips.
+
+This was my lucky night, if not at cards. Here were all three of them. The first stage of my search was ended.
+
+Walter was the man who had been at the roadhouse with Helen Spencer and Don Yard and Lily and again at the bungalow when Yard hit Oliver Spencer. A long face that was like a blank wall, Helen had described him. That was adequate. Add a chin like a spade to it and dull little eyes which showed as much emotion as a dead man’s. He didn’t have to change his face for poker.
+
+***
+
+Bertha Kaleman had hair of flame. It was too good to be natural. She reminded me of Lily because of that same brittle polish and that way of wearing a dress so that you were aware of every movement of her body. She had plenty of body. She was bigger than Lily had been, taller and fuller. But Lily had been beautiful where Bertha Kaleman only stepped up your blood pressure.
+
+She was sitting next to Don Yard, looking at his cards. Her eyes lifted and caught me appraising her. Her red mouth threw me a sensuous smile. “Don’t I know you?” she said.
+
+Not, ‘Do I know you?’ meaning I don’t know you and please introduce yourself. ‘Don’t I know you?’—as if mine was a face seen and lost among many other faces. Could she have been at the trial with Yard? No, Helen, who had met them both, would have recognized them and told me. I was frightening myself with shadows formed of words.
+
+“I’d never have forgotten you if we’d met,” I said.
+
+Locust mumbled a belated introduction.
+
+“Berkowitz,” she said, leaning her arms on the table. “I bet your friends call you Berky.”
+
+“Anything you call me is music,” I said.
+
+“Look, the boy is gallant,” she said.
+
+“Shut up and let’s play,” Don Yard growled.
+
+On the next deal I caught a flush on a draw and tapped into Walter who was holding three eights. A player named Judson turned up a straight, and I made myself a nice pot.
+
+But it was the last I won for a long time. My stack was sinking dangerously low and I had only a few hundred dollars left in my pocket. I played as tightly as I could, but that wouldn’t do it. There was too little money between myself and disaster.
+
+Because if I dropped all my money here I was through. I could support myself by getting a job, any job, but I had no more taste for being a fugitive indefinitely than for burning in the chair or rotting in jail or going mad in a madhouse. I had to have money to remain in contact with Don Yard and Bertha and Walter. There was no way I could do it except through poker. I was in now. I was one of them. I’d be invited to other games in which Yard played. But not if I was broke. Not if I had a job where I would not make enough in a month to participate in a single one of these pots.
+
+There was one way to get a stake. The ethics of it I could take in stride. These men were gamblers or rich and could afford to contribute to my attempt to regain my life. But it was highly dangerous. It wouldn’t be an exhibition before friends to show how clever I was with cards. These men knew all the tricks. You had to be better than good to fool them. Better than perfect.
+
+***
+
+The deck was three deals away from me. I sweated those deals out, throwing my hand in as soon as I glanced at it. Walter, on my right, brought out a new deck for his deal. I had two high pairs, but I went out, and raked in the discards and washed them. There was some hot action between a man named Silver and Yard and Locust, so that nobody paid attention to me shuffling and reshuffling the discards.
+
+Yard won. I scooped up the remaining deck and shuffled some more.
+
+“Come on, deal,” Judson said. “Do you want to wash the spots off them?” I placed the deck before Locust on my left. He cut it only in two, as he generally did. I’d banked on that. I dealt the way I always did, rapidly.
+
+Yard said: “What’s the rush?”
+
+I stopped. A vein pounded in my temple. “What’s that?” I asked.
+
+“Take it easy,” Yard said. “We like the cards dealt slow.”
+
+I forced a grin to the surface. “Oh, sure,” I said and continued to flick the cards out.
+
+I sank back a little when the round was dealt. I didn’t have to look at my cards. There were three queens. I knew that a man named Smollens was holding three aces and Silver two high pair. The other hand had fallen any way they had come up.
+
+Locust must have bought something good. He opened strong. Smollens was enthusiastic about his three aces and raised. Silver tagged along with his two pairs. Yard looked at his cards and then across the table at me and folded. So did Judson and Walter. I shoved in my stack. The three who were in saw me.
+
+On the draw I dealt the cards straight except to myself. I gave myself a full house. None of the others helped. The pot was mine.
+
+As I leaned forward to pull in the chips, my eyes tilted up to Yard’s craggy face. He was watching me flatly, without expression. My heart skipped a couple of beats. He said nothing. There was talk between Smollens and Silver about how neither of them had been able to fill all night. Locust was gathering up the cards. The game continued. I had my stake.
+
+The gods of chance are not concerned with morals. From that deal on I won. At four o’clock in the morning I walked out with eleven thousand dollars in cash and checks.
+
+
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+

@@ -1,0 +1,465 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{TITLE}
+\SetAuthor{AUTHOR}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{TITLE }\par
+\centering\charscale[0.75]{TITLE LINE 2}\par
+\centering{TITLE LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{AUTHOR}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{CHAPTER_TITLE}{STARTING_PAGE}
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 16}
+\ChapterTitle[l]{## Don Yard}
+\end{ChapterStart}
+\FirstLine{\noindent ### Chapter 16
+
+## Don Yard
+
+Walter was waiting for me on Madison Avenue. He said tonelessly: “Around the corner.”
+
+Both hands were thrust deep into the pockets of his jacket. He had a gun in one of those hands or he would have been more polite. I looked up the street and then down the street. At that hour it was quiet enough to hear myself breathe.
+
+“What’s around the corner?” I said. “Don. He wants to see you.”
+
+We walked side by side to the end of the block and turned right. A snappy sedan stood twenty feet down from the corner. Bertha Kaleman sat behind the wheel. She said pleasantly: “Hello, Berky.”
+
+The back door on the curb side opened. “Get in, kid,” Don Yard said out of the back seat darkness.
+
+I sat beside him Walter followed me, climbing over Yard’s feet and mine, and sat at my left. Bertha had the front seat to herself, probably the first time in her life she was left sitting alone when there were men around. She drove west to Sixth Avenue, then south, then west again. Nobody said anything. I wondered why I wasn’t more scared. A week ago I would have tightened up and started to sweat and shake. Now I was chiefly curious.
+
+Between Tenth and Eleventh Avenues Bertha stopped the car.
+
+“Let’s have the dough, kid,” Don Yard said crisply.
+
+They were shadows on either side of me, their thighs pressing against mine. Past Bertha’s left shoulder I saw the brightness of the Hudson River speedway. They could find better spots to kill a man.
+
+“So it’s a holdup?” I said.
+
+“You’re too smart for your pants,” Yard said. “You used the Haymarket Shuffle to give yourself that queen-high full.”
+
+I laughed. The effect sounded all right to me. Just about enough derision. “Why didn’t you expose me during the game?”
+
+“I had no dough in the pot. There’s more in it for me this way.”
+
+“You’re crazy,” I said. “That was an honestly dealt hand. Why didn’t any of the others notice anything wrong?”
+
+Bertha twisted around, putting her knees up on the seat and facing us. “Walt, did you notice the deal was phoney?”
+
+“I wasn’t watching.”
+
+“I was,” Bertha said. “I didn’t see him hold any fingers at the bottom of the deck.
+
+“He’s smart,” Yard said. “Damn smart. Quick as lightning. But I’m smarter. I was brought up on the Haymarket Shuffle and I know when cards drop at the same time from the top and bottom of the deck, even if he doped out a new grip. Locust only cut the deck once, which made it snap for a good mechanic to stack them. And look how the cards fell, just right for him.” He turned his shadowed face to me. “You’re lucky I’m taking only the dough and leaving your health.”
+
+***
+
+It was my lucky night, all right. Whether I gave up the money or didn’t, my contact with Don Yard and Walter and Bertha was over almost before it started. Oh, I was smart as hell.
+
+Walter said indifferently: “Take a look at this, kid.” The overhead light flashed on and off. There was a revolver on his knee.
+
+“You win,” I said. I dug the roll of bills and checks out of my hip pocket.
+
+“But two thousand dollars of that was money I started with. You saw me buy two stacks. You can have the rest.”
+
+“I’ll take it all,” Yard said. He took it all.
+
+“There are checks made out to my name.”
+
+“Don’t let that worry you.” Yard pushed the door open. “Scram, mug. If I ever see you around again, you’ll be a mighty sick crook.”
+
+I rose in a crouch to step over his feet. Bertha reached a hand over the back of the seat and put it on my arm. “Wait,” she said. “Don, you’re a dope.”
+
+“That so?” Yard said indifferently. “Sit down, Berky,” she ordered me. I squeezed myself back between the two men. A match flared. Yard brought it up to his cigar. By its light I saw the money in his lap.
+
+“You’re throwing away a gold mine,” Bertha said. “Those men tonight weren’t babes in the woods. How come none of them spotted a phoney deal. Walt’s eagle eyes didn’t. You said it yourself, Don—he pulled cards from the top and bottom at the same time like greased lightning. Could you do it as well?”
+
+Yard grunted. The tiny glow at the end of his cigar made his face look like the side of a mountain seen at dusk.
+
+“I bet you watched him pretty close after you spotted that trick deal,” she went on.
+
+“What do you think?”
+
+“Did you catch him at any other?”
+
+“There weren’t any more.” A note of interest slipped into Yard’s voice. “I think I get it, baby.”
+
+She tossed her hair which had turned black in the dimness of the car. “It’s about time. Berky was the big winner tonight and most of his pots came when he wasn’t dealing. He’s got to be mighty good to win from you sharks.
+
+And just look at him. Did you ever see anybody nicer-looking? I mean clean and young, like he doesn’t know what day of the week it is. If he can take you like he did tonight, what do you think he can do to suckers? And you want to throw it away for a few crummy grand.”
+
+“She’s got something there,” Walter said. “The kid’s born sucker-bait.” They were settling it all between themselves. I might have been part of the upholstery for all my opinion counted. That was all right with me.
+
+Yard gave me a faceful of cigar smoke. “I thought I’d seen you around. Who are you, kid?”
+
+Locust must have explained to Yard and the other players who I was when he had told them he had invited me.
+
+I repeated the story.
+
+When I finished, Yard said: “Let’s see your discharge papers.”
+
+That was the basic weakness of my new identity. I told him that I’d mailed them to my father in Utah.
+
+“Like hell you did,” Yard said. “You carry those on you all the time. What are you hiding, kid?”
+
+***
+
+I was silent, waiting for one of them to suggest it. Bertha did. She had enough brains for herself and the two men.
+
+“Dishonorable discharge,” she said. “He was kicked out of the Army.”
+
+I dropped my head. “I tore them up,” I said wearily. “They weren’t the kind I’d want to show. It was the same thing as happened tonight. I’d been winning a lot in barracks games and the Army rang in an expert on mechanics. He spotted me and I was sent home. I haven’t a rich father and no securities in my name. All I had left was twenty-five hundred bucks after blowing the rest away between India and here. I don’t know anything but cards and I tried to get in on the big-time, with guys like you. I was hitting the bottom of my stake and got scared I’d be cleaned out, so I pulled that one fancy deal.” I spread my hands. “There it is.”
+
+They liked that story. It made us kindred souls. They could understand a lad like that and know how to work with him. An honest man would have been hazardous.
+
+Yard removed his cigar from his mouth. “See me tomorrow. Maybe I can use you.”
+
+I tapped the roll on his lap. “What about my dough?”
+
+“Yours?” He chuckled dryly. Then he decided that that wasn’t the right tactic if he was to use me. “I’ll take care of it till tomorrow. Make it at two.” He told me a number and a street in Greenwich Village. “Now beat it.”
+
+I climbed out over his feet. He followed me out and got in the front seat with Bertha. She raised a red-tipped hand to me and drove off.
+
+***
+
+The house was on the far side of Ninth Avenue. It was a hundred-year-old tenement which had been torn up inside and rebuilt and the shell had been covered with a veneer of gray brick. Don Yard occupied the street floor. He had an entrance all to himself under the side of the stoop.
+
+I wondered why a man who won and lost thousands in one night would live in a dump. When I was inside, I saw an apartment which would have looked good on top of Park Avenue. The rooms were immense. The walls were hand-troweled light-green plaster. The living room rug was a pomegranate-red Persian with a grayish-green border. The furniture was subdued modern. Heavy drapes fortified by Venetian blinds barred the vulgar eyes of passersby from the street-level windows. It was a sunny afternoon, but soft, indirect lights were on. Twilight gloom would always prevail in these rooms, which wouldn’t matter to people who did most of their sleeping in daylight.
+
+It was five minutes after two when Walter answered my ring. Bertha wore a black chiffon negligee which obviously was all between us and her lush flesh. Her long flame hair was a shawl over her shoulders. She gave me a hand to shake and a smile to absorb.
+
+Yard sat in a semi-circle of Sunday papers scattered around his armchair. Powder-blue pajamas were covered by a red silk robe which hung open in front. His jowls were dark with stubble. He threw me a curt nod and dropped his eyes back to the sports section.
+
+I advanced to the edge of the papers at his feet. “Before I hear your proposition,” I said, “I want my money back.”
+
+“You stole it,” he muttered without looking up from the paper.
+
+“Only a small part of it and not from you or Walter,” I said. “You two were out of that hand. The rest I won fair and square.”
+
+Walter was at my side. I hadn’t heard him move over the rug. His hands were deep in his jacket pockets. “Should I throw him out, Don?” he asked lazily.
+
+“We’ll see.” Yard dropped the paper to the floor and put his head against the back of the chair. “You had a good night’s sleep and now you’re feeling your oats. Is that it, kid?”
+
+“I’ve had time to think it over, if that’s what you mean. I’m willing to work with you, but first I want my money.”
+
+Bertha undulated around me and sat on the arm of Yard’s chair. One of her nicely rounded thighs showed. She didn’t cover it. “The boy has spirit,” she said.
+
+“Yeah?” Negligently Yard pulled the negligee over the exposed thigh, then looked up at me through half-closed lids.
+
+“So you heard about me in India?”
+
+“From a former newspaper reporter during a bull session. I don’t remember his name.”
+
+“What did you hear?”
+
+“That you were one of the top gamblers in New York. Something like that. It was indefinite.”
+
+“It was so indefinite that you came to New York looking for me,” he said. “You went around asking about me.”
+
+“I suppose Locust told you.”
+
+“Yeah.”
+
+***
+
+This was my opening. I said: “As a matter of fact, I’d forgotten about you until a couple of days ago. I picked up a paper in the subway. There was one of those full-page feature spreads about a murder. An Air Force navigator had been tried for the murder of a woman named Daisy—I think that was her name—and it said in the paper that you’d once been married to her.”
+
+When I stopped speaking, I felt a vacuum of silence. Bertha glanced at Yard and then away. Yard’s eyes had opened all the way in a stare that smoldered.
+
+“Lily,” Walter said softly at my side.
+
+“That’s it, Lily,” I said. “I knew it was a flower.”
+
+Yard’s eyes closed. “What was the name of the paper? I didn’t see anything about me in any paper.”
+
+“It wasn’t a New York paper,” I said. “New Jersey or maybe Connecticut. I forget. Then somebody else was murdered, the lover of—” I stopped out of apparent delicacy for her former husband’s feeling.
+
+“Go on,” Yard urged me quietly. “What else did the paper say?”
+
+“The police are looking for the navigator. He’d been found innocent of Lily’s murder, but—”
+
+Yard sat erect. “He wasn’t innocent. He was acquitted, that’s all. How’d they get my name into it? It wasn’t brought in at her trial.”
+
+My bluff hand was being called. But it was unlikely that he would take the trouble to check up on every paper in New York and Connecticut and New Jersey to see if I’d lied. He would not think that there was any reason for me to lie.
+
+“I guess you’re something of a public character,” I said. “Everything about you comes out sooner or later. But I was telling you how I came across your name a second time. What made me read that story was a picture of your former wife, Lily. She was something to look at. She had all the pin-up girls I ever saw beaten hollow.” A storm was gathering in his craggy face. I stirred it up. “I suppose a man like you who’s got a swell girl like Bertha, wouldn’t care if another man took Lily away from you. But I know if I had a girl like her—”
+
+His beefy neck was as red as Bertha’s hair. He leaped to his feet. I started to duck to avoid the blow I thought I saw coming, but he only dropped his powerful right hand on my shoulder and squeezed. Then he shoved me aside and strode out of the room.
+
+He still loved Lily. Even now that she was dead, Bertha was only a substitute for her.
+
+Bertha slipped off the arm of the chair. Her head was dipped so that I could not clearly see her face. She went to a cigar stand and took a cigarette out of a hammered silver box and set fire to it with a table lighter.
+
+I turned to Walter who stood regarding me with his dull little eyes. “What did I say?” I asked.
+
+“Too damn much.”
+
+“You mean what I said about his former wife who was murdered? I get it. He still cares for her.”
+
+“You talk too damn much,” Walter said.
+
+***
+
+I started toward Bertha whose back was to me. Don Yard returned before I reached her. His color was high and his eyes bright. That must have been a pretty stiff drink he had gone for.
+
+He said briskly: “Keep out of my personal life, kid, and we’ll get along. Here is the deal. I stake you and you get ten percent of the winnings.”
+
+“Twenty-five percent,” I said.
+
+Bertha emitted a low giggle. “Berky is all right, Don. You don’t scare him.”
+
+He sent her an annoyed scowl and for a moment I was afraid she had queered it for me. But he shrugged and said: “Fifteen percent. We’ll see how you do on that. There’s a game tonight at the Hotel Tannor. Room 783. Be there at nine.”
+
+“What kind of game?”
+
+“Whatever kind of poker they ask for and whatever stakes they set. Those heels will play high. They all have plenty of dough in their pants and asking for somebody to take it away. I won’t be there because I’m too well known. If anybody asks you, tell them the first story you told us, about being a returned soldier with rich folks in Utah and so much dough you don’t know what to do with it. Walt will be playing and handling the kitty. It’s okay to know him, but only because he steered you up to the game. You’re a sucker like the others.”
+
+“A house man for a floating game,” I said. “That suits me. What happens when I lose?”
+
+“You don’t get your fifteen percent. Lose too much and it won’t pay me to do business with you. Win a lot and I’ll raise your percentage.” One corner of Yard’s mouth lifted. “The idea, kid, is not to lose.”
+
+He left it at that. I had been afraid that he wanted me solely for my ability as a mechanic. That would have put me on the spot; one rigged deal had been enough to last me for the rest of my life. Yard was not a crook. He was a business man who made investments with the odds in his favor. He didn’t care how I won as long as I won and he made his eighty-five percent of the profits. He was right up there with the captains of high finance.
+
+“Then it’s set,” I said, “except that you haven’t yet returned the money you took from me last night.”
+
+Yard went out of the room and returned with a roll. It wasn’t my roll; there weren’t any checks in it. “Our agreement started as of last night,” he said. “You get your two grand back and fifteen percent of the rest. Any more arguments?”
+
+I had none. He handed me thirty-three hundred and some odd dollars and Walter conducted me to the street door.
+
+***
+
+Four of the five strangers in the hotel room were visitors to New York who yearned for a fling at big-city poker. They were top-notch players in their home towns, but not quite adequate for a floating game organized by professionals. Some won and some lost, but both Walter and I won. Honestly. I ended up with three thousand dollars ahead. Walter with seven hundred dollars, not counting the kitty for playing host. A fair night’s work.
+
+I waited for Walter a couple of blocks away. He picked me up in a taxi and we rode downtown to settle accounts with the boss. Between the Seventies and Fourteenth Street, not a word passed between us. He wasn’t a lad who worked his face except when essential. Even when sitting, his hands remained in his pockets, as if to hide them or warm them or hold onto something out of sight.
+
+“Why did Don get sore at me when I mentioned his former wife?” I said suddenly.
+
+“He wasn’t sore at you.” The words came out of the corner of the long, wide mouth; the face remained turned to the side window.
+
+“Then what was he sore about?”
+
+“Keep your trap shut about Lily.”
+
+“Don strikes me being a pretty hard guy,” I persisted.
+
+“Yeah.”
+
+“Then why did he let another man take her away from him? Why didn’t he go after her if he cared so much for her?”
+
+His face swiveled to me. “Let it lay, kid.”
+
+“I only asked—”
+
+“Let it lay.”
+
+The taxi pulled up at the gray-brick house. No light showed through the Venetian blinds. Walter pressed the bell-button once. When there was no answer, he fished out a keyring.
+
+“Do you live with Don? I asked. “I’ve got a place up in the Bronx, but I bunk here sometimes.”
+
+A dim bulb glowed in the long hall. At the end of it was a back door leading out into a yard—the privilege of living on street-level. He waved to the living room on my left. “Wait in there. I’ll wake him up.”
+
+I found the wall-switch and clicked it. A pre-dawn hush seeped into the house from the street. I crossed the room and took a cigarette from the hammered silver box. There was a bleached oak desk against the far wall. I had perhaps a minute to search it. What for? It was only in stories that there would be a letter from Lily saying: “If you don’t send me ten grand at once I’ll tell the police all I know, so you better pay up.” Or: “My husband is coming home any day now, probably this weekend, so don’t come sucking around me any more. You’re too jealous for a girl to live with. Alec is a hick and a dope, but he’s nice and maybe I’ll like it with him. If you don’t let me alone, I’ll tell him when he gets back.”
+
+All right—fantastic. So were any other ideas I had which would work Don Yard into my equation. Here I was marking time with great vigor and getting nowhere in a hurry.
+
+***
+
+The cry wasn’t loud. Not the first one. The second was shriller, more urgent.
+
+I started toward the hall door and then reversed myself. The door in the back wall of the living room led directly into the other rooms. I went through it and found myself in darkness except for light shining through a door at the other end. The lighted room was a small study, and to the left of it was the master bedroom.
+
+Bertha Kaleman had both hands against Walter’s chest and was trying to push herself away from him. His arms were about her waist and his spade-chin was frantically nuzzling her bare shoulder.
+
+“Cut it out!” I said.
+
+Walter released her. His long face was very pale. His eyes had something in them now—glittering, feverish lights.
+
+“Beat it!” he panted.
+
+Agitatedly, Bertha pulled up the shoulderstrap of her yellow nightgown. She had just gotten out of bed, but the layer of paint was smooth and precise on her face. The toenails of her bare feet were scarlet.
+
+“Never mind, Berky,” she said jerkily. “Don will kill him when he comes home.”
+
+Walter thrust his hands into his pockets. He was trembling and I wasn’t. That was good to know.
+
+“Beat it!” he said again.
+
+I watched his hands. If he had a gun in either of those pockets, what would I do? This was absurd, unnecessary. I hadn’t come to New York to be killed to protect what honor the mistress of a gambler had. But here I was, stuck with the situation. I waited.
+
+Bertha said hoarsely: “If you touch Berky, I’ll tell Don. I swear I will.”
+
+“Yeah?” The blankness had whipped back into his face. His dead eyes looked at her and then at me. He went out through the other door, the one leading into the hall. I listened to him enter the living room.
+
+“You were swell, Berky,” Bertha said. “He’s been waiting for a chance at me for a long time. That guy gives me the willies.”
+
+There wasn’t much to that yellow nightgown of hers. Little purple forget-me-nots were scattered over it, and at the edge of the very low bodice was embroidered: “Forget Me Not.” Cute as hell. I could have thought of a more apt slogan.
+
+She looked down at herself and brought her palms up over her breasts. “Why, I’m practically naked,” she said with a girlish giggle.
+
+“Don’t mind me,” I said.
+
+She took one hand from herself to pat my cheek. “You’re sweet, Berky.” The she ducked into the bedroom.
+
+***
+
+I returned to the living room.
+
+Walter had placed a bottle and glasses on the white coffee table. “How about a snorter?” he asked almost amiably.
+
+I shook my head.
+
+He poured a short one and then said angrily: “What the hell can you expect when I meet her walking out of her room in only that yellow stuff? She’s always like that. She drives a guy nuts. You don’t have to make anything of it.”
+
+“Why should I? Was Lily like that too? Was that why she and Don—”
+
+The blank stare he gave me cut me off. “Why do you keep bringing up Lily?”
+
+I laughed, probably too lightly. “I guess that newspaper account I read about her murder made me curious.”
+
+“Well, don’t be.” He sat down at the coffee table and pulled a pocket chess set out of his inside breast pocket. “Do you play, kid? There’s no telling when Don will get back.”
+
+I bit off the automatic reply that rose to my lips. Alec Linn was a chess player. “Never could get into it,” I said. “Poker is my only game.”
+
+He set up a simple problem. It gave him trouble. After a while he looked up. “The way you ask about Lily, sometimes I think maybe you’re a cop.”
+
+“Why would you be afraid of a cop?”
+
+The empty stare lay flatly on me. “You’re too dumb to be a cop. Except you’re smart in poker and you play that too good for a cop.” And he moved the rook to KB5 instead of to KB6, which would have been proper.
+
+Don Yard arrived with the dawn. He was counting out my fifteen percent when Bertha came in. She was wearing the black negligee over the yellow nightgown. Her flame hair hung down to her waist. She looked very good. What was it about unhandsome heels like Don Yard that could get women like Lily and Bertha?
+
+Then I noticed Walter crouching over the chess set. He might merely have been studying the problem, but there was tension in the arc of his shoulders and his jutting jaw was ridged. He was afraid of Yard and afraid of what Bertha could do to him through Yard.
+
+She ignored him. She went over to Yard and pecked his cheek. “How’d Berky make out tonight?”
+
+Yard patted her hip. “Not bad. Three grand.”
+
+“I told you he would. Don’t be long, Don. Good-night, Berky.” She undulated out of the room.
+
+Walter’s body loosened. He sat back. That was that. I took my cut of the winnings and went home.
+
+
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+
