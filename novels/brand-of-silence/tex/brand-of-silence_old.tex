@@ -1,0 +1,166 @@
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{THE BRAND OF SILENCE}
+\SetAuthor{Harrington Strong}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{THE }{BRAND}\par
+\centering\charscale[0.75]{OF}\par
+\centering{SILENCE}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{THE }{BRAND}\par
+\centering\charscale[0.75]{OF}\par
+\centering{SILENCE}\par
+\end{parascale}
+\vspace*{2\nbs}
+
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{HARRINGTON STRONG}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{GENRE} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} PUBLICATION_DATE\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © COPYRIGHT_DATE Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+%some kind of loop through chapters for TOC
+\tocitem*[1]{In The Harbor}{#}
+\tocitem*[2]{The Girl On The Ship}{#}
+\tocitem*[3]{Some Discourtesies}{#}
+\tocitem*[4]{A Foe And A Friend}{#}
+\tocitem*[5]{The Cousin}{#}
+\tocitem*[6]{Murk---And Murder}{#}
+\tocitem*[7]{Evidence}{#}
+\tocitem*[8]{Lies And Liars}{#}
+\tocitem*[9]{Puzzled}{#}
+\tocitem*[10]{On The Trail}{#}
+\tocitem*[11]{Concerning Kate Gilbert}{#}
+\tocitem*[12]{Battered Keys}{#}
+\tocitem*[13]{A Plan Of Campaign}{#}
+\tocitem*[14]{More Mystery}{#}
+\tocitem*[15]{A Moment Of Violence}{#}
+\tocitem*[16]{Murk Receives A Blow}{#}
+\tocitem*[17]{Murk Is Tempted}{#}
+\tocitem*[18]{A Woman's Way}{#}
+\tocitem*[19]{Coadley Quits}{#}
+\tocitem*[20]{Up The River}{#}
+\tocitem*[21]{Recognition}{#}
+\tocitem*[22]{An Unexpected Visitor}{#}
+\tocitem*[23]{A Startling Story}{#}
+\tocitem*[24]{High-Handed Methods}{#}
+\tocitem*[25]{An Accusation}{#}
+\tocitem*[26]{The Truth Comes Out}{#}
+
+
+\end{toc}
+%end loop
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+%some kind of loop through all chapters
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter CHAPTER_NUM}
+\ChapterTitle[l]{CHAPTER_NAME}
+\end{ChapterStart}
+\FirstLine{\noindent CHAPTER_BODY
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+%end chapter loop
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{7506 Normandy Rd.
+
+Rowlett, Texas 75089}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}
+
