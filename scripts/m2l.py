@@ -57,7 +57,7 @@ f"\\ChapterTitle[l]{{{chapter_title}}}" if chapter_title else ''
 \\end{{ChapterStart}}
 \\FirstLine{{\\noindent {first_line}}}
 
-{' '.join(line for line in chapter_lines if line.strip() and not line.startswith('#') and line != first_line)}
+{'\n\n'.join(line for line in chapter_lines if line.strip() and not line.startswith('#') and line != first_line)}
 """
 
     latex_content = latex_content.replace('%CHAPTER_CONTENT%', chapters_content)
