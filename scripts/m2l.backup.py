@@ -1,3 +1,5 @@
+# this code runs 90% correctly: only chapters out of order & requires manual fixes to chapter heading for chapters without chapter titles ... this is a backup in case cody messes with then loses working code!!
+
 import os
 import re
 import yaml
@@ -18,7 +20,7 @@ def read_chapter(chapter_path):
 def process_chapters(chapters_dir):
     chapters = []
     for filename in sorted(os.listdir(chapters_dir)):
-        if filename.endswith('.md'):
+        if filename.endswith('.md') and filename != 'frontmatter.yml':
             chapter_path = os.path.join(chapters_dir, filename)
             chapter_content = read_chapter(chapter_path)
             chapter_num = filename.split('.')[0]
@@ -49,30 +51,18 @@ def generate_latex(template, frontmatter, chapters):
         chapter_title = frontmatter['chapters'].get(chapter['number'], f"Chapter {chapter['number']}")
         first_line = next((line for line in chapter_lines if line.strip() and not line.startswith('#')), '')
         
-        # Group lines into paragraphs
-        paragraphs = []
-        current_paragraph = []
-        for line in chapter_lines:
-            if line.strip() and not line.startswith('#') and line != first_line:
-                current_paragraph.append(line)
-            elif current_paragraph:
-                paragraphs.append(' '.join(current_paragraph))
-                current_paragraph = []
-        if current_paragraph:
-            paragraphs.append(' '.join(current_paragraph))
-        
         chapters_content += f"""
 \\begin{{ChapterStart}}
 \\vspace{{3\\nbs}}
 \\ChapterSubtitle[l]{{Chapter {chapter['number']}}}
-{"\\ChapterTitle[l]{" + chapter_title + "}" if chapter_title else ''}
+f"\\ChapterTitle[l]{{{chapter_title}}}" if chapter_title else ''
 \\end{{ChapterStart}}
 \\FirstLine{{\\noindent {first_line}}}
 
-{'\n\n'.join(paragraphs)}
+{'\n\n'.join(line for line in chapter_lines if line.strip() and not line.startswith('#') and line != first_line)}
 """
-        
-        latex_content = latex_content.replace('%CHAPTER_CONTENT%', chapters_content)
+
+    latex_content = latex_content.replace('%CHAPTER_CONTENT%', chapters_content)
 
     return latex_content
 

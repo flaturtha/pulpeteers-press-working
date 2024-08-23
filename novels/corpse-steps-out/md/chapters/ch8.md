@@ -1,4 +1,5 @@
 ### Chapter 8
+## Lawyers and Liars
 
 The immense room overlooking the lake had satiny paneled walls, a massive fireplace, polished and graceful furniture. At a small table between two long windows, a couple sat playing chess.
 

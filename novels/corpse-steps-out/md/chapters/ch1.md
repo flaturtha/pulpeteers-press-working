@@ -1,4 +1,5 @@
 ### Chapter 1
+## A Room with a Bloody View
 
 Everything in the big, shabby room was painfully familiar. Not one thing had been changed in the months since she had seen it last. There were the same faded tan curtains at the window, one still hanging a little askew; the same pictures; even the same discolored spot on the wall over the fireplace.
 

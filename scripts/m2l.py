@@ -1,3 +1,5 @@
+# this code runs 90% correctly: only chapters out of order & requires manual fixes to chapter heading for chapters without chapter titles ... this is a backup in case cody messes with then loses working code!!
+
 import os
 import re
 import yaml
@@ -17,13 +19,16 @@ def read_chapter(chapter_path):
 
 def process_chapters(chapters_dir):
     chapters = []
-    for filename in sorted(os.listdir(chapters_dir)):
+    for filename in sorted(os.listdir(chapters_dir), key=lambda x: int(x.split('.')[0].lstrip('ch')) if x.endswith('.md') and x != 'frontmatter.yml' else float('inf')):
         if filename.endswith('.md') and filename != 'frontmatter.yml':
             chapter_path = os.path.join(chapters_dir, filename)
             chapter_content = read_chapter(chapter_path)
-            chapter_num = filename.split('.')[0]
+            chapter_num = filename.split('.')[0].lstrip('ch')
+            chapter_lines = chapter_content.split('\n')
+            chapter_title = next((line.strip('## ') for line in chapter_lines if line.startswith('## ')), '')
             chapters.append({
                 'number': chapter_num,
+                'title': chapter_title,
                 'content': chapter_content
             })
     print(f"Processed {len(chapters)} chapters")
@@ -45,22 +50,29 @@ def generate_latex(template, frontmatter, chapters):
 
     chapters_content = ''
     for chapter in chapters:
+        chapter_number = chapter['number'].lstrip('ch')  # Remove the "ch" prefix from the chapter number
+        chapter_title = chapter['title']
         chapter_lines = chapter['content'].split('\n')
-        chapter_title = frontmatter['chapters'].get(chapter['number'], f"Chapter {chapter['number']}")
         first_line = next((line for line in chapter_lines if line.strip() and not line.startswith('#')), '')
         
         chapters_content += f"""
 \\begin{{ChapterStart}}
 \\vspace{{3\\nbs}}
-\\ChapterSubtitle[l]{{Chapter {chapter['number']}}}
-f"\\ChapterTitle[l]{{{chapter_title}}}" if chapter_title else ''
+\\ChapterSubtitle[l]{{Chapter {chapter_number}}}
+\\ChapterTitle[l]{{{chapter_title}}}
 \\end{{ChapterStart}}
 \\FirstLine{{\\noindent {first_line}}}
 
 {'\n\n'.join(line for line in chapter_lines if line.strip() and not line.startswith('#') and line != first_line)}
+
+\\vspace{{2\\nbs}}
+\\ChapterDeco[c1]{{\\decoglyph{{e9665}}}}
+\\clearpage
+\\thispagestyle{{empty}}
 """
 
     latex_content = latex_content.replace('%CHAPTER_CONTENT%', chapters_content)
+    
 
     return latex_content
 

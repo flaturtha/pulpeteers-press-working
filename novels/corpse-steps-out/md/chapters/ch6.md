@@ -1,4 +1,5 @@
 ### Chapter 6
+## The Case of the Clean Floor
 
 Take stopped in at the little bar on the corner and ordered a double rye. He needed it. Then he strolled over to Michigan Avenue and began walking north, hardly conscious of where he was going.
 

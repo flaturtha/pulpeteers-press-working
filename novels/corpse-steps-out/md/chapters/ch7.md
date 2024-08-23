@@ -1,4 +1,5 @@
 ### Chapter 7
+## Love, Liquor, and Larceny
 
 “Hello, baby,” Jake Justus said tenderly.
 

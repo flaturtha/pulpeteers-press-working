@@ -1,4 +1,5 @@
 ### Chapter 3
+## Bloodstains and Bouquets
 
 Jake told the taxi driver to go around Grant Park until further orders and to close the glass partition. Then he turned to Nelle, huddled in a corner. “Paul March had it coming to him, but why did you do it?”
 

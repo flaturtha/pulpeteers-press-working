@@ -1,7 +1,137 @@
-### Chapter 1
-## A Room with a Bloody View
+% !TeX TS-program = LuaLaTeX
+% !TeX encoding = UTF-8
+\documentclass{novel}
+%%% METADATA (FILE DATA):
+\SetTitle{The Corpse Steps Out}
+\SetAuthor{Craig Rice}
+\SetPDFX{X-1a:2001}
+\SetTrimSize{4.25in}{6.875in}
+\SetMediaSize{4.5in}{7.12in}
+\SetMargins{0.5in}{0.5in}{0.5in}{0.7in}
+\SetParentFont{Libertinus Serif}
+\SetFontSize{9.5pt}
+\SetHeadFootStyle{5}
+\SetHeadJump{1.5}
+\SetFootJump{1.5}
+\SetLooseHead{50}
+\SetEmblems{}{} % Default blanks.
+\SetHeadFont[\parentfontfeatures,Letters=SmallCaps,Scale=0.92]{\parentfontname}
+\SetPageNumberStyle{\thepage}
+\SetVersoHeadText{\theAuthor}
+\SetRectoHeadText{\theTitle}
+%%% CHAPTERS:
+\SetChapterStartStyle{footer} % Equivalent to empty, when style has no footer.
+\SetChapterStartHeight{10}
+\SetChapterFont[Numbers=Lining,Scale=1.6]{\parentfontname}
+\SetSubchFont[Numbers=Lining,Scale=1.2]{\parentfontname}
+\SetScenebreakIndent{false}
+%%% BEGIN DOCUMENT:
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+% Half-Title Page.
+\begin{parascale}[2]
+\vspace*{3\nbs}
+\centering\charscale[0.75]{The Corpse Steps Out }\par
+\centering\charscale[0.75]{The Corpse Steps Out LINE 2}\par
+\centering{The Corpse Steps Out LINE 3}\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+\null % Necessary for blank page.
+% Alternatively, List of Books.
+\clearpage
+\thispagestyle{empty}
+% Title Page.
+\begin{parascale}[4]
+\centering\charscale[0.75]{The Corpse Steps Out }\par
+\centering\charscale[0.75]{The Corpse Steps Out LINE 2}\par
+\centering{The Corpse Steps Out LINE 3}\par
+\end{parascale}
+\vspace*{2\nbs}
 
-Everything in the big, shabby room was painfully familiar. Not one thing had been changed in the months since she had seen it last. There were the same faded tan curtains at the window, one still hanging a little askew; the same pictures; even the same discolored spot on the wall over the fireplace.
+\begin{parascale}[1]
+\centering\textit{SERIES}\par
+\vspace*{3\nbs}
+\charscale[2]{Craig Rice}\par
+\end{parascale}
+\vfill
+\begin{parascale}[1]
+% \centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+A Tales of Murder Press, LLC\par
+\textit{Noir} Novel\par
+\end{parascale}
+\clearpage
+\thispagestyle{empty}
+% Copyright Page.
+\null\vfill
+\allsmcp{First edition} Simon \&amp; Schuster, March 1940 (First printing February 1940). Two Complete Detective Books edition published January 1944. Tower edition published July 1945 (1st printing June 1945). Pocket Books edition published November 1945 (1st printing October 1947). by Tales of Murder Press, LLC\par
+\null\null
+\allsmcp{ISBN}\par
+\null\null
+\vfill
+\begin{adjustwidth}{3em}{3em}
+\textit{This novel is in the public domain.} Certain \mbox{elements} in this edition are Copyright © 2024 Tales of Murder Press, LLC
+\end{adjustwidth}
+\clearpage
+\thispagestyle{empty}
+\clearpage % because ToC must start recto
+\thispagestyle{empty}
+\begin{toc}[0.5]{0em}
+{\centering\charscale[1.25]{Contents}\par}
+\null
+
+\tocitem*[1]{A Room with a Bloody View}{1}
+\tocitem*[2]{Blackmail on AIR}{2}
+\tocitem*[3]{Bloodstains and Bouquets}{3}
+\tocitem*[4]{Nelle's Notorious Night}{4}
+\tocitem*[5]{A Hangover and a Homicide}{5}
+\tocitem*[6]{The Case of the Clean Floor}{6}
+\tocitem*[7]{Love, Liquor, and Larceny}{7}
+\tocitem*[8]{Lawyers and Liars}{8}
+\tocitem*[9]{A Barstool Confession}{9}
+\tocitem*[10]{The Corpse's Second Act}{10}
+\tocitem*[11]{Everyone's a Suspect}{11}
+\tocitem*[12]{Cloak and Swagger}{12}
+\tocitem*[13]{Loose Lips Sink Nelle}{13}
+\tocitem*[14]{Encore for the Dead}{14}
+\tocitem*[15]{The Mic is Hot}{15}
+\tocitem*[16]{Whispers in the Booth}{16}
+\tocitem*[17]{Nell's Confession}{17}
+\tocitem*[18]{A Fractured Alibi}{18}
+\tocitem*[19]{Uninvited and Unhinged}{19}
+\tocitem*[20]{Secrets in the Shadows}{20}
+\tocitem*[21]{A Pursuit in the Dark}{21}
+\tocitem*[22]{A Tight Spot}{22}
+\tocitem*[23]{Devils and Dames}{23}
+\tocitem*[24]{Breaking Point}{24}
+\tocitem*[25]{The Past is a Killer}{25}
+\tocitem*[26]{All Bets Are Off}{26}
+\tocitem*[27]{Backstabbers Anonymous}{27}
+\tocitem*[28]{Love Hurts}{28}
+\tocitem*[29]{Threading the Needle}{29}
+\tocitem*[30]{Checkmate}{30}
+\tocitem*[31]{A Night of Reckoning}{31}
+\tocitem*[32]{Truth Beneath Lies}{32}
+\tocitem*[33]{End of the Line}{33}
+\tocitem*[34]{Justice, Jake-Style}{34}
+
+
+\end{toc}
+\clearpage
+
+\mainmatter
+\cleartorecto
+\thispagestyle{empty}
+
+
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 1}
+\ChapterTitle[l]{A Room with a Bloody View}
+\end{ChapterStart}
+\FirstLine{\noindent Everything in the big, shabby room was painfully familiar. Not one thing had been changed in the months since she had seen it last. There were the same faded tan curtains at the window, one still hanging a little askew; the same pictures; even the same discolored spot on the wall over the fireplace.}
 
 She stood for one moment, listening. Nothing stirred. Yet for that moment she had found herself waiting for someone to speak.
 
@@ -61,10 +191,17 @@ There was no other way.
 
 She went into the kitchenette, knelt on the floor, and carefully, methodically, began searching the dead man’s pockets.
 
-### Chapter 2
-## Blackmail on AIR
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-The Tall Thin Man in the Little Control Room of the broadcasting studio stretched his long legs uncomfortably under the black-and-chromium table, absent-mindedly mussed up his red hair with a carelessly straying hand, and tried to focus his tired mind on the implications of what had just been said to him.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 2}
+\ChapterTitle[l]{Blackmail on AIR}
+\end{ChapterStart}
+\FirstLine{\noindent The Tall Thin Man in the Little Control Room of the broadcasting studio stretched his long legs uncomfortably under the black-and-chromium table, absent-mindedly mussed up his red hair with a carelessly straying hand, and tried to focus his tired mind on the implications of what had just been said to him.}
 
 The forty-seventh broadcast of the Nelle Brown Revue had ended in a burst of applause from the studio audience. He forced his thoughts back over past events: Schultz, the control engineer, had made a final twisting of dials and switches, grabbed his hat, and gone hurrying off to get a sandwich between shows. Joe Mclvers, from the advertising agency, had popped out of the booth like a cork out of a bottle to phone the sponsor. The usual procession of actors, musicians, sound men, and assistants had filed out of the studio.
 
@@ -79,6 +216,7 @@ What the devil had happened to Nelle Brown this time?
 There was no sign of her in the corridor. He stopped a page boy.
 
 “Miss Bro
+
 "Excuse me, sir? Try the reception room."
 
 She was not in the reception room.
@@ -126,6 +264,7 @@ Oh well, as long as there was nothing of Nelle's in the place.
 He looked at his watch. Fourteen minutes to the rebroadcast.
 
 He gave the room one last, hurried look, saw that he had left no trace of his own visit, left the door slightly ajar just as he had found it, and ra
+
 Ced to his waiting taxi.
 
 “—And step on it, fella!”
@@ -166,10 +305,17 @@ It had not been there when she left the studio.
 
 Even through the heavy glass of the control-room window, Jake Justus could see that it was blood.
 
-### Chapter 3
-## Bloodstains and Bouquets
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Jake told the taxi driver to go around Grant Park until further orders and to close the glass partition. Then he turned to Nelle, huddled in a corner. “Paul March had it coming to him, but why did you do it?”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 3}
+\ChapterTitle[l]{Bloodstains and Bouquets}
+\end{ChapterStart}
+\FirstLine{\noindent Jake told the taxi driver to go around Grant Park until further orders and to close the glass partition. Then he turned to Nelle, huddled in a corner. “Paul March had it coming to him, but why did you do it?”}
 
 “I don’t know what you’re talking about,” she said sullenly.
 
@@ -188,6 +334,7 @@ He swore wearily and at length, without repeating himself.
 “But I didn’t shoot him, Jake. You’ve got to believe me. I was there tonight, yes. That’s right. But I didn’t shoot him.”
 
 “You said...”
+
 "That before," he said glumly.
 
 "I went there. I'd written him some letters, last winter."
@@ -227,6 +374,7 @@ Just the same, he looked at her with reluctant admiration. Between broadcasts sh
 Nelle Brown chose that moment to hurl herself at his shoulder, bury her head in it, and begin to cry, noisily and childishly.
 
 "He used to be so sweet to me, Jake. Just sweet. Good-for-nothing louse if there ever was one. Can't you imagine what it was like, walking in there tonight? It was wintertime when—remember? I used to stop in there and he'd have a fire going in the fireplace, and he always took my galoshes off for me, and I'd watch the snow going down past the window. Everything looked just the way it always did, with the little chromium ashtray on the end table, the one we got with cigarette coupons. And he was there on the kitchen floor, dead. All bloody, Jake. I used to be so happy with him. Remember how awful it was when Joe McIvers had him fired, and he told me that it was all just so he'd get the job of producing the show? He hadn't really cared about me, he just wanted my show to do. Remember how you sat up with me for three nights in a row, and how we thought I'd never get sobered up for rehearsal, and that terrible Turkish-bath place you took me to? I could have sworn he was in love with me. Oh, Jake, he couldn't have said some of the things he said."
+
 "And not meant them.”
 
 Jake held her very gently for a few minutes and let her talk on and on, until at last she sat bolt upright and said in a calm, perfectly clear voice, “I wonder where in hell those letters are now.”
@@ -286,6 +434,7 @@ She ignored him, and said, “But if whoever has those letters is a friend of mi
 He felt agreeably sure he could depend on that.
 
 At Max’s, he paused a moment in the doorway. “Chase up to the little girls’
+
 Room and wash your face. I’ll be waiting for you right here. For the love of Pete, hide that damn handkerchief until you get a chance to burn it.”
 
 “Yes, Jake.” Her voice seemed almost too docile.
@@ -312,10 +461,17 @@ There was, to Jake, a curious unreality about it all. There was the usual talk, 
 
 He looked slowly around the table. Had one of them slipped over to that shabby apartment between broadcasts and killed a man? But which one of them, and why? Or had it been Nelle after all?
 
-### Chapter 4
-## Nelle's Notorious Night
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-How did you get to be a radio star?” the red-haired stranger was asking Nelle.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 4}
+\ChapterTitle[l]{Nelle's Notorious Night}
+\end{ChapterStart}
+\FirstLine{\noindent How did you get to be a radio star?” the red-haired stranger was asking Nelle.}
 
 One of the penalties of being a radio star, Jake reflected, was that everyone asked you how you got to be that way.
 
@@ -330,6 +486,7 @@ Jake grinned and said, “I might,” and wondered what would happen if he ever 
 “How did you get into show business?” the red-haired stranger persisted.
 
 Nelle looked him straight in the eye and told him she had been born backstage and had played little Eva at the age of six. The red-haired stranger looked interested but skeptical, and Ja
+
 Ke remembered that Nelle had been adopted by the boss of a traveling medicine show at the age of twelve. He had seen pictures of her: a thin, rather attractive, leggy child, with a mass of curly hair, and immense, hungry eyes. Two years later, professing to be sixteen, she had turned up in the chorus of a second-rate burlesque company.
 
 Along way from that to the Nelle Brown Revue. Jake sighed deeply, ordered another rye, and reflected that if this murder story broke the wrong way, Nelle would zigzag right back to a second-rate burlesque company.
@@ -381,6 +538,7 @@ Jake nodded and wished the red-haired stranger onto Oscar.
 Jake recalled a bright-eyed and glowing Nelle confiding in him that Henry (though even then she called him Tootz) was so sweet, and she adored him. Of course, she was marrying him for his money. She’d be a fool not to, wouldn’t she? But he was such a lamb. She’d want to marry him if he didn’t have a dime in the world. Jake had told her at the time that she could think up the sweetest stories.
 
 Oscar was explaining to the red-haired stranger
+
 That Nelle would probably never have returned to radio if Gifford and Company hadn’t failed, leaving Tootz with nothing except the shirt on his back and a mortgage on that.
 
 “But didn’t Henry Gibson Gifford lose his mind after the crash?” the red-mustached stranger asked in a whisper perfectly audible two blocks away. Three people managed to kick him under the table as he reached the last word.
@@ -424,6 +582,7 @@ Jake remembered suddenly that Joe Mclvers hadn’t attended the rebroadcast. Tha
 John St. John wandered upstairs and lost twenty dollars in a crap game. Everyone was secretly delighted.
 
 While he was gone, Essie St. John made a date with B.
+
 Bob Bruce, and everyone pretended not to hear. The blonde in the tight blue dress asked Jake how she could get a job in radio, and gave him her telephone number, which he promptly lost. The red-mustached stranger upset his drink across the table.
 
 It was exactly like every other evening at Max’s that Jake could remember. Except that one man who had spent so many evenings at Max’s lay dead behind the dingy green curtains of a little kitchenette.
@@ -466,12 +625,20 @@ He poured himself another drink.
 
 After an hour he switched off the radio, reflected that he would read all about it in the morning papers. There was nothing he could do about it tonight anyway. He turned off the light and went to sleep in his chair.
 
-### Chapter 5
-## A Hangover and a Homicide
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-At eight o’clock in the morning, he sponged Nelle’s face with a cold wet cloth until she blinked, opened her eyes, stared at him, and suddenly sat bolt upright.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 5}
+\ChapterTitle[l]{A Hangover and a Homicide}
+\end{ChapterStart}
+\FirstLine{\noindent At eight o’clock in the morning, he sponged Nelle’s face with a cold wet cloth until she blinked, opened her eyes, stared at him, and suddenly sat bolt upright.}
 
 “Jake. Last night. Someth
+
 Nothing happened.” “A murder,” he told her calmly, lighting a cigarette and putting it in her mouth.
 
 She lay perfectly still for a long time, her face as impassive as the bottom of a bottle.
@@ -533,6 +700,7 @@ Jake lit a cigarette, walked to the window, and stood looking out. “Nelle, I�
 He continued to stare moodily out the window.
 
 The arrival of Nelle’s maid with her clothes was a welcome diversion. Jake tactfully went downstairs for cigarettes he didn’t need and returned fifteen minutes later.
+
 To find Nelle a vision in pale-brown wool and vast quantities of red fox. Her hair was smooth and shining over her shoulders; she was crumpling a soft felt hat between her hands.
 
 “Very nice,” he said approvingly.
@@ -576,6 +744,7 @@ No answer.
 What in blazes was he going to do after he did go in? Make a noisy gesture of finding the body? Dash down to the lobby yelling, “Murder!” Explain that he had come to see Paul March, and found him dead?
 
 Explain how he, Jake Justus, press agent and manager of Nelle Brown, was going to see Paul March—when everyone in town (save Tootz, Mr. Goldman, and the
+
 General public) knew all the details of last winter’s March-Brown affair?
 
 Or it was going to look very silly to stroll down to the lobby and say to the landlady, “Look here, there’s been a murder up in 215, and you ought to report it to the police.” Just like that, as though he were reporting the unwelcome presence of a cockroach in the kitchen sink.
@@ -594,10 +763,17 @@ No, everything was not as it had been the night before.
 
 The kitchen linoleum was clean and shining and unspotted, newly washed. The huddled body of Paul March was gone.
 
-### Chapter 6
-## The Case of the Clean Floor
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Take stopped in at the little bar on the corner and ordered a double rye. He needed it. Then he strolled over to Michigan Avenue and began walking north, hardly conscious of where he was going.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 6}
+\ChapterTitle[l]{The Case of the Clean Floor}
+\end{ChapterStart}
+\FirstLine{\noindent Take stopped in at the little bar on the corner and ordered a double rye. He needed it. Then he strolled over to Michigan Avenue and began walking north, hardly conscious of where he was going.}
 
 What the hell!
 
@@ -620,6 +796,7 @@ He speculated calmly on the possibility of Nelle as the murderer. If she had bee
 His mind moved on to the next problem. Where were Nelle’s letters? This was a far more serious menace than an obligingly disappearing corpse.
 
 He decided that it was something he couldn’t cope with himself, and a n
+
 Name popped into his mind. John Joseph Malone.
 
 Merely thinking of the name made him feel that the whole problem was a simple one, already half solved. John Joseph Malone, untidy, resourceful little criminal lawyer, who boasted that he could get anybody out of any mess. He could certainly get Nelle Brown out of this one.
@@ -653,14 +830,22 @@ In that moment a wonderfully familiar voice spoke just behind him.
 He wheeled around, knowing he couldn’t mistake that mocking drawl, not daring to believe it. It was true. Helene Brand!
 
 There she stood, as patrician, as beautiful, as perfect as ever, in the midst of the noontime crowds on Michigan Avenue. Her pale blond hair was exquisitely in place, and she was dressed simply.
+
 Ply in a very low-cut pale-violet chiffon evening gown. She was carrying a Parma violet evening wrap. And she was not sober.
 
 “Well!” said Jake Justus inadequately. “Well! Imagine meeting you here!”
 
-### Chapter 7
-## Love, Liquor, and Larceny
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-“Hello, baby,” Jake Justus said tenderly.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 7}
+\ChapterTitle[l]{Love, Liquor, and Larceny}
+\end{ChapterStart}
+\FirstLine{\noindent “Hello, baby,” Jake Justus said tenderly.}
 
 The exquisite blond girl on the bed moaned, stirred, sat up. For a moment she sat there blinking, looking around the disordered room: a half-empty bottle on the dresser, an overturned ashtray on the floor, her evening wrap fastened gracefully around the bridge lamp in the corner, and Jake Justus in the easy chair by the window, surrounded by a squirrel’s nest of newspapers.
 
@@ -719,6 +904,7 @@ Jake told him and poured three drinks.
 “Now,” Helene said, “now that Malone is here, maybe you’ll give out about this murder of yours.”
 
 Jake scowled into his rye. “I can’t prove that there was a murder."
+
 "Did you hear me?” he said slowly. “Because the body’s lost. But Nelle saw it, and I saw it, and I'd be convinced that she did it, except that she told me she didn’t, and she wouldn’t have any reason for lying to me about it.”
 
 Malone sighed heavily and gloomily. “It would make life a lot simpler if you’d stay sober when you have something to tell me.”
@@ -762,6 +948,7 @@ Malone said, “Maybe she did shoot him. She had plenty of time and opportunity.
 Jake nodded. “I phoned everywhere else. Even phoned her apartment, but no one answered.”
 
 The little lawyer mopped his red face. “She’s got nothing to worry about even if she did the murder. If the police find the body, there’s nothing to link the murder up with Nelle Brown. Nobody’s going to run to the cops with the dope that she used to spend her spare time with the stiff, months back. If worst came to the worst, you could keep it out of the paper."
+
 S. What the hell has she got a press agent for?”
 
 “You forget the letters,” Jake said.
@@ -825,6 +1012,7 @@ The lawyer snorted. “Find who murdered Paul March. No body. No proof there has
 “One other,” Jake reminded him. “The murderer.”
 
 “Unless it was you or Nelle,” Malone said. “Find out where the body went, and why it went there, and who murdered him and how and why, and what was done with the letters and how to get them back safely, and then probably break our necks hushing up all we’ve dug up. Happy days!” He drank deeply. “We’ll have to scare the birds out of the bushes and shoot them as they r
+
 "Un."
 
 "Fly," Helene corrected him.
@@ -853,10 +1041,17 @@ Helene scowled, puzzled. "I thought the stables burned, horses and all, just abo
 
 "Right," Jake said, "but he still has the horses." And as she stared blankly at him, he grinned. "Be patient, pet. You’re going to meet Tootz’ horses. You’re going to meet them any minute now!"
 
-### Chapter 8
-## Lawyers and Liars
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-The immense room overlooking the lake had satiny paneled walls, a massive fireplace, polished and graceful furniture. At a small table between two long windows, a couple sat playing chess.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 8}
+\ChapterTitle[l]{Lawyers and Liars}
+\end{ChapterStart}
+\FirstLine{\noindent The immense room overlooking the lake had satiny paneled walls, a massive fireplace, polished and graceful furniture. At a small table between two long windows, a couple sat playing chess.}
 
 The man was slender, dignified, scholarly. His carefully brushed hair and trim mustache were snowy white; his handsome profile was pale and patrician. The hand that paused over the chessboard was long and graceful and pallid. The cut of his dinner coat was irreproachable.
 
@@ -869,6 +1064,7 @@ The picture was one that held Jake, Helene, and Malone at the door for a moment.
 But at that moment Nelle Brown greeted them in the voice that no one in the world could have duplicated. Henry Gibson Gifford rose and welcomed them with the grace and charm of a visiting ambassador.
 
 It was to be, Jake had reminded Helene and Malone in the elevator, purely a social call. Bigges, the butler, brought in cocktails, and Henry Gibson Gifford led a discussion of the situation in Europe, on which he spoke with informed authority. Then he and Helene spoke at length of the Russian ballet, about which both of them seemed to know a great deal, while Jake and Nelle quarreled over a song in the next week’s broadcast, and Malone stared moodily out the window. Then Henry Gibson Gifford noticed the little lawyer.
+
 R’s apparent boredom, and brought the talk around to celebrated criminal cases of the past decade.
 
 He was, Jake thought, one of the most charming and well-informed men he had ever known.
@@ -930,6 +1126,7 @@ For a few moments they discussed Henry Gibson Gifford’s horses in a manner so 
 “Tough,” Malone murmured laconically.
 
 “Why?” Nelle asked almost angrily. “He’s happy. Sure he has a few delusions, but nothing that bothers him, except that he doesn’t like being followed. He won’t stir out of the apartment unless I’m with him. But he’s contented there. He doesn’t even mind being left alone in the apartment, not at all. I phone him every little while when he’s alone, and he parks right by the phone so he’ll hear it ring if I call, and nothing bothers him. The horses are no trouble.
+
 E likes horses.”
 
 “I mean—it’s tough on you,” Malone said.
@@ -977,6 +1174,7 @@ Malone said, “Get back to Tootz.”
 “He won’t,” Jake assured her. “Malone here is going to fix everything for you.”
 
 “Sure,” Malone said.
+
 "No trouble at all. Part of our regular service," she said.
 
 "Are you really, Malone?" she asked.
@@ -1023,10 +1221,17 @@ Nelle Brown stared at Helene with wide, puzzled eyes. "But Miss Brand. You don�
 
 Helene looked at her affectionately. "Maybe I like the way you sing and wouldn’t like to have you off the air," she said. "Or you might put down that I liked the way you kissed Tootz good-by. Anyway, let’s all go in and buy a drink."
 
-### Chapter 9
-## A Barstool Confession
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-About an hour later, Nelle phoned her apartment, learned that Henry Gibson Gifford was tucked in bed and sound asleep for the night.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 9}
+\ChapterTitle[l]{A Barstool Confession}
+\end{ChapterStart}
+\FirstLine{\noindent About an hour later, Nelle phoned her apartment, learned that Henry Gibson Gifford was tucked in bed and sound asleep for the night.}
 
 "Curfew won’t ring for hours yet," she reported, coming back to the table. "Let’s think of a place where it would be more fun to do our drinking."
 
@@ -1067,6 +1272,7 @@ Jake sighed. "There she goes again. All right Malone, where are the letters?"
 "For that matter," Malone said, loosening his collar and wiping a glistening brow, "where’s the corpse?"
 
 "What good is a murder without a corpse?"
+
 "e?” Helene inquired. “How can you have a corpus if you can’t find the damned thing?”
 
 “Your legal terminology is a little confused,” Malone said severely, “but your intentions are doubtless good.”
@@ -1142,6 +1348,7 @@ Malone sighed. “Nothing that leads anywhere,” he said. “If somebody killed
 “Why?” Jake asked. “Why Baby?”
 
 Nelle looked at him crossly. “Can’t you im"
+
 Imagine what Baby might think if he knew I’d had a love affair with Paul, and then was accused of murdering him? Baby is a timid guy anyway.
 
 Jake said, “Hell, I've had enough of this. Let’s go to the Colony Club.”
@@ -1168,10 +1375,17 @@ Molly Coppins, the landlady, an enormous, slightly faded and very amiable blonde
 
 She found an enormous bunch of keys, led them through the maze of halls and corners, up a flight of stairs, and down a long corridor. She stopped in front of a door marked 215.
 
-### Chapter 10
-## The Corpse's Second Act
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-It’s one of the nicest apartments in the building,” Molly was saying. “Of course, I’ll have the curtains washed.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 10}
+\ChapterTitle[l]{The Corpse's Second Act}
+\end{ChapterStart}
+\FirstLine{\noindent It’s one of the nicest apartments in the building,” Molly was saying. “Of course, I’ll have the curtains washed.”}
 
 Jake sank down in a worn overstuffed chair and stared dazedly around him. It was a large, square room, with two immense windows that opened onto a fire escape and looked into the back windows of apartments across the alley. There was a slightly battered but still handsome marble fireplace, now stuffed with old newspapers, a tapestry-covered davenport, a day bed in one corner, and a spinet desk in the other. Nowhere was there any sign of the previous occupancy of Paul March. Not so much as an abandoned magazine.
 
@@ -1200,6 +1414,7 @@ Helene paid no attention to him. “Jake, Honolulu is a long way from here.”
 “Somebody,” she observed thoughtfully, “is being awfully modest about this murder. Help me unpack.”
 
 They unpacked a collection of clothes that would have done credit to a Hollywood queen.
+
 "Set a bottle of rye on the kitchen shelf," and stowed away the empty suitcase.
 
 "Tomorrow," Helene said, looking around the room, "I buy vases and stuff at the dime store, and this will be elegant."
@@ -1287,6 +1502,7 @@ She sighed. "Well, if you're going to be fussy, I can always give it away. I can
 "Well, of course," he began slowly.
 
 "Oh Jake," she said suddenly, "don't make it awful for me to have money. Like being born with a harelip or something. I can't help it.
+
 It’s just been a damn nuisance all my life, and if it spoils things, I can’t stand it. Let’s be sensible.”
 
 “All right,” he said, “we’ll be sensible. But I’m going to tell everybody that I'm marrying you for your money. Nobody could ever be able to imagine any other reason.”
@@ -1323,10 +1539,17 @@ It was Nelle. Her voice was tight and frantic.
 
 Before he could answer, she had hung up.
 
-### Chapter 11
-## Everyone's a Suspect
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-“Never mind,” Helene said consolingly. “We can get married tomorrow. And it’ll be so nice to find out who the murderer was.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 11}
+\ChapterTitle[l]{Everyone's a Suspect}
+\end{ChapterStart}
+\FirstLine{\noindent “Never mind,” Helene said consolingly. “We can get married tomorrow. And it’ll be so nice to find out who the murderer was.”}
 
 She had dressed in something pale and cool while he was at the telephone. They picked up Malone at his hotel, selected a table in a far corner of Ricardo’s, and waited for Nelle.
 
@@ -1369,6 +1592,7 @@ The waiter took advantage of the momentary silence to come back with the menu.
 “What of it?” Malone asked. “You’re hardly in a position to call a cop.”
 
 “He didn’t say how he got them except that it was none of my business,” Nelle said. “Then he said he didn’t want to make any trouble.”
+
 For me. Trouble! The low-down—"
 
 “You can leave your personal impressions of him out of this,” Jake said.
@@ -1426,6 +1650,7 @@ She nodded. “But the option is up tomorrow night at six. Goldman and Joe Mclve
 “What do you mean?” Malone asked.
 
 “The letters St. John has. I don’t know how he got them from Paul March, but anyway, he has them and that’s enough. He said if I tried to communicate with Goldman or Joe, or didn’t do just as he ordered, he’d send half the letters to Tootz and the other half to Papa Goldman himself."
+
 “I can see Papa Goldman,” Jake said, musing. “If he once had the faintest idea that you’d ever committed anything worse than dropping a lead nickel in a phone box. Not a pretty picture. Nelle, St. John seems to have you very nicely.”
 
 “Give me a little time to think,” Malone said. “What does he want you to do?”
@@ -1485,6 +1710,7 @@ Nelle’s retort was brief, appropriate, and highly colored.
 He bowed. “All depending,” he said, “on whether I can find this guy tomorrow. I think I can. Anyway, by God, I’ll try.”
 
 “And I hope,” Jake said sternly to Nelle, “this will be a lesson.”
+
 "Nice to see you."
 
 "It has been," she promised. "I'll never write another letter, even to a vox-pop column. Now where's that waiter? I'm hungry."
@@ -1503,10 +1729,17 @@ Malone laughed politely. "That's very funny."
 
 Jake's fingers tightened around the neck of the ginger-ale bottle. "I've had enough. The next person, male or female, who says that to me, gets his face shoved down his neck. And when I say that, I'm not being funny!"
 
-### Chapter 12
-## Cloak and Swagger
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Jake began what he was to remember later as one of the most terrible days of a lifetime by meeting Nelle and Helene for breakfast at Ricketts. The two girls were waiting for him when he arrived, exchanging confidences like lifelong friends.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 12}
+\ChapterTitle[l]{Cloak and Swagger}
+\end{ChapterStart}
+\FirstLine{\noindent Jake began what he was to remember later as one of the most terrible days of a lifetime by meeting Nelle and Helene for breakfast at Ricketts. The two girls were waiting for him when he arrived, exchanging confidences like lifelong friends.}
 
 "Anything happen on Erie Street last night?" he asked Helene, sliding into his chair.
 
@@ -1549,6 +1782,7 @@ The black-haired waitress came running.
 Helene busied herself with her compact and pretended not to hear.
 
 "Only last month,
+
 "Jake finished, 'She burned down the railway station in Oshkosh, and it cost us a fortune to hush things up.'
 
 As they waited for the change, they could see the black-haired waitress talking in low tones to the other waitresses, who stared with scandalized and fascinated eyes at Helene.
@@ -1612,6 +1846,7 @@ St. John called the blonde secretary, gave orders regarding a dozen or more smal
 They rode to the studio in silence.
 
 Nelle was there, so was Helene. St. John looked at the latter disapprovingly."
+
 This is supposed to be a secret audition.”
 
 “Miss Brand is my confidential secretary,” Jake told him. He went on into the control room. Schultz was there, gloomily gnawing an apple.
@@ -1652,10 +1887,17 @@ Chicago Lawyer Slightly Hurt In Crash Near Madison
 
 John J. Malone, prominent Chicago attorney, was cut and bruised in the crash of a private plane near Madison, Wisconsin, early today. The pilot is reported in a serious condition. The accident occurred when....
 
-### Chapter 13
-## Loose Lips Sink Nelle
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-“Pull yourself together,” Jake said. “He still may be able to make it.” He hoped his voice carried the conviction that he didn’t feel.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 13}
+\ChapterTitle[l]{Loose Lips Sink Nelle}
+\end{ChapterStart}
+\FirstLine{\noindent “Pull yourself together,” Jake said. “He still may be able to make it.” He hoped his voice carried the conviction that he didn’t feel.}
 
 “But if he doesn’t,” Nelle said desperately, “if he doesn’t—" She paused, frowned. “I could do this. I could do such a lousy job of the audition that Givvus wouldn’t buy the show for marbles.”
 
@@ -1682,6 +1924,7 @@ Jake started to follow him to the studio. A page boy touched his arm.
 Essie St. John was waiting by the elevator, her homely face pale with anxiety.
 
 “Jake, where can we talk? I mustn’t
+
 He opened a door leading out of the reception room, led her into the seclusion of the stairway.
 
 “Jake, I had to warn you.”
@@ -1741,6 +1984,7 @@ It was, Jake thought, the only happy moment of the day.
 St. John retired to a chair in the corner. No one dared look at him.
 
 “All set,” Schultz called into the comm.
+
 Communicating microphone. He looked at his signals and saw that the client’s room was ready.
 
 They were not all set. The sound man was missing again.
@@ -1809,14 +2053,22 @@ Jake walked over to him. Mr. Givvus was slumped a little in his chair. Just behi
 
 The audition had been wasted on the late Mr. Givvus.
 
-### Chapter 14
-## Encore for the Dead
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-With a quick, instinctive motion, Jake kicked the door shut, and laid one hand over Nelle’s mouth before she could scream.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 14}
+\ChapterTitle[l]{Encore for the Dead}
+\end{ChapterStart}
+\FirstLine{\noindent With a quick, instinctive motion, Jake kicked the door shut, and laid one hand over Nelle’s mouth before she could scream.}
 
 “But he’s dead!” St. John said in a curiously flat voice.
 
 “That’s not original,” Jake said grimly, “but God knows it’s true.” He took his hand away from Nelle’s mouth.
+
 Ruth stood and pushed her into a chair.
 
 “But,” St. John said, “he was alive when I left him here before the audition.”
@@ -1890,6 +2142,7 @@ Schultz cleared his throat. “It can be done. There’s a back elevator.”
 “He told me he walked over from his hotel.”
 
 “That helps. You run along and start spreading the information that your client didn’t show up for the audition. I'll meet you here later in the reception room. Helene, get your car around to the rear entrance near the back elevator—Schultz will tell you just where. And
+
 Nelle, you and Oscar get out in the reception room and start the biggest, noisiest row you can manage. You ought to be able to draw a good crowd. The rest, Schultz, is up to you.”
 
 They left to carry out instructions. A few minutes later Schultz returned, carrying one of the smocks worn by the studio musicians and a bottle of whisky. He poured some of the whisky on the smock, put the smock on Mr. Givvus, pulled a beret over his head so that it concealed the bullet hole. Mr. Givvus’ straw hat bothered him a moment; finally, he stuck it on his own head.
@@ -1949,6 +2202,7 @@ Jake smiled at them pleasantly. “Don’t ask me,” he said amiably. “You’
 Jake had expected that. “You wouldn’t like to have me tell the police about your client being shot when and where he was, and about your being the last person to see him alive, would you?”
 
 St. John’s lips curved in an unpleasant smile. “And you wouldn’t like to have me tell the police how you disposed of the body, would you? I believe it’s a criminal offense. And if you did go to the police, I would have to...
+
 Turn the letters over to them as part of the evidence, and of course the newspapers—” he let it go at that.
 
 “Well,” Jake said after a pause, “I thought there was no harm in trying.”
@@ -1971,10 +2225,17 @@ Jake made one sudden and cataclysmic motion. A loud sound shattered the pleasant
 
 “Oh boy!” said Nelle Brown exultantly. “Oh boy! Right on the button!”
 
-### Chapter 15
-## The Mic is Hot
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-A page boy came running and helped St. John to his feet.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 15}
+\ChapterTitle[l]{The Mic is Hot}
+\end{ChapterStart}
+\FirstLine{\noindent A page boy came running and helped St. John to his feet.}
 
 “I'm sorry,” Jake said. “It was one of those irresistible impulses.”
 
@@ -2039,6 +2300,7 @@ She looked around a little timorously. “It doesn’t look the same. Everything
 Jake steered her to the davenport, sat down beside her, and pulled her head down on his shoulder. “Go ahead. Cry all you want. You might as well get it over with.”
 
 “I just thought,” she sobbed, “about all the times...
+
 I used to come here and how everything looked then, and then I didn’t come here anymore but I knew everything was just the same, and he was here, and now he’s dead, and everything of his is gone, and it’s all so different.”
 
 “Sure,” Jake said, patting her. “Go ahead and cry.”
@@ -2100,6 +2362,7 @@ Jake sighed. “That leaves us you and St. John,” he said. “And God knows, S
 “All right,” Jake said, “let it go at that. There’s one very pertinent fact that you yourself innocently pointed out when we found the body. Remember? You said—‘But nobody would shoot a prospective sponsor. He must have been mistaken for someone else.”
 
 “He was sitting with his back to the door,” Nelle said slowly, “with just the back of his head showing. And the lights weren’t any t
+
 The room was dim, as intended for the client, but it was too bright. They were supposed to focus on auditions, not timetables.
 
 "Who could he have been mistaken for?"
@@ -2138,10 +2401,17 @@ The door flung open, flooding the hall with people. A brunette grabbed Jake, ask
 
 "It came from in there," Jake pointed, dashing towards the source. "It was a gunshot!"
 
-### Chapter 16
-## Whispers in the Booth
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Jake's mind raced as he sprinted down the hall. Who fired the gun? Was it Nelle? Could she be the murderer? Or had someone intruded while he was on the phone?
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 16}
+\ChapterTitle[l]{Whispers in the Booth}
+\end{ChapterStart}
+\FirstLine{\noindent Jake's mind raced as he sprinted down the hall. Who fired the gun? Was it Nelle? Could she be the murderer? Or had someone intruded while he was on the phone?}
 
 He burst into the room, followed by the disheveled brunette and others. Nelle sat smoking on the davenport, while Helene held a peculiar contraption.
 
@@ -2160,6 +2430,7 @@ Only then did Jake notice the onlookers in the doorway.
 "You certainly gave us a fright," a young man with a mustache remarked, wiping his brow. "You truly did!"
 
 Helene appeared surprised.
+
 Ed. “You mean you could hear this thing all the way down the hall to your room?”
 
 “Hear it!” the young man said, “I thought the little men were landing from Mars!” He mopped his brow again. “I’m glad no one was shot. Come on down and have some beer.”
@@ -2213,6 +2484,7 @@ He sighed. “As a matter of manners, I’ll believe you. But you could have don
 “Stop picking on her,” Helene said indignantly.
 
 “Don’t mind me,” Jake said mildly, “I’m just tired.”
+
 Just trying to solve a couple of murders.”
 
 Helene frowned. “Find someone who had a motive for murdering both Paul March and either St. John or Mr. Givvus.”
@@ -2241,10 +2513,17 @@ She drove in silence for half a block.
 
 “All right,” she said, “all right. But we only stop for one drink. One!”
 
-### Chapter 17
-## Nell's Confession
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-JAKE WOKE FROM A DREAM THAT WAS HALF HANGOVER AND HALF NIGHTMARE, WONDERED IF HIS EYES FELT MORE UNCOMFORTABLE OPEN OR SHUT. HE THOUGHT VERY SERIOUSLY FOR A LITTLE WHILE, AND THEN RESOLVED THAT THIS WOULD BE THE BEGINNING OF A NEW AND FAR, FAR BETTER LIFE.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 17}
+\ChapterTitle[l]{Nell's Confession}
+\end{ChapterStart}
+\FirstLine{\noindent JAKE WOKE FROM A DREAM THAT WAS HALF HANGOVER AND HALF NIGHTMARE, WONDERED IF HIS EYES FELT MORE UNCOMFORTABLE OPEN OR SHUT. HE THOUGHT VERY SERIOUSLY FOR A LITTLE WHILE, AND THEN RESOLVED THAT THIS WOULD BE THE BEGINNING OF A NEW AND FAR, FAR BETTER LIFE.}
 
 “There was a dim—but very dim—recollection of taking Helene home in a taxi. He wondered where they had left her car, and if they would ever find it again.
 
@@ -2273,6 +2552,7 @@ He was still trying to fix his mind on it when the telephone rang. It was Helene
 He shaved, took a shower, and dressed, spending an extra thirty seconds on the selection of his tie.
 
 Just as he was ready to leave there was a sudden knock at the door.
+
 The door. He opened it and there stood Malone, a rakish bandage over one eye.
 
 “The next time I travel, go on a tricycle,” the little lawyer said sourly. He came in and kicked the door shut. “Imagine how I felt when I saw that tree coming at us. Imagine how I felt when I couldn’t find any way of getting up to Brule. And imagine how I felt when you told me it had all been a waste of time. Now tell me why I didn’t need to find Goldman.”
@@ -2316,6 +2596,7 @@ Malone scowled, spilling a little coffee on his cuff.
 “No one did. He wasn’t the sort of guy you’d notice. Just a little, ordinary-looking guy.”
 
 “Those are the sort of guys that always get noticed,” Malone observed. He sat thinking for a
+
 Minute. “Anyway, if he was a little ordinary-looking guy, it’s damned funny somebody mistook him for St. John.”
 
 “The light was poor in the client’s room,” Jake said.
@@ -2375,6 +2656,7 @@ Malone said, “A flier will tell you that a good landing is any landing you can
 “Von Flanagan,” Malone told her, “it’s his name. It was Flanagan and everybody kidded him so much about Flanagan being a good name for a cop that he went to court and had the Von tacked on.”
 
 “He should have made it Von MacFlanagan."
+
 "Hey," she commented. "Why do you want to see him?"
 
 "I want to remark that I once knew a guy named Givvus and I wondered if this could be the one, which it will turn out it isn't, but meantime I'll find out just how much the police do know about the murder."
@@ -2401,10 +2683,17 @@ They stared at her hopefully.
 
 "I left it by the no parking sign in front of the Chicago Avenue Police Station," she said happily. "I remember thinking at the time, it would be such a good safe place for it!"
 
-### Chapter 18
-## A Fractured Alibi
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Malone knew the desk sergeant at the Chicago Avenue Police Station and managed to convince him of a good reason why the big imported car had been left there overnight between two no parking signs. Then he delivered the car to Helene, suggested to her that his life would be simplified if she took up bicycling, and went in search of Daniel Von Flanagan.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 18}
+\ChapterTitle[l]{A Fractured Alibi}
+\end{ChapterStart}
+\FirstLine{\noindent Malone knew the desk sergeant at the Chicago Avenue Police Station and managed to convince him of a good reason why the big imported car had been left there overnight between two no parking signs. Then he delivered the car to Helene, suggested to her that his life would be simplified if she took up bicycling, and went in search of Daniel Von Flanagan.}
 
 The big police officer was red-faced and wilted by the heat, and very tired. He welcomed Malone's suggestion of a cool drink in some quiet place as a marooned mariner might have welcomed the Coast Guard.
 
@@ -2427,6 +2716,7 @@ Von Flanagan was a weary, exasperated, and unhappy man. He was, as he explained 
 "Why?" Malone asked disinterestedly.
 
 "Because there ain't no reason for nob."
+
 "Nobody shooting the guy," Von Flanagan exploded. "Nobody wants to shoot him. He comes from Philly, and he's rich, and he makes soap. That's a hell of a lot to find out about a guy, now isn't it? I ask you. Nobody knows him in Chicago. Nobody ever heard of him in Chicago. And God damn it, nobody knows why he came here." He looked moodily into his glass.
 
 "That don't make sense," Malone said.
@@ -2470,6 +2760,7 @@ Malone raised an eyebrow, drew a long breath, and said very slowly, "That's funn
 "Why indeed," Malone murmured.
 
 "Why not leave him where he was? Or if he had to be carted away for some reason, why sit him up on a bench in Lincoln Park, with his hat on his head, and why the hell stick a newspaper in his lap?" Von Flanagan mopped a
+
 Steaming brow. “I tell you, Malone, nobody would do a thing like that who wasn’t just plain ordinary nuts!”
 
 “You,” said Malone soulfully, “are telling me.
@@ -2490,10 +2781,17 @@ Malone remembered past instances of Von Flanagan’s dogged persistence when his
 
 Von Flanagan shook his head. “Sure I could. But I ain’t going to. Not this case.” He set his glass down with a thump. “Now, you see what I mean, Malone? It’s things like this that make it hard for a fella. Next year I quit, so help me. All you have to do is buy a nice little farm somewhere and get two mink, and then just wait. That’s all. We’d better have some more beer.”
 
-### Chapter 19
-## Uninvited and Unhinged
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-With good luck,” Malone said, “I can get him off with twenty years. I hope you’ll wait for him, Helene, he’s a nice fella.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 19}
+\ChapterTitle[l]{Uninvited and Unhinged}
+\end{ChapterStart}
+\FirstLine{\noindent With good luck,” Malone said, “I can get him off with twenty years. I hope you’ll wait for him, Helene, he’s a nice fella.”}
 
 He had finished his description of the conference with Von Flanagan. Even Jake looked a little concerned.
 
@@ -2510,6 +2808,7 @@ He paused, paced up and down the floor leaving little piles of cigar ash on the 
 Another silence, a few more trips back and forth on the floor. In his strolling the little lawyer suddenly noticed the odd-shaped contraption of wood, leather, and rubber lying on the table. He picked it up, idly fiddled with it, half-unconsciously.
 
 Suddenly the quiet was shattered by the sound of...
+
 At the sound of a gunshot, Jake jumped. Helene screamed, and Malone dropped the contraption as though it had bitten him.
 
 “What the hell,” he said dazedly, and again, “what the hell!”
@@ -2563,6 +2862,7 @@ Before anyone had a chance to speak, there were running footsteps in the hall. J
 Malone sighed. “Here are some more trains of thought. First, that the same person committed both murders. That thought has two subdivisions: (a) that someone committed both murders thinking that Mr. Givvus was St. John, and (b) that someone committed both murders thinking that Mr. Givvus was Mr. Givvus. Then there is the thought that these are two different and totally unrelated crimes, with the same two subdivisions relating to the second murder: (a) that the murderer thought he was shooting St. John, and (b) that he thought he was shooting Mr. Givvus.”
 
 “And subdivision (c),” Helene said,
+
 "That it was Krause thinking Mr. Givvus had stolen his sound effect."
 
 No one paid any attention to her.
@@ -2622,6 +2922,7 @@ St. John raised his right eyebrow half an inch. “Wouldn’t it be safer to let
 “None of them knew who the audition was for.”
 
 “Marvelous,” Jake said. “A scene beautifully set for murder.”
+
 Just as if it had been planned.”
 
 “Are you insinuating anything?” St. John asked in a perfectly expressionless voice, raising the other eyebrow.
@@ -2646,10 +2947,17 @@ He nodded to Jake and Helene, and they left together. St. John’s secretary pas
 
 “Never a dull moment with the Nelle Brown Revue,” Jake commented. “But it would simplify everything if somebody would shoot St. John. Maybe if we wait long enough, Essie St. John will. Now let’s me and Helene go to Crown Point and get married. This looks like a nice day for it.”
 
-### Chapter 20
-## Secrets in the Shadows
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-I’m going home and change my dress first,” Helene complained. “If I’m really going to get married, I’ve got to dress up for it.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 20}
+\ChapterTitle[l]{Secrets in the Shadows}
+\end{ChapterStart}
+\FirstLine{\noindent I’m going home and change my dress first,” Helene complained. “If I’m really going to get married, I’ve got to dress up for it.”}
 
 Malone said, “I can get you married at Crown Point any time up to midnight. Helene can change her dress, we’ll have dinner, and I’ll go along and get you married. I’ll be the best man and bridesmaid all at once. I'll even buy the gin.”
 
@@ -2670,6 +2978,7 @@ But not handsome. He didn’t seem to care whether he was good-looking or not. P
 “No,” Baby was saying to Helene, “radio doesn’t seem glamorous to me. It’s a lot of hard work. But I like it.”
 
 Baby would like hard work, Jake thought, and h
+
 He’d do it, too. He wasn’t another Paul March, with ability, but getting by on the strength of his personal charm. By some miracle, Nelle had picked wisely this time.
 
 “Did you ever know a man in radio named Paul March?” Helene asked very innocently. “This used to be his apartment.”
@@ -2725,6 +3034,7 @@ Jake shook his head. “Not that I know. Why?”
 Jake nodded, and said, “Sure.”
 
 “Tootz isn’t going to live forever. He’s getting on. When it happens it’s going to be a terrible blow to Nelle. I want to be there to catch her when it comes. Ok, I don’t mean marry her. I’m just another guy to Nelle. But when something li
+
 When that happens, if somebody like me just happens to be there, if you know what I mean.”
 
 “Sure,” Jake said again, wishing he had taken either one more drink or one less.
@@ -2763,10 +3073,18 @@ Jake rose to his feet. “I have not forgotten it. This time we go to Grown Poin
 
 It was then that the telephone call came from Essie St. John.
 
-### Chapter 21
-## A Pursuit in the Dark
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-OH, THANK GOD, JAKE,” ESSIE ST. JOHN SAID OVER THE wire. “I’ve been trying everywhere to reach you, and finally I thought of calling Nelle’s, and
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 21}
+\ChapterTitle[l]{A Pursuit in the Dark}
+\end{ChapterStart}
+\FirstLine{\noindent OH, THANK GOD, JAKE,” ESSIE ST. JOHN SAID OVER THE wire. “I’ve been trying everywhere to reach you, and finally I thought of calling Nelle’s, and}
+
 The butler suggested that I call this number, and here you are. I’m so glad I found you.”
 
 “I'm glad you’re glad,” Jake said. “Is that what you wanted to know?”
@@ -2826,6 +3144,7 @@ He wondered if she knew Paul March was dead.
 “Oh God,” Jake moaned, “if only you’d had the inspiration to steal them and burn them up!”
 
 “I didn’t dare, Jake. You don’t know what he might have done when he found out about it. I didn’t dare. But I’m going to get them. I haven’t finished telling you about it yet.” She finished the drink and set the glass down on the floor. “Yes, I’m going to get those letters for you, Jake. I won’t let him g
+
 "Get away with this. It isn't fair, that's what. It isn't fair."
 
 "Very nice, even noble," Jake said, "but how are you going to do it?"
@@ -2885,6 +3204,7 @@ She blinked a little. "What do you mean? You mean—Paul and me?"
 "He must have had," Jake said, and very casually, "seen him lately?"
 
 She shook her head. "Not for weeks. He went to lunch with me quite a long time ago and borrowed some money from me. I guess he was pretty much."
+
 Ard up. And I haven’t seen him since.”
 
 Jake nodded slowly and thoughtfully. “It’s just as well. I can’t give Paul very much. He’s almost in the class with your old man.”
@@ -2913,10 +3233,17 @@ Essie was going to get those letters back, good old Essie. Malone was nuts. Nobo
 
 It was just a great big beautiful world.
 
-### Chapter 22
-## A Tight Spot
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Jake found Helene listening to a new installment of Molly Coppins’ life story. The evening was very warm, and she had changed into a dress that reminded him a little of a cloud, very faintly gray, almost misty. She greeted him enthusiastically.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 22}
+\ChapterTitle[l]{A Tight Spot}
+\end{ChapterStart}
+\FirstLine{\noindent Jake found Helene listening to a new installment of Molly Coppins’ life story. The evening was very warm, and she had changed into a dress that reminded him a little of a cloud, very faintly gray, almost misty. She greeted him enthusiastically.}
 
 “Five more minutes and I’d have married Malone. What have you been drinking?”
 
@@ -2937,6 +3264,7 @@ On the way, he told her what Essie had done and was going to do.
 She sighed. “Wouldn’t it be nice if we could just pin it on him.”
 
 “Wouldn’t it be nice if we could just forget the whole thing,” Jake said. He grinned wryly. “Funny thing. Nobody likes St. John except possibly St. John. Nothing would suit us better than to pin Paul Ma
+
 Arch’s murder on him. We feel sure he’s guilty of it. And damn it, we can’t do a thing.”
 
 “We can get married,” she said, “though that begins to seem just about as impossible. Jake, if St. John murdered Paul March, who murdered Mr. Givvus? Surely not St. John.”
@@ -3014,6 +3342,7 @@ He rattled the door, finally picked up a stone from the gutter, broke the window
 “No. I’m coming with you.”
 
 There was no time to stop and argue about it. He plunged into the darkness of the deserted building, Helene close behind him. Suddenly a rat scuttled across their path, and she screamed.
+
 “Afraid of mice!” he flung back at her.
 
 “That was no mouse,” she gasped. “It was a monster. Three feet long and eyes like balls of fire—Jake!”
@@ -3028,10 +3357,17 @@ The faint reddish light, mingling with a bluish glare through the dusty windows,
 
 “We’ve found Paul March!”
 
-### Chapter 23
-## Devils and Dames
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-There was the body of Paul March on the floor, and there was the fire crackling and spreading. The thing to do, Jake agreed later, was to go away, drive away as fast as Helene’s car would go, let the fire destroy the evidence of some unknown person’s crime. That was what he thought later. But at the moment, the thing on the warehouse floor was the body of a man, and the fire was coming closer. Hardly conscious of what he was doing, he lifted it from the floor. It was cold and terribly hard, like ice. For the first time, he was aware of the almost obscene coldness of the refrigerating chamber.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 23}
+\ChapterTitle[l]{Devils and Dames}
+\end{ChapterStart}
+\FirstLine{\noindent There was the body of Paul March on the floor, and there was the fire crackling and spreading. The thing to do, Jake agreed later, was to go away, drive away as fast as Helene’s car would go, let the fire destroy the evidence of some unknown person’s crime. That was what he thought later. But at the moment, the thing on the warehouse floor was the body of a man, and the fire was coming closer. Hardly conscious of what he was doing, he lifted it from the floor. It was cold and terribly hard, like ice. For the first time, he was aware of the almost obscene coldness of the refrigerating chamber.}
 
 “Jake, what are you going to do?”
 
@@ -3060,6 +3396,7 @@ In a more sober moment, he might have found a few flaws in her reasoning, but he
 “Oh boy!” said a young man next to Jake. “She’s a dandy!”
 
 To the indescribable delight of the crowd, the water tower came into position and shot foaming.
+
 Ribbons into the upper windows. There was a moment of almost unbearable excitement when a fireman, overcome by smoke, was carried down a ladder from the roof. A woman in the crowd began screaming and was led away. Picture trucks arrived from the newspapers, and bursts of white light from the photographers' flashlights illuminated the burning building. A police squad car whined dismally around the corners.
 
 Suddenly, the roof and part of a wall caved in with a resounding crash, sending clouds of dust and small debris to mingle with the smoke. Flames began to appear at every window, and policemen started moving the crowd farther away from the scene.
@@ -3111,6 +3448,7 @@ As they drove across, they could hear the police siren wailing above them.
 "Keep driving on streets the squad cars haven't even heard about," she told him.
 
 She turned into a dark, deserted passage just beyond the bridge.
+
 Edge, drove west a few blocks, turned north again. There was not another car in sight; the street was lined with unlighted factory buildings.
 
 “Jake, I've got to have a drink.”
@@ -3165,10 +3503,17 @@ The big car leaped forward in a sudden burst of speed.
 
 “We’re going to take the body up to St. John’s house and leave it with him,” she said happily. “It’ll just be our own little present to him, yours and mine!”
 
-### Chapter 24
-## Breaking Point
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-But you can’t do that,” Jake said in a dazed voice. “It’s wrong. It’s—it’s arson.” “You’ve got the wrong crime,” she told him. “That’s what they’re chasing me for.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 24}
+\ChapterTitle[l]{Breaking Point}
+\end{ChapterStart}
+\FirstLine{\noindent But you can’t do that,” Jake said in a dazed voice. “It’s wrong. It’s—it’s arson.” “You’ve got the wrong crime,” she told him. “That’s what they’re chasing me for.”}
 
 “Well damn it,” he said, “anyway it’s illegal.”
 
@@ -3193,6 +3538,7 @@ She said, “You’d better take a drink.”
 He told her, adding, “But suppose someone catches us in the act of presenting St. John with a frozen stiff. A stiff, frozen stiff,” he muttered after a little pause.
 
 “You didn’t think of that when you presented Lincoln Park with the late Mr. Givvus.”
+
 She said irritably.
 
 That was when Jake gave up the argument.
@@ -3252,6 +3598,7 @@ She drove to the address Jake had given her, parked the car in an alley while he
 “How did you explain things to him?”
 
 “I told him you…”
+
 "I'd just assisted in the hijacking of a truck and the cops had gotten a description of the car.”
 
 “Thoughtful of you.”
@@ -3319,6 +3666,7 @@ Helene sank into a chair.
 Jake told the story of his unfortunate remark in Rickett’s, explained that they had innocently gone to watch what looked like a good fire, and gave a few details of the subsequent chase. The plump brunette seemed to find it amusing.
 
 “Thank God it’s n
+
 "Nothing worse!" Molly said with feeling. "The cops have been all over this place. Someone told them she lived here. They looked at everybody in the building, and made a note of all the apartments where the occupant was out, and said they’d be back later. In fact," she said very calmly, looking out the window, "they are back."
 
 Helene turned pale. "Oh God. All that chasing around for nothing!"
@@ -3359,14 +3707,22 @@ Jake looked up at the windows, saw just a faint gray light coming through. He re
 
 "One of the nights," said Helene, and was asleep before Jake could answer.
 
-### Chapter 25
-## The Past is a Killer
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Jake inquired at the hotel desk for John J. Malone, was told that the little lawyer had come in a few hours before and gone up to his room. He looked at his watch, riding up in the elevator, and reflected that this was an ungodly hour to wake anyone. Still, what was the use of having a lawyer if you couldn’t wake him up before dawn to get you out of a jam. Especially a jam like this one.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 25}
+\ChapterTitle[l]{The Past is a Killer}
+\end{ChapterStart}
+\FirstLine{\noindent Jake inquired at the hotel desk for John J. Malone, was told that the little lawyer had come in a few hours before and gone up to his room. He looked at his watch, riding up in the elevator, and reflected that this was an ungodly hour to wake anyone. Still, what was the use of having a lawyer if you couldn’t wake him up before dawn to get you out of a jam. Especially a jam like this one.}
 
 The door to Malone’s room was ajar. The lawyer was fast asleep in a chair by the window, a little avalanche of cigar ashes on his vest. Jake shook him into wakefulness.
 
 "What the hell?"
+
 "Malone said, blinking, 'What the hell? Where did you go? I waited here an hour or so, and then I drove to Erie Street and couldn’t find you, so I stopped to watch a fire for a while, and came back here.'
 
 'That was our fire,' Jake said proudly, 'too bad you didn’t stick around longer.'
@@ -3428,6 +3784,7 @@ Malone unearthed a bottle of gin from under a pile of shirts and poured some int
 'Wouldn’t it,' Malone said coldly.
 
 'Well, you can’t expect me to think of everything. I'd.'
+
 I don’t like St. John anyway. If he didn’t do it, let him prove it.”
 
 “Shut up and go to sleep.”
@@ -3487,6 +3844,7 @@ Blond Pyromaniac Sought by Police
 Jake remembered something very suddenly. “Malone! The letters. Nelle’s letters. Did Essie get them before the murder?”
 
 “Before the murder, or after it, or at the time of it,” Malone said. “At least the police didn’t find them in his pocket—I was able to learn that much, anyway. So I stopped at your hotel to find out if she’d left them for you, and she hadn’t. But I
+
 I learned that the announcer, Bob Bruce, has been trying to reach you since four o’clock this morning. You’d better call him right away.”
 
 Jake stared at him. “Bob Bruce? Why does he want to get in touch with me?”
@@ -3501,10 +3859,17 @@ Jake picked up the telephone and called Bob Bruce.
 
 “Lord, yes. He’s just the man we need. But hurry, will you? This is an awful mess!”
 
-### Chapter 26
-## All Bets Are Off
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Bob Bruce’s apartment was on the top floor of a building only a few blocks north of Erie Street, overlooking the lake. The handsome young announcer, his face pale with anxiety and loss of sleep, ushered them into a large living room that was a confused horror of modernistic furniture and paintings.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 26}
+\ChapterTitle[l]{All Bets Are Off}
+\end{ChapterStart}
+\FirstLine{\noindent Bob Bruce’s apartment was on the top floor of a building only a few blocks north of Erie Street, overlooking the lake. The handsome young announcer, his face pale with anxiety and loss of sleep, ushered them into a large living room that was a confused horror of modernistic furniture and paintings.}
 
 Essie St. John sat near the window on a contortion of chromium-plated gas pipe and pink leather.
 
@@ -3565,6 +3930,7 @@ He stared at her in amazement.
 “I went back and—felt in his pocket—in all his pockets, Jake.”
 
 “Good God, Essie!” He l
+
 Jake looked at her admiringly.
 
 “Jake, they weren’t there. They weren’t anywhere. Someone took them.”
@@ -3616,6 +3982,7 @@ No one paid any attention to him. Least of all, Essie St. John. She stared at th
 “But Bob,” she said again. “But I’m so—homely!” Tears trembled in her eyes again.
 
 “Don’t be such a sap,” he said, and this time his voice was really cross. “You’re the most beautiful woman I ever saw, and you know it.”
+
 Jake could tell that he meant it from the bottom of his heart.
 
 “Very pretty,” Malone said, “and for the love of God, get out of here and on your way.” His voice was unexpectedly gentle.
@@ -3648,10 +4015,17 @@ Malone interrupted him. “By a strange coincidence, at least I hope it’s a co
 
 “Who are you to tell what the police can or can’t do?” Malone said. “Hope for the best and keep your fingers crossed. And now, for the love of God, let’s have breakfast.”
 
-### Chapter 27
-## Backstabbers Anonymous
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-They walked to Erie Street, found Helene awake, and while Malone went to the corner delicatessen for breakfast materials, Jake told her all that had been happening. By the time he had finished, it was one in the afternoon, and Malone had breakfast on the table.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 27}
+\ChapterTitle[l]{Backstabbers Anonymous}
+\end{ChapterStart}
+\FirstLine{\noindent They walked to Erie Street, found Helene awake, and while Malone went to the corner delicatessen for breakfast materials, Jake told her all that had been happening. By the time he had finished, it was one in the afternoon, and Malone had breakfast on the table.}
 
 “There’s a certain austere simplicity about this murderer that I’m beginning to enjoy,” the lawyer said, buttering a piece of toast.
 
@@ -3676,6 +4050,7 @@ They walked to Erie Street, found Helene awake, and while Malone went to the cor
 “I never believed in long engagements,” Jake said. “Malone, what happened out there last night?”
 
 “I don’t know,” Malone said, “but three murders, if committed by the same…”
+
 The person, ought to be easier to solve than one." He sighed deeply. "The thing that bothers me about these damned murders is that they all benefit Nelle Brown. This glamour-pants Paul March was blackmailing her. Somebody shot him. The guy Givvus was trying to get his hands on her show. Somebody shot him. John St. John had a copy of the Paul March letters and conceivably knew about the Paul March murder. Somebody shot him. The inference," he said, stirring his coffee violently, "is obvious. Too obvious, in fact, for me to credit."
 
 "You mean it looks so much as if she had shot all three of them that you don't think she did?" Helene inquired.
@@ -3713,6 +4088,7 @@ Jake was paying no attention. "You can take the name of almost anyone on the sho
 Commit murder for her? Hell's bells, any one of that crew would be murdered for her."
 
 "A beautiful speech," Malone said.
+
 Id. “It does you credit, and what’s more, I believe it. But it doesn’t tell me who murdered who.” He paused to mop his face with a soiled and crumpled handkerchief. “What’s more, I’d like to know how much goofier Tootz is than we think he is.”
 
 They stared at him for a full minute.
@@ -3758,6 +4134,7 @@ Jake nodded.
 “But what about me?” Helene wailed. “Do I have to stay hidden here forever?”
 
 “I feel a lot safer when you can’t roam around.”
+
 "Und and stir up more trouble,” Malone said severely. “But I’ll do what I can, as soon as I can.”
 
 “And meantime, you just stay right where you are,” Jake told her.
@@ -3808,12 +4185,20 @@ Malone considered the end of his cigar very thoughtfully and said, “What do yo
 
 “Somebody moved those two bodies,” Von Flanagan said, an indignant light coming into his eyes, as though he considered it a grave personal affront. “Somebody did, and me, I ain’t gonna stand for it. I don’t know who done it, but I’m sure as shooting going to find out. And boy,” he said gleefully, rubbing his hands together, “boy, when I do get my hands on whoever it was—”
 
-### Chapter 28
-## Love Hurts
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-“Well, we didn’t learn much from Von Flanagan,” Malone said on the way to Nelle’s apartment. “Just that Mr. Givvus sent Paul March five hundred bucks, and that if Von Flanagan ever lays hands on you, God help you.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 28}
+\ChapterTitle[l]{Love Hurts}
+\end{ChapterStart}
+\FirstLine{\noindent “Well, we didn’t learn much from Von Flanagan,” Malone said on the way to Nelle’s apartment. “Just that Mr. Givvus sent Paul March five hundred bucks, and that if Von Flanagan ever lays hands on you, God help you.”}
 
 “Damn it,” Jake said indignantly, “I wasn’t the first person to move Paul March’s morta."
+
 Only one question remains. Somebody else started this juggling process. Malone, why did Givvus send the money to March?”
 
 “You’re as good a guess artist as I am,” Malone said noncommittally. “Offhand, I can think of several dozen reasons, and none of them seem in the least reasonable.”
@@ -3885,6 +4270,7 @@ Jake told them what little they had learned from Von Flanagan.
 They heard a door close somewhere in the apartment.
 
 “Here comes Tootz.”
+
 Nelle whispered.
 
 The handsome, white-haired man walked in and greeted them. He looked a little uncertainly at Helene.
@@ -3950,6 +4336,7 @@ Henry Gibson Gifford stared at him, a puzzled look in his fine gray eyes. “But
 Conversation went back to the chess problem. At last Malone signaled to Jake that he was ready to leave, and they rose to go, taking Helene with them. At the door, Jake managed one last warning to Nelle, to sit tight and say nothing.
 
 “I wish I had my car,” Helene grumbled as they hailed.
+
 In a taxi, Malone asked, "Are you going to get me out of this mess, or aren't you?"
 
 He checked his watch. "I'll do it now. Andy will be at the police station. In fact, I'll even take you with me, wig and all."
@@ -3997,6 +4384,7 @@ Jake walked to the window, watched two taxicabs and a truck roll down the street
 "I couldn't say anything to her, could I? I couldn't do anything, could I? I just had to keep still. And then the day of the audition—" He paused.
 
 "Go on," Jake said.
+
 Aid.
 
 “I knew the secret audition was going on. And I was just coming out of Studio B and I saw Givvus going into the client’s room with St. John. And I just sort of figured it out myself—that St. John was making Nelle give the audition. I knew she wouldn’t want to do such an audition. I wasn’t sure how St. John was making her do it, but I knew he must be. And then I read in the paper that Givvus had been killed.”
@@ -4035,16 +4423,24 @@ He walked into the lobby of his hotel. A tall, gangling young man rose from a ch
 
 “Thank God you got here,” Joe McIvers said. “I’ve been going nuts!”
 
-### Chapter 29
-## Threading the Needle
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-YOU’RE DAMN RIGHT. I’M NOT GLAD TO SEE YOU,” Jake said crossly, ushering McIvers into his room and kicking the door shut. “Last Sunday I started out to get married. This is Thursday night and, between one cursed murder and another, I haven’t got around to it yet.”
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 29}
+\ChapterTitle[l]{Threading the Needle}
+\end{ChapterStart}
+\FirstLine{\noindent YOU’RE DAMN RIGHT. I’M NOT GLAD TO SEE YOU,” Jake said crossly, ushering McIvers into his room and kicking the door shut. “Last Sunday I started out to get married. This is Thursday night and, between one cursed murder and another, I haven’t got around to it yet.”}
 
 He lighted a cigarette and stared at McIvers. “How about a drink?”
 
 “Thanks,” McIvers said. “I guess I could use one.”
 
 “You look it,” Jake grunted. He dug the remains of a bottle of gin out of a dresser drawer and divided it with mathematical precision into two glasses. “I’m meeting my girl and my lawyer in just twenty-one minutes and possibly by the grace of God we
+
 "I'll be able to get married tonight."
 
 "Does it take a lawyer to get you married?" McIvers asked a little stupidly.
@@ -4100,6 +4496,7 @@ Before Jake had time to wrestle with that, the gin arrived. "So it was you who s
 "Maybe she didn't," Jake said. "But go on. You found him dead, and you did what?"
 
 "I supposed, of course, she'd shot him. And I had no idea how many people might know she'd gone to his apartment between shows. Or how many people might know about the blackmail note. Or anything. And my God, Jake, imagine what would happen if Ne."
+
 Lle was arrested for murder.”
 
 Jake said, “I’ve been imagining it for several days. So you moved the body, huh?”
@@ -4162,11 +4559,17 @@ Jake tied his tie with a savage jerk, muttered that he hoped he might be married
 
 “If all that happens,” Jake said, reaching for his hat, “then we’ll all go to Australia and raise mink.”
 
-### Chapter
-### Chapter 30
-## Checkmate
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Malone and Helene were waiting for him. She was still wearing the black wig, which was now slightly askew.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 30}
+\ChapterTitle[l]{Checkmate}
+\end{ChapterStart}
+\FirstLine{\noindent Malone and Helene were waiting for him. She was still wearing the black wig, which was now slightly askew.}
 
 "Your wig is a little woppijawed," he told her, adding, "So Malone couldn't get it fixed up for you."
 
@@ -4225,6 +4628,7 @@ Malone scowled at the notes he had made on the envelope, finally crumpled it up,
 "I can tell you that one," Jake said. "The first thing Joe did after the broadcast was to go phone Goldman, the sponsor. Knowing Goldman, I'd say that probably took some time. And Joe's anxiety over what Goldman had thought of the show would keep his mind pretty well occupied for a spell. That happens every week. After he'd phoned Goldman and settled back to normal again, he began to worry about Nelle Brown and the blackmail note and eventually got over here."
 
 Malone nodded. "Give us sent five hundred bucks."
+
 "Checks to Paul March," he said thoughtfully. "Paul March was murdered by persons unknown. McIvers played boy scout and moved the remains. Givvus came here for an audition and somebody shot him. Finally, St. John was killed—with the same gun that killed Paul March, but not the gun that killed Givvus."
 
 Jake picked it up from there. "If St. John and Paul March were shot with the same gun, I’d hazard a guess that St. John didn’t kill Paul March. There was more than five hundred bucks in Paul March’s pants. So possibly St. John bought the Nelle Brown letters from Paul March."
@@ -4274,6 +4678,7 @@ Malone bounded up, shut the door, and led her to a chair.
 "They won’t," Nelle said. "I thought of that. He was restless and not feeling very well anyway, so before I left, Bigges put him to bed and gave him a sedative that’ll keep him asleep for hours. If the police go back there, they won’t be able to wake him up."
 
 "I want to see that contract signed tomorrow night," Jake said very thoughtfully. "I have a hunch that once it’s signed, we’ll be safer. If the story does get to Goldman after that, he probably won’t do a thing. Not."
+
 Only will Nelle be a valuable property but he’ll feel it necessary to protect the show’s reputation. So the thing to do is to keep the police from catching up with Nelle until after the contract is signed.”
 
 “Very nice,” Malone said, “but how? They’re probably out looking for her right now.”
@@ -4321,6 +4726,7 @@ A few minutes later Helene returned, triumphantly leading the transformed Nelle.
 Nelle sat down beside him and began getting acquainted. Helene turned on her radio and then turned it down so low that no one paid any attention to it. Jake and Malone took turns going to the corner for beer. It was nearly eleven o’clock, Helene was discussing with Malone the merits of using gin as a chaser for beer as against using beer as a chaser for gin, when there was a knock on the door. Jake opened it, and ushered in Von Flanagan, accompanied by a weary and morose policeman.
 
 Jake introduced Helene, the black-haired girl (my cousin Miss Wilson, from Lansing, Michigan), and the young man from next door, whose name turned out to be Willie.
+
 Wolff von Flanagan decided he was among friends, sat down, accepted the combination of gin and beer, waved the morose policeman to a chair, and complained bitterly that all people did was conspire to make life hard for him.
 
 “And you, Jake Justus,” he concluded, “do you know where this Nelle Brown woman is?”
@@ -4402,16 +4808,24 @@ That seemed to satisfy him. He nodded, said to the morose policeman, “Come alo
 The door closed behind them, and heavy footsteps sounded on the stairs. Jake looked accusingly at Miss Wilson from Lansing.
 
 “On top of everything else,” he said, “just when I’m about to get married.”
+
 Ed, you go and get my girl thrown into jail.”
 
 Her eyes filled with sudden tears. “Oh Jake, I cause you so much trouble. Jake, I’m so sorry. I know I'm nothing but a nuisance.”
 
 He patted her shoulder. “Never mind, babe. It’s all in the day’s work. What have you got a press agent for, anyway? Only we ought to change my contract to Jake Justus and family!”
 
-### Chapter 31
-## A Night of Reckoning
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Take reminded Nelle that she still had a program to do, induced her to lie down on Helene’s bed, and talked to her until she went to sleep. Then he sat by the window and devoted himself to worrying, until sometime near four in the morning when Malone telephoned.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 31}
+\ChapterTitle[l]{A Night of Reckoning}
+\end{ChapterStart}
+\FirstLine{\noindent Take reminded Nelle that she still had a program to do, induced her to lie down on Helene’s bed, and talked to her until she went to sleep. Then he sat by the window and devoted himself to worrying, until sometime near four in the morning when Malone telephoned.}
 
 The lawyer informed him that he was letting Von Flanagan keep Helene overnight. It would, he explained, keep his mind off Nelle Brown. Once Jake had delivered Nelle safely to rehearsal, he, Malone, would get Helene out without any difficulty.
 
@@ -4450,6 +4864,7 @@ Joe McIvers mopped his forehead.
 “Sure,” Jake said, laughing hollowly. “I could hush it up no matter what happened.”
 
 Mr. Goldman pulled his lower lip. “I don’t say you can’t,” he said.
+
 Firmly, “Now look here. At home I've got a wife and two wonderful daughters. Every week they sit at home and listen to Nelle Brown. Every week they sit at home and tune in to the West Coast to hear the rebroadcast of Nelle Brown. Now how would I feel if they sat at home listening to Nelle Brown, and here she is mixed up in two nasty murders.”
 
 “But she isn’t—" McIvers began.
@@ -4495,6 +4910,7 @@ They found the little lawyer eating breakfast in his office. McIvers told him of
 Jake sighed with relief. “At least she’s out of this mess.”
 
 Malone nodded. “It was a matter of proving to Von Flanagan that she really didn’t know anything about Paul March,” he said, “and she contributed more to that than I did. Then a few hints to Von Flanagan that I might be very displeased, personally, if he didn’t forget the whole thing. Don’t ask me why that had an effect on him, because I won’t tell you. After all, some things are sacred.” He sighed heavily. “Anyway, Vo
+
 In Flanagan was damned glad to see the last of her.
 
 In spite of the worries on his mind, Jake grinned at the thought of the havoc Helene must have created at police headquarters. But the grin faded rapidly.
@@ -4560,6 +4976,7 @@ Oscar said, “I could have written a better one in my sleep.”
 Nelle joined them. “What goes on?” she asked, very casually.
 
 “Listen,” Jake said, “as far as you’re concerned, this is just another rehearsal. I want Nelle to keep hidden out for reasons of my own. Schultz is keeping everybody out of the studio, so she might as well take off the disguise. Now get this. The whole mess is going to be cleared up this afternoon. I don’t know how myself, but it is. Meanwhile, there’s a show t
+
 To do tonight. Forget the whole infernal business and rehearse the show. Now get going.”
 
 He signaled to Helene to follow him into the control room, and settled down to listening.
@@ -4584,10 +5001,17 @@ The little lawyer walked into the studio. He looked very pale and very tired.
 
 Malone nodded and sat down heavily in one of the leather-and-chromium chairs. “I know the whole story. I might as well be honest. I've known the important part for several days now.” He paused a moment. “There’s a way to handle it that will save things, I think. But I hate to do it. Because I know it’s going to hurt.” He paused again and looked up. “I’m sorry, Nelle. I’m sorrier than I can say.”
 
-### Chapter 32
-## Truth Beneath Lies
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-“What are you talking about?” Jake asked. His voice seemed to come from some perfect stranger.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 32}
+\ChapterTitle[l]{Truth Beneath Lies}
+\end{ChapterStart}
+\FirstLine{\noindent “What are you talking about?” Jake asked. His voice seemed to come from some perfect stranger.}
 
 Malone didn’t appear to hear him. He was looking at Nelle. The radio singer seemed to know what he was going to say. She turned very white.
 
@@ -4612,6 +5036,7 @@ He looked toward the door. All their eyes followed his. The door opened slowly, 
 “You heard it!” Nelle said.
 
 “Through the loudspeaker,” he explained, “in the control room. The operator had you still—hooked up is the word, isn’t it?”
+
 "It?"
 
 "But how did you get here?" Nelle asked. "You didn’t come here alone! You couldn’t have—"
@@ -4663,6 +5088,7 @@ He stroked her soft, shining hair very tenderly. "Perhaps I should simply have g
 "You talk of forgiveness," Malone said, "after what you have done for her."
 
 "The imaginary men following me," the old man went on, continuing to stroke her hair, "were for another reason. I wanted to know all that was going on. I knew you were as impulsive as a child. I thought there might be a time when you would need help, protection perhaps. When everyone believed I would."
+
 "I couldn't leave the house without Nelle, I always had a perfect alibi whenever Nelle was away.”
 
 Jake looked up. “That’s what’s been fooling me all along,” he said.
@@ -4704,16 +5130,24 @@ Tootz smiled. “I was very quiet.” He paused and drew a long, sighing breath.
 In the long silence that followed, his fingers began stroking Nelle’s hair again, slowly and rhythmically.
 
 “But damn it all,” Helene began. Her voice broke off suddenly, she scowled and began again, “You said you took the letters from Paul March’s pocket. Then how did St. John get them?”
+
 T hold of them? What happened to St. John?” she paused and scowled again. “And Mr. Givvus. None of this explains who murdered Mr. Givvus.”
 
 Henry Gibson Gifford nodded toward the letters Nelle still held limply in her hands.
 
 “They explain who killed Mr. Givvus,” he said quietly. “Who and why. They explain—everything you asked.”
 
-### Chapter 33
-## End of the Line
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-Nelle picked up the big envelope and shook it. Three packages of letters fell onto the studio floor. Jake picked them up, stared at them. “But they’re all alike,” he exclaimed.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 33}
+\ChapterTitle[l]{End of the Line}
+\end{ChapterStart}
+\FirstLine{\noindent Nelle picked up the big envelope and shook it. Three packages of letters fell onto the studio floor. Jake picked them up, stared at them. “But they’re all alike,” he exclaimed.}
 
 Malone almost grabbed them from his hand.
 
@@ -4744,6 +5178,7 @@ The lawyer scowled. “Naturally everyone assumed that the last person in the wo
 “But St. John—" Joe McIvers began a little stupidly.
 
 The old man interrupted him. “I thought everything was all right—that every danger was out of the way. Then St. John came to see Nelle, and told her he had the letters. She thought I was taking a nap at the time he was there—I wasn’t. I was listening. I knew I had the letters taken from Paul March’s pockets. Finally, I came to a conclusion which proved to be the right one—that there were duplicate letters.
+
 "At first, I wasn’t sure what to do. I knew Nelle didn’t want to give the audition, and I knew the reason why she was doing it. Then when Mr. Givvus of Philadelphia turned up on a bench in Lincoln Park, I didn’t know what had happened. I did know, though, that St. John was a danger to Nelle. The letters he had might be duplicates—but they were just as great a threat to her as those I had taken from Paul March’s pockets. So I knew St. John had to die.”
 
 Once more the slim old fingers paused, half tangled in Nelle’s hair.
@@ -4777,6 +5212,7 @@ Nelle rose, clasped Tootz’ hand. Jake tried not to look at her face.
 “Yes,” she said, “I have a program to do tonight, and a week from tonight and a week from then—” Her voice broke ever so little. “If you could do this for me, Tootz, I guess I can live up to it.”
 
 He kissed her once, said, “I’m ready to go, Malone,” and walked to the studio door without looking back, as though he had been.
+
 On his way to receive a decoration.
 
 Nelle stood very still, looking after him. No one spoke. Jake counted the squares in the studio floor and wished someone would say something, felt that someone, anyone, must speak, must say something, anything. And at last it was his own voice that he heard.
@@ -4789,10 +5225,17 @@ Nelle seemed to wake from a dream, looked at her watch. “But I’d have to go 
 
 Then Helene came to life again. “Oh yes there is,” she said, “oh yes there is. Have you ever seen me drive?”
 
-### Chapter 34
-## Justice, Jake-Style
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
 
-In Von Flanagan's dingy little office, Henry Gibson Gifford, otherwise Tootz, had finished telling his story of how he had eluded the watchful eye of Nelle Brown and shot and killed Paul March, Mr. Givvus, and John St. John, because they were persecuting him. Something told him to do it, he explained. He produced the gun that had shot March and St. John, apologized for having lost the gun that shot Mr. Givvus, and gave the one he had to Von Flanagan with a little sigh of regret. The only thing he didn’t confess to, Malone said later, was Helene’s driving through a red light.
+\begin{ChapterStart}
+\vspace{3\nbs}
+\ChapterSubtitle[l]{Chapter 34}
+\ChapterTitle[l]{Justice, Jake-Style}
+\end{ChapterStart}
+\FirstLine{\noindent In Von Flanagan's dingy little office, Henry Gibson Gifford, otherwise Tootz, had finished telling his story of how he had eluded the watchful eye of Nelle Brown and shot and killed Paul March, Mr. Givvus, and John St. John, because they were persecuting him. Something told him to do it, he explained. He produced the gun that had shot March and St. John, apologized for having lost the gun that shot Mr. Givvus, and gave the one he had to Von Flanagan with a little sigh of regret. The only thing he didn’t confess to, Malone said later, was Helene’s driving through a red light.}
 
 “We should have known it,” Von Flanagan said to Malone. “We knew Nelle Brown had a husband who was a little over the sill, but we never thought he’d go completely off. We should have seen that these murders were committed by a nut—anybody with half an eye should have seen it right away.”
 
@@ -4825,6 +5268,7 @@ Papa Goldman had been extremely sympathetic. The occurrence would make Nelle Bro
 Everything was settled, everything was serene. Nelle was out of trouble. The contract would be re-signed. In—he looked up at the control-room clock—thirty-three minutes and fifteen seconds the show would be over.
 
 That is, if Helene had managed to get Nelle back to the studio in time! For a horrible moment, he thought of everything that might happen—accidents, arrests, traffic.
+
 Fic Jams.
 
 In the studio, Bob Bruce, serene and smiling, was making his regular weekly spiel about the show, the star, and the sponsor, and "Quiet in the studio, please, except when laughter or applause are indicated." Bob Bruce was pale, but his face was happy. He was going to see Essie St. John after the rebroadcast.
@@ -4869,3 +5313,40 @@ He sat straight up in his chair and swore unhappily.
 
 There wasn't time to drive to Crown Point and be married between broadcasts!
 
+The End.
+
+\vspace{2\nbs}
+\ChapterDeco[c1]{\decoglyph{e9665}}
+\clearpage
+\thispagestyle{empty}
+
+
+\scenebreak
+\scenebreak
+{\centering\textsc{the end}\par}
+
+\clearpage
+
+\null
+
+\centering\textsc{www.TalesofMurder.com}\par
+
+\vspace*{10\nbs}
+
+%\centering\InlineImage[0, 3em]{/home/darkstar/dox/working-files/LaTeX/atticus.jpg}
+
+TALES OF MURDER PRESS, LLC
+
+\null
+
+\scshape{675 TOWN CENTER BLVD
+BLDG 1A STE 200 PMB 530
+GARLAND, TEXAS 75040}
+
+\null
+
+\textit{atticus@talesofmurder.com}
+\vfill
+
+
+\end{document}

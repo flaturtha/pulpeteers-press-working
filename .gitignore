@@ -1,0 +1,38 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore virtual environment directories
+venv/
+env/
+.venv/
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore log files
+*.log
+
+# Ignore any LFS (Large File Storage) files
+*.lfs
+
+# Ignore any generated documentation
+docs/_build/
+docs/api/
+
+# Ignore any local configuration files
+local_settings.py

@@ -1,4 +1,5 @@
 ### Chapter 9
+## A Barstool Confession
 
 About an hour later, Nelle phoned her apartment, learned that Henry Gibson Gifford was tucked in bed and sound asleep for the night.
 
