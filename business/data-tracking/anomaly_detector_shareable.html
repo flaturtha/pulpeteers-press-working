@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ads Anomaly Detector — Demo</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1d2330;
+  background: #f6f7f9;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.wrap { max-width: 1100px; margin: 0 auto; padding: 20px 18px 60px; }
+h1 { font-size: 20px; margin: 0 0 2px; }
+.sub { color: #6b7280; font-size: 12.5px; margin-bottom: 16px; }
+.bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 18px;
+}
+.bar label { font-size: 12.5px; color: #374151; display: flex; align-items: center; gap: 8px; }
+.bar input[type=range] { vertical-align: middle; }
+.threshval { font-weight: 600; color: #111827; min-width: 38px; display:inline-block; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 11.5px; color: #4b5563; margin-left: auto; }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.swatch { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+.snap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.snap .card {
+  flex: 1 1 140px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+  padding: 10px 12px;
+}
+.snap .k { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: .03em; }
+.snap .v { font-size: 18px; font-weight: 650; margin-top: 2px; }
+.snap .d { font-size: 11px; color: #6b7280; margin-top: 1px; }
+
+.summary {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+  padding: 14px 16px; margin-bottom: 22px;
+}
+.summary h2 { font-size: 14px; margin: 0 0 8px; }
+.alerts { display: flex; flex-direction: column; gap: 6px; }
+.alert {
+  display: flex; align-items: center; gap: 10px; font-size: 13px;
+  padding: 7px 10px; border-radius: 7px; border: 1px solid;
+}
+.alert.bad { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+.alert.good { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+.alert.neutral { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.alert .pill { font-weight: 700; margin-left: auto; white-space: nowrap; }
+.noalert { color: #6b7280; font-size: 13px; }
+
+.section { margin-bottom: 28px; }
+.section > h2 { font-size: 15px; margin: 0 0 4px; }
+.section > .desc { color: #6b7280; font-size: 12px; margin-bottom: 10px; }
+
+.matrix-scroll { overflow-x: auto; border-radius: 10px; border: 1px solid #e5e7eb; background:#fff; }
+table.matrix { border-collapse: collapse; width: 100%; min-width: 760px; }
+table.matrix th, table.matrix td { padding: 9px 10px; text-align: center; border-bottom: 1px solid #eef0f3; }
+table.matrix thead th {
+  background: #f9fafb; font-size: 11px; color: #4b5563; font-weight: 600;
+  position: sticky; top: 0; text-transform: none;
+}
+table.matrix th.metric, table.matrix td.metric {
+  text-align: left; font-weight: 600; white-space: nowrap; background: #fff;
+  position: sticky; left: 0; z-index: 1; border-right: 1px solid #eef0f3;
+}
+table.matrix thead th.metric { z-index: 2; }
+table.matrix tr:last-child td { border-bottom: none; }
+.cell { display: flex; flex-direction: column; align-items: center; gap: 1px; border-radius: 7px; padding: 5px 4px; }
+.cell .pct { font-weight: 700; font-size: 13.5px; }
+.cell .vals { font-size: 10.5px; color: #6b7280; white-space: nowrap; }
+.cell.flag { box-shadow: 0 0 0 2px #111827 inset; }
+.metric .hint { font-weight: 400; font-size: 10.5px; color: #9ca3af; display:block; }
+.na { color: #b0b6bf; font-size: 12px; }
+td.clickable { cursor: pointer; }
+td.clickable .cell { position: relative; transition: box-shadow .12s; }
+td.clickable:hover .cell { box-shadow: 0 0 0 2px #2563eb inset; }
+.cell .why { font-size: 9.5px; color: #2563eb; opacity: 0; transition: opacity .12s; margin-top: 1px; font-weight:600; }
+td.clickable:hover .cell .why { opacity: 1; }
+
+.drill-overlay {
+  position: fixed; inset: 0; background: rgba(17,24,39,.45);
+  display: none; align-items: flex-start; justify-content: center; z-index: 50;
+  padding: 24px 16px; overflow-y: auto;
+}
+.drill-overlay.open { display: flex; }
+.drill {
+  background: #fff; border-radius: 12px; width: 100%; max-width: 880px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25); overflow: hidden;
+}
+.drill-head {
+  display: flex; align-items: flex-start; gap: 12px; padding: 16px 18px;
+  border-bottom: 1px solid #eef0f3; position: sticky; top: 0; background: #fff;
+}
+.drill-head h2 { font-size: 16px; margin: 0 0 3px; }
+.drill-head .meta { font-size: 12px; color: #6b7280; }
+.drill-head .chg { font-size: 22px; font-weight: 700; margin-left: auto; white-space: nowrap; }
+.drill-close {
+  border: none; background: #f3f4f6; color: #374151; border-radius: 7px;
+  width: 30px; height: 30px; font-size: 18px; cursor: pointer; line-height: 1;
+}
+.drill-body { padding: 16px 18px 22px; }
+.narr {
+  background: #f0f6ff; border: 1px solid #cfe0fb; border-radius: 9px;
+  padding: 12px 14px; font-size: 13px; line-height: 1.5; margin-bottom: 18px; color: #1e3a5f;
+}
+.narr h3 { font-size: 12px; text-transform: uppercase; letter-spacing:.04em; color:#2563eb; margin:0 0 6px; }
+.narr.loading { color: #6b7280; font-style: italic; }
+.lvl { margin-bottom: 18px; }
+.lvl h3 { font-size: 13px; margin: 0 0 7px; display:flex; align-items:center; gap:8px; }
+.lvl h3 .badge { font-size:10.5px; background:#eef2ff; color:#4338ca; padding:1px 7px; border-radius:10px; font-weight:600; }
+table.movers { border-collapse: collapse; width: 100%; font-size: 12px; }
+table.movers th, table.movers td { padding: 6px 8px; border-bottom: 1px solid #f0f2f5; text-align: right; }
+table.movers th { color:#6b7280; font-weight:600; font-size:11px; text-align:right; background:#fafbfc; }
+table.movers th:first-child, table.movers td.nm { text-align: left; }
+table.movers td.nm { max-width: 280px; }
+table.movers td.nm .sub { color:#9ca3af; font-size:10.5px; }
+.tag { font-size:9.5px; padding:1px 6px; border-radius:9px; font-weight:600; margin-left:6px; white-space:nowrap; }
+.tag.new { background:#dbeafe; color:#1e40af; }
+.tag.off { background:#f3f4f6; color:#6b7280; }
+.tag.up { background:#fee2e2; color:#991b1b; }
+.tag.dn { background:#dcfce7; color:#166534; }
+.tag.act { background:#ecfdf5; color:#047857; }
+.tag.pau { background:#fef3c7; color:#92400e; }
+.delta-pos { color:#991b1b; font-weight:600; }
+.delta-neg { color:#166534; font-weight:600; }
+.delta-pos.inv { color:#166534; }
+.delta-neg.inv { color:#991b1b; }
+.drill-status { padding: 30px; text-align:center; color:#6b7280; font-size:13px; }
+.mini-note { font-size:11px; color:#9ca3af; margin:-6px 0 14px; }
+.drill-body textarea {
+  width:100%; height:230px; resize:vertical; box-sizing:border-box;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px;
+  line-height:1.5; color:#1f2937; background:#f9fafb; border:1px solid #e5e7eb;
+  border-radius:8px; padding:10px 12px; white-space:pre-wrap;
+}
+.btn-primary {
+  background:#2563eb; color:#fff; border:none; border-radius:7px; padding:8px 16px;
+  font-size:13px; font-weight:600; cursor:pointer;
+}
+.btn-primary:hover { background:#1d4ed8; }
+.toast {
+  position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(10px);
+  background:#111827; color:#fff; font-size:13px; font-weight:500;
+  padding:10px 16px; border-radius:9px; box-shadow:0 8px 24px rgba(0,0,0,.25);
+  opacity:0; pointer-events:none; transition:opacity .18s, transform .18s; z-index:60;
+}
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+.chart-card { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px 16px; }
+.chart-head { display:flex; align-items:center; gap:12px; margin-bottom:8px; flex-wrap:wrap; }
+.chart-head h2 { font-size:14px; margin:0; }
+.chart-head select { font-size:12.5px; padding:4px 8px; border:1px solid #d1d5db; border-radius:6px; background:#fff; }
+.chart-box { position: relative; height: 240px; }
+
+.status { padding: 40px; text-align: center; color: #6b7280; }
+.err { color: #b91c1c; }
+.foot { margin-top: 26px; font-size: 11px; color: #9ca3af; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Ads Anomaly Detector</h1>
+  <div class="sub"><b>Demo</b> · sample data · daily account-level metrics · baseline = trailing 30 complete days · <span id="rangelbl"></span></div>
+
+  <div id="root"><div class="status">Loading data…</div></div>
+
+  <div class="foot">
+    Window aggregates are recomputed from raw totals (e.g. CPC = total spend ÷ total clicks, ROAS = total revenue ÷ total spend) rather than averaging daily ratios.
+    Revenue is derived as ROAS × spend per day. "vs 30-day avg" compares the recent window's per-day rate against the trailing-30-day rate.
+    This is a self-contained demo populated with synthetic sample data — it is not connected to any ad account.
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<script>
+const ACCT = 'DEMO';   // synthetic demo — not linked to any ad account
+
+// ---- metric definitions ----
+// dir: +1 means "higher is better", -1 means "lower is better", 0 neutral
+const SECONDARY = [
+  { key:'cpc', label:'Cost per Click (CPC)', fmt:'money', dir:-1, hint:'spend ÷ clicks' },
+  { key:'ctr', label:'Click-Through Rate (CTR)', fmt:'pct', dir:+1, hint:'clicks ÷ impressions' },
+  { key:'cpm', label:'CPM', fmt:'money', dir:-1, hint:'spend ÷ impr × 1000' },
+];
+const CORE = [
+  { key:'roas', label:'ROAS', fmt:'x', dir:+1, hint:'revenue ÷ spend' },
+  { key:'cpa', label:'CPA', fmt:'money', dir:-1, hint:'spend ÷ purchases' },
+  { key:'spend', label:'Amount Spent', fmt:'money', dir:0, hint:'per-day vs windows' },
+];
+
+const COMPARISONS = [
+  { id:'dod',   label:'Day over Day',     cur:['last',1], base:['prev',1], note:'yest vs prior day' },
+  { id:'3v3',   label:'3d vs prev 3d',    cur:['last',3], base:['prev',3], note:'last 3 vs prior 3' },
+  { id:'7v7',   label:'7d vs prev 7d',    cur:['last',7], base:['prev',7], note:'last 7 vs prior 7' },
+  { id:'1v30',  label:'Yest vs 30d avg',  cur:['last',1], base:['avg30',null], note:'yesterday vs 30d/day' },
+  { id:'3v30',  label:'3d vs 30d avg',    cur:['last',3], base:['avg30',null], note:'3d/day vs 30d/day' },
+  { id:'7v30',  label:'7d vs 30d avg',    cur:['last',7], base:['avg30',null], note:'7d/day vs 30d/day' },
+];
+
+let THRESH = parseFloat(localStorage.getItem('fb_anom_thresh') || '20');
+let DAYS = [];
+let CHART = null;
+
+function pnum(s){
+  if(s===null||s===undefined) return NaN;
+  if(typeof s==='number') return s;
+  const t=String(s).replace(/[^0-9.\-]/g,'');
+  if(t===''||t==='-'||t==='.') return NaN;
+  return parseFloat(t);
+}
+
+// SYNTHETIC SAMPLE DATA — this demo is not connected to any ad account.
+// A deterministic generator builds 34 days of fabricated daily metrics so the
+// file is fully self-contained and shows the same numbers for everyone.
+async function fetchData(){
+  document.getElementById('rangelbl').textContent = 'synthetic sample data';
+  let s = 1337; const rnd = ()=>{ s=(s*1664525+1013904223)>>>0; return s/4294967296; };
+  const MONTHS_FULL=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const N=34;
+  const end=new Date(); end.setDate(end.getDate()-1);
+  const rows=[];
+  for(let i=N-1;i>=0;i--){
+    const d=new Date(end); d.setDate(end.getDate()-i);
+    const dow=d.getDay();
+    const weekend=(dow===0||dow===6)?0.8:1;        // lighter weekends
+    const ramp=1+(N-1-i)*0.004;                    // slight upward drift
+    const spend=Math.round((900+rnd()*900)*weekend*ramp);
+    const cpm=9+rnd()*5;                           // $9–$14
+    const impr=Math.round(spend/cpm*1000);
+    const ctr=(1.1+rnd()*0.8)/100;                 // 1.1%–1.9%
+    const clicks=Math.max(1,Math.round(impr*ctr));
+    let roas=0.8+rnd()*2.2;                         // 0.8x–3.0x
+    if(i===0) roas=0.55;                            // demo anomaly: ROAS dips on the latest day
+    const aov=70+rnd()*40;
+    const revenue=spend*roas;
+    const purch=Math.max(0,Math.round(revenue/aov));
+    rows.push({
+      date:`${MONTHS_FULL[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`,
+      ts:+d, spend, impr, clicks, purch, revenue
+    });
+  }
+  return rows;
+}
+
+// aggregate a list of day-rows into rate metrics
+function agg(rows){
+  const s=rows.reduce((a,r)=>({spend:a.spend+r.spend,impr:a.impr+r.impr,clicks:a.clicks+r.clicks,purch:a.purch+r.purch,rev:a.rev+r.revenue}),{spend:0,impr:0,clicks:0,purch:0,rev:0});
+  const days=rows.length||1;
+  return {
+    days,
+    spendTotal: s.spend,
+    spendPerDay: s.spend/days,
+    cpc: s.clicks? s.spend/s.clicks : NaN,
+    ctr: s.impr? (s.clicks/s.impr)*100 : NaN,
+    cpm: s.impr? (s.spend/s.impr)*1000 : NaN,
+    roas: s.spend? s.rev/s.spend : NaN,
+    cpa: s.purch? s.spend/s.purch : NaN,
+    raw: s
+  };
+}
+
+function windowRows(spec){
+  const n=DAYS.length;
+  const [kind,k]=spec;
+  if(kind==='last') return DAYS.slice(Math.max(0,n-k), n);
+  if(kind==='prev') return DAYS.slice(Math.max(0,n-2*k), n-k);
+  if(kind==='avg30') return DAYS.slice(Math.max(0,n-30), n);
+  return [];
+}
+
+// get the comparable value for a metric out of an agg, honoring per-day vs total for spend
+function metricVal(metric, a, perDay){
+  if(metric==='spend') return perDay ? a.spendPerDay : a.spendTotal;
+  return a[metric];
+}
+
+function fmtVal(v, fmt){
+  if(!isFinite(v)) return '—';
+  if(fmt==='money') return '$'+v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+  if(fmt==='pct') return v.toFixed(2)+'%';
+  if(fmt==='x') return v.toFixed(2)+'×';
+  return v.toFixed(2);
+}
+
+// color for a cell based on signed % change + direction
+function cellColor(pct, dir){
+  if(!isFinite(pct)) return {bg:'#f3f4f6', fg:'#9ca3af'};
+  const mag=Math.abs(pct);
+  let intensity = mag>=25?2 : mag>=10?1 : 0;
+  if(dir===0){ // neutral metric (spend): amber scale by magnitude only
+    const amber=['#f9fafb','#fffbeb','#fef3c7'][intensity];
+    return {bg:amber, fg:'#1d2330'};
+  }
+  const good = (pct>0 && dir>0) || (pct<0 && dir<0);
+  if(intensity===0) return {bg:'#f9fafb', fg:'#1d2330'};
+  if(good){ return {bg:['','#ecfdf5','#d1fae5'][intensity], fg:'#065f46'}; }
+  return {bg:['','#fef2f2','#fee2e2'][intensity], fg:'#991b1b'};
+}
+
+function buildMatrix(metrics){
+  const n=DAYS.length;
+  const head = '<thead><tr><th class="metric">Metric</th>'+
+    COMPARISONS.map(c=>`<th title="${c.note}">${c.label}</th>`).join('')+'</tr></thead>';
+  const body = metrics.map(m=>{
+    const cells = COMPARISONS.map(c=>{
+      const curRows = windowRows(c.cur);
+      const baseRows = windowRows(c.base);
+      // need enough data
+      const needPrev = c.base[0]==='prev';
+      if(curRows.length===0 || baseRows.length===0 || (needPrev && baseRows.length < c.base[1])){
+        return '<td><span class="na">n/a</span></td>';
+      }
+      const perDay = (c.base[0]==='avg30'); // when comparing to 30d avg, spend uses per-day
+      const ca = agg(curRows), ba = agg(baseRows);
+      const cv = metricVal(m.key, ca, perDay);
+      const bv = metricVal(m.key, ba, perDay);
+      if(!isFinite(cv) || !isFinite(bv) || bv===0){
+        return '<td><span class="na">—</span></td>';
+      }
+      const pct = (cv-bv)/Math.abs(bv)*100;
+      const col = cellColor(pct, m.dir);
+      const flag = Math.abs(pct) >= THRESH ? ' flag' : '';
+      const arrow = pct>0?'▲':(pct<0?'▼':'•');
+      const sign = pct>0?'+':'';
+      const valLabel = m.key==='spend' && perDay ? '/day' : '';
+      return `<td class="clickable" data-m="${m.key}" data-c="${c.id}" title="Ask Claude to investigate why ${m.label} moved ${sign}${pct.toFixed(1)}% (${c.label})"><div class="cell${flag}" style="background:${col.bg}">`+
+        `<span class="pct" style="color:${col.fg}">${arrow} ${sign}${pct.toFixed(1)}%</span>`+
+        `<span class="vals">${fmtVal(cv,m.fmt)} vs ${fmtVal(bv,m.fmt)}${valLabel}</span>`+
+        `<span class="why">↗ ask Claude</span>`+
+        `</div></td>`;
+    }).join('');
+    return `<tr><td class="metric">${m.label}<span class="hint">${m.hint} · ${m.dir>0?'↑ better':m.dir<0?'↓ better':'watch'}</span></td>${cells}</tr>`;
+  }).join('');
+  return `<div class="matrix-scroll"><table class="matrix">${head}<tbody>${body}</tbody></table></div>`;
+}
+
+function collectAlerts(metrics){
+  const out=[];
+  metrics.forEach(m=>{
+    COMPARISONS.forEach(c=>{
+      const curRows=windowRows(c.cur), baseRows=windowRows(c.base);
+      const needPrev=c.base[0]==='prev';
+      if(curRows.length===0||baseRows.length===0||(needPrev&&baseRows.length<c.base[1])) return;
+      const perDay=(c.base[0]==='avg30');
+      const ca=agg(curRows), ba=agg(baseRows);
+      const cv=metricVal(m.key,ca,perDay), bv=metricVal(m.key,ba,perDay);
+      if(!isFinite(cv)||!isFinite(bv)||bv===0) return;
+      const pct=(cv-bv)/Math.abs(bv)*100;
+      if(Math.abs(pct)<THRESH) return;
+      let kind='neutral';
+      if(m.dir!==0){ const good=(pct>0&&m.dir>0)||(pct<0&&m.dir<0); kind=good?'good':'bad'; }
+      out.push({m,c,pct,cv,bv,kind,perDay});
+    });
+  });
+  out.sort((a,b)=>Math.abs(b.pct)-Math.abs(a.pct));
+  return out;
+}
+
+function render(){
+  const root=document.getElementById('root');
+  const n=DAYS.length;
+  if(n<2){ root.innerHTML='<div class="status err">Not enough daily data returned to compute comparisons.</div>'; return; }
+
+  // snapshot (yesterday)
+  const y=DAYS[n-1];
+  const yAgg=agg([y]);
+  const snap = [
+    {k:'Latest day', v:y.date.replace(', 2026',''), d:''},
+    {k:'Spend', v:fmtVal(y.spend,'money'), d:''},
+    {k:'ROAS', v:fmtVal(yAgg.roas,'x'), d:y.purch+' purch'},
+    {k:'CPA', v:fmtVal(yAgg.cpa,'money'), d:''},
+    {k:'CPC', v:fmtVal(yAgg.cpc,'money'), d:''},
+    {k:'CTR', v:fmtVal(yAgg.ctr,'pct'), d:''},
+    {k:'CPM', v:fmtVal(yAgg.cpm,'money'), d:''},
+  ].map(s=>`<div class="card"><div class="k">${s.k}</div><div class="v">${s.v}</div><div class="d">${s.d}</div></div>`).join('');
+
+  root.innerHTML = `
+    <div class="bar">
+      <label>Anomaly threshold
+        <input id="thresh" type="range" min="5" max="60" step="1" value="${THRESH}">
+        <span class="threshval">${THRESH}%</span>
+      </label>
+      <div class="legend">
+        <span><i class="swatch" style="background:#fee2e2"></i> bad move</span>
+        <span><i class="swatch" style="background:#d1fae5"></i> good move</span>
+        <span><i class="swatch" style="background:#fef3c7"></i> spend swing</span>
+        <span><i class="swatch" style="background:#111827"></i> ≥ threshold</span>
+      </div>
+    </div>
+
+    <div class="snap">${snap}</div>
+
+    <div class="section">
+      <h2>Core metrics</h2>
+      <div class="desc">ROAS, CPA, and amount spent — the metrics that move the P&amp;L.</div>
+      ${buildMatrix(CORE)}
+    </div>
+
+    <div class="section">
+      <h2>Secondary metrics</h2>
+      <div class="desc">CPC, CTR, and CPM — the auction/creative signals that explain core moves.</div>
+      ${buildMatrix(SECONDARY)}
+    </div>
+
+    <div class="section">
+      <div class="chart-card">
+        <div class="chart-head">
+          <h2>Daily trend</h2>
+          <select id="metricSel">
+            <option value="spend">Amount Spent</option>
+            <option value="roas">ROAS</option>
+            <option value="cpa">CPA</option>
+            <option value="cpc">CPC</option>
+            <option value="ctr">CTR</option>
+            <option value="cpm">CPM</option>
+          </select>
+        </div>
+        <div class="chart-box"><canvas id="trend"></canvas></div>
+      </div>
+    </div>
+  `;
+
+  const ti=document.getElementById('thresh');
+  ti.addEventListener('input', e=>{
+    document.querySelector('.threshval').textContent=e.target.value+'%';
+  });
+  ti.addEventListener('change', e=>{
+    THRESH=parseFloat(e.target.value);
+    localStorage.setItem('fb_anom_thresh', String(THRESH));
+    render();
+  });
+  document.getElementById('metricSel').addEventListener('change', e=>drawChart(e.target.value));
+  drawChart('spend');
+
+  root.querySelectorAll('td.clickable').forEach(td=>{
+    td.addEventListener('click', ()=>openDrill(td.dataset.m, td.dataset.c));
+  });
+}
+
+function dailyMetric(r, key){
+  if(key==='spend') return r.spend;
+  if(key==='roas') return r.spend? r.revenue/r.spend : null;
+  if(key==='cpa') return r.purch? r.spend/r.purch : null;
+  if(key==='cpc') return r.clicks? r.spend/r.clicks : null;
+  if(key==='ctr') return r.impr? (r.clicks/r.impr)*100 : null;
+  if(key==='cpm') return r.impr? (r.spend/r.impr)*1000 : null;
+  return null;
+}
+
+function drawChart(key){
+  const labels=DAYS.map(r=>r.date.replace(', 2026','').replace(/ \d+$/,m=>m));
+  const lbls=DAYS.map(r=>{const d=new Date(r.ts);return (d.getMonth()+1)+'/'+d.getDate();});
+  const data=DAYS.map(r=>dailyMetric(r,key));
+  const avg30 = data.slice(-30).filter(v=>v!=null);
+  const baseline = avg30.length? avg30.reduce((a,b)=>a+b,0)/avg30.length : null;
+  const meta = {spend:['Spend','#2563eb'],roas:['ROAS','#059669'],cpa:['CPA','#dc2626'],cpc:['CPC','#7c3aed'],ctr:['CTR','#0891b2'],cpm:['CPM','#ea580c']}[key];
+  if(CHART) CHART.destroy();
+  CHART=new Chart(document.getElementById('trend'), {
+    type:'line',
+    data:{ labels:lbls, datasets:[
+      { label:meta[0], data, borderColor:meta[1], backgroundColor:meta[1]+'22', tension:.25, pointRadius:2, fill:true },
+      ...(baseline!=null?[{ label:'30d avg', data:DAYS.map(()=>baseline), borderColor:'#9ca3af', borderDash:[5,4], pointRadius:0, borderWidth:1.5 }]:[])
+    ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ labels:{ boxWidth:12, font:{size:11} } } },
+      scales:{ x:{ ticks:{ font:{size:10}, maxRotation:0, autoSkip:true, maxTicksLimit:12 } },
+               y:{ ticks:{ font:{size:10} } } } }
+  });
+}
+
+// ========================= DRILL-DOWN ("why?") =========================
+const METMETA = {};
+[...CORE,...SECONDARY].forEach(m=>METMETA[m.key]=m);
+const CMPMETA = {}; COMPARISONS.forEach(c=>CMPMETA[c.id]=c);
+const MONTHS = {January:0,February:1,March:2,April:3,May:4,June:5,July:6,August:7,September:8,October:9,November:10,December:11};
+const MON_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function parseDateStr(s){ // "June 16, 2026" -> {iso, md}
+  const m = String(s).match(/([A-Za-z]+)\s+(\d+),\s*(\d+)/);
+  if(!m) return {iso:s, md:s};
+  const mo = MONTHS[m[1]] ?? 0, d = +m[2], y = +m[3];
+  const pad = x => String(x).padStart(2,'0');
+  return { iso: `${y}-${pad(mo+1)}-${pad(d)}`, md: `${MON_SHORT[mo]} ${d}` };
+}
+function rangeOf(rows){
+  const a = parseDateStr(rows[0].date), b = parseDateStr(rows[rows.length-1].date);
+  return { since:a.iso, until:b.iso, days:rows.length,
+           label: rows.length===1 ? a.md : `${a.md}–${b.md}` };
+}
+function shortMetric(m){ return m.label.replace(/ \(.*\)/,''); }
+
+function buildPrompt(metricKey, cmpId){
+  const m=METMETA[metricKey], cmp=CMPMETA[cmpId];
+  const curRows=windowRows(cmp.cur), baseRows=windowRows(cmp.base);
+  const perDay=(cmp.base[0]==='avg30');
+  const ca=agg(curRows), ba=agg(baseRows);
+  const cv=metricVal(metricKey,ca,perDay), bv=metricVal(metricKey,ba,perDay);
+  const pct=(bv!==0&&isFinite(cv)&&isFinite(bv))?(cv-bv)/Math.abs(bv)*100:NaN;
+  const curR=rangeOf(curRows), baseR=rangeOf(baseRows);
+  const chg=isFinite(pct)?(pct>0?'+':'')+pct.toFixed(1)+'%':'n/a';
+  const unit=(perDay&&metricKey==='spend')?'/day':'';
+  const sm=shortMetric(m);
+  return [
+`Investigate the following advertising anomaly (sample/demo data).`,
+``,
+`Metric: ${m.label} (${m.dir<0?'lower is better':m.dir>0?'higher is better':'watch / neutral'})`,
+`Comparison window: ${cmp.label}`,
+`Current period: ${curR.since} to ${curR.until} — account ${sm} = ${fmtVal(cv,m.fmt)}${unit}`,
+`Baseline period: ${baseR.since} to ${baseR.until} — account ${sm} = ${fmtVal(bv,m.fmt)}${unit}`,
+`Account-level change: ${chg}`,
+``,
+`Pull the active campaigns, ad sets, and ads for BOTH periods and explain what drove this move. Specifically:`,
+`1. At the campaign, ad set, and ad level, where did ${sm} change the most between the two periods?`,
+`2. How was spend distributed and redistributed between the periods — did budget shift toward higher- or lower-${sm} entities (a mix shift)?`,
+`3. Were there major structural changes: new entities that started spending, entities paused/stopped, budget changes, or large swings in an entity's own ${sm}?`,
+`4. Conclude with the most likely driver(s) of the ${chg} change, naming the specific campaigns/ad sets/ads with concrete numbers.`
+  ].join('\n');
+}
+
+// Copy that works inside sandboxed iframes (where navigator.clipboard is usually blocked).
+function copyText(text, ta){
+  let ok=false;
+  if(ta){
+    try{
+      ta.focus();
+      ta.setSelectionRange(0, ta.value.length);
+      ok = document.execCommand('copy');
+    }catch(e){ ok=false; }
+  }
+  // best-effort async API too (harmless if it fails)
+  try{ if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).catch(()=>{}); }catch(e){}
+  return ok;
+}
+
+function toast(msg){
+  let t=document.getElementById('toast');
+  if(!t){ t=document.createElement('div'); t.id='toast'; t.className='toast'; document.body.appendChild(t); }
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'), 3600);
+}
+
+function showPromptPanel(text){
+  let ov=document.getElementById('promptOverlay');
+  if(!ov){
+    ov=document.createElement('div'); ov.id='promptOverlay'; ov.className='drill-overlay';
+    ov.innerHTML='<div class="drill" role="dialog" aria-modal="true"></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click', e=>{ if(e.target===ov) ov.classList.remove('open'); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') ov.classList.remove('open'); });
+  }
+  const box=ov.querySelector('.drill');
+  box.innerHTML=`
+    <div class="drill-head">
+      <div><h2>Investigate in chat</h2>
+      <div class="meta">Copy this prompt and paste it into your AI assistant to investigate the anomaly against your own data.</div></div>
+      <button class="drill-close" title="Close">×</button>
+    </div>
+    <div class="drill-body">
+      <textarea id="promptText" readonly>${text.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</textarea>
+      <div style="margin-top:10px;display:flex;gap:8px">
+        <button id="copyPrompt" class="btn-primary">Copy prompt</button>
+      </div>
+    </div>`;
+  box.querySelector('.drill-close').addEventListener('click', ()=>ov.classList.remove('open'));
+  box.querySelector('#copyPrompt').addEventListener('click', ()=>{
+    const ta=box.querySelector('#promptText');
+    const ok=copyText(text, ta);
+    toast(ok ? 'Copied — paste into chat' : 'Select the text above and press '+(navigator.platform&&/Mac/i.test(navigator.platform)?'⌘C':'Ctrl+C'));
+  });
+  ov.classList.add('open');
+  const ta=box.querySelector('#promptText');
+  setTimeout(()=>{ try{ ta.focus(); ta.setSelectionRange(0, ta.value.length); }catch(e){} }, 30);
+}
+
+// Clicking a cell builds a ready-to-use investigation prompt for the selected
+// metric/window and offers it for copying (demo build — no live data connection).
+function openDrill(metricKey, cmpId){
+  const cmp=CMPMETA[cmpId];
+  const curRows=windowRows(cmp.cur), baseRows=windowRows(cmp.base);
+  if(!curRows.length || !baseRows.length) return;
+  showPromptPanel(buildPrompt(metricKey, cmpId));
+}
+
+(async function(){
+  try{
+    DAYS = await fetchData();
+    render();
+  }catch(err){
+    document.getElementById('root').innerHTML='<div class="status err">Failed to load data: '+(err&&err.message?err.message:err)+'</div>';
+  }
+})();
+</script>
+</body>
+</html>

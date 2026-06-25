@@ -31,3 +31,8 @@ fi
 
 # 2) build the dashboard (reads cogs.json if present)
 python3 "$HERE/build-meta-dashboard.py"
+
+# 3) build the account-level anomaly detector (best-effort)
+if [ -f "$HERE/anomaly_detector_shareable.html" ]; then
+  python3 "$HERE/build-anomaly-detector.py" || echo "  (anomaly detector build skipped)"
+fi
