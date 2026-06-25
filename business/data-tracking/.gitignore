@@ -1,0 +1,8 @@
+# Generated dashboard output (rebuilt by refresh-meta-dashboard.sh)
+meta-ads-dashboard-NOS.html
+cogs.json
+
+# Customer / business data exports — PII, keep out of git
+*.csv
+*.xlsx
+FB CAPI*.json

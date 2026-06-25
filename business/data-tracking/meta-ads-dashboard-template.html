@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<!--
+  META ADS DASHBOARD — reusable template (contains NO data)
+  To use it with your own account:
+   1. Paste this file into Cowork (Claude) and ask it to make a live artifact,
+      with the Meta Ads MCP connected.
+   2. Set ACCOUNT_ID below to your own numeric Meta ad account ID.
+   3. Point TOOL at your Meta Ads MCP's "ads_get_ad_entities" tool (your Claude
+      can fill this in when it registers the artifact's mcp_tools).
+   4. USE_DUMMY starts true so you see sample data immediately; set it to false
+      for live numbers once ACCOUNT_ID + TOOL are set.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Ads Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#f6f7f9; --card:#ffffff; --ink:#11181c; --muted:#5b6770; --line:#e6e9ec;
+    --accent:#1b6df0; --accent-soft:#eaf1fe; --good:#0f9d58; --good-soft:#e7f5ec;
+    --bad:#d23f3f; --bad-soft:#fcebeb; --warn:#c9810a; --warn-soft:#fdf3e3;
+    --chip:#eef1f4; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 60px}
+  h1{font-size:19px;margin:0;font-weight:650;letter-spacing:-.01em}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 10px;font-weight:650}
+  .topbar{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .brandmark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#1b6df0,#5b8def);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+  .sub{color:var(--muted);font-size:12.5px;margin:0 0 16px 42px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+  .section{padding:16px;margin-bottom:16px}
+  .section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;padding:7px 12px;
+    font-size:13px;font-weight:550;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .btn:hover{background:#f3f5f7}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary:hover{background:#175ed1}
+  .btn.ghost{background:transparent;border-color:transparent;color:var(--accent);padding:6px 8px}
+  .btn.sm{padding:4px 9px;font-size:12px}
+  select,input[type=date],input[type=number],input[type=text]{
+    border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;background:#fff;color:var(--ink);font-family:inherit}
+  select:focus,input:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .spacer{flex:1}
+
+  /* Targets */
+  .targets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+  .target{border:1px solid var(--line);border-radius:10px;padding:12px;position:relative;background:#fff}
+  .target .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:650}
+  .target .big{font-size:23px;font-weight:680;margin:5px 0 2px;letter-spacing:-.02em}
+  .target .meta{font-size:12px;color:var(--muted)}
+  .target .tgtline{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px}
+  .target .barwrap{height:6px;border-radius:4px;background:var(--chip);overflow:hidden;margin-top:8px}
+  .target .bar{height:100%;border-radius:4px;background:var(--accent)}
+  .pill{font-size:11px;font-weight:650;padding:2px 7px;border-radius:999px}
+  .pill.good{background:var(--good-soft);color:var(--good)}
+  .pill.bad{background:var(--bad-soft);color:var(--bad)}
+  .pill.warn{background:var(--warn-soft);color:var(--warn)}
+  .pill.neutral{background:var(--chip);color:var(--muted)}
+  .target .x{position:absolute;top:8px;right:9px;cursor:pointer;color:#c2c9cf;font-size:15px;line-height:1;border:none;background:none}
+  .target .x:hover{color:var(--bad)}
+  .target.editing input{width:100%;margin-top:6px}
+
+  /* Widgets */
+  .widgets{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .widget{border:1px solid var(--line);border-radius:10px;padding:13px;position:relative;background:#fff}
+  .widget .wlbl{display:flex;align-items:center;justify-content:space-between;gap:6px}
+  .widget select{border:none;background:none;padding:0;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--muted);font-weight:650;cursor:pointer;-webkit-appearance:none;appearance:none}
+  .widget .wval{font-size:25px;font-weight:680;margin-top:6px;letter-spacing:-.02em}
+  .widget .wsub{font-size:12px;color:var(--muted);margin-top:1px}
+  .widget .x{position:absolute;top:7px;right:9px;cursor:pointer;color:#cfd5da;font-size:14px;border:none;background:none}
+  .widget .x:hover{color:var(--bad)}
+
+  /* Table */
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:880px}
+  th,td{padding:9px 11px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:#fff}
+  thead th{background:#fafbfc;color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;
+    cursor:default;position:sticky;top:0;z-index:1}
+  thead th:first-child{z-index:2;background:#fafbfc}
+  tbody tr:hover td{background:#f7f9fb}
+  tbody tr:hover td:first-child{background:#f7f9fb}
+  tfoot td{font-weight:680;background:#f4f6f8;border-top:2px solid var(--line)}
+  tfoot td:first-child{background:#f4f6f8}
+  .pos{color:var(--good)} .neg{color:var(--bad)}
+  .subhead{font-size:13.5px;font-weight:650;margin:18px 0 9px;display:flex;align-items:center;gap:8px}
+  .subhead:first-of-type{margin-top:2px}
+  .subhead .tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--chip);padding:2px 8px;border-radius:999px}
+  td .adname{font-weight:600}
+  .rank{display:inline-block;width:18px;color:var(--muted);font-variant-numeric:tabular-nums}
+  /* Demographics tabs */
+  .demotabs{display:flex;gap:6px;flex-wrap:wrap}
+  .demotab{font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:8px;
+    border:1px solid var(--line);background:var(--chip);color:var(--muted)}
+  .demotab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+  /* modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(16,24,40,.42);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+  .modal-bg.open{display:flex}
+  .modal{background:#fff;border-radius:14px;width:100%;max-width:440px;box-shadow:0 12px 40px rgba(16,24,40,.25);overflow:hidden}
+  .modal h3{margin:0;font-size:16px}
+  .modal-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+  .modal-body{padding:18px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:5px}
+  .field .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-top:3px}
+  .input-affix{position:relative;display:flex;align-items:center}
+  .input-affix .affix{position:absolute;color:var(--muted);font-size:13px}
+  .input-affix .affix.pre{left:10px} .input-affix .affix.suf{right:10px}
+  .input-affix input{width:100%}
+  .input-affix.pre input{padding-left:24px} .input-affix.suf input{padding-right:26px}
+  .modal-foot{padding:14px 18px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px}
+
+  .banner{border-radius:10px;padding:11px 13px;font-size:12.5px;margin-bottom:14px;display:none;gap:9px;align-items:flex-start}
+  .banner.show{display:flex}
+  .banner.err{background:var(--bad-soft);color:#8f2a2a;border:1px solid #f3cccc}
+  .banner.info{background:var(--accent-soft);color:#16489e;border:1px solid #d4e2fb}
+  .loading{color:var(--muted);font-size:13px;padding:8px 2px}
+  .muted{color:var(--muted)}
+  .legend{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.55}
+  .chartbox{height:200px;margin-top:6px}
+  @media (max-width:560px){ .sub{margin-left:0} .target .big{font-size:20px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brandmark">M</div>
+    <h1>Meta Ads Dashboard</h1>
+  </div>
+  <p class="sub">Live performance, targets &amp; contribution margin</p>
+
+  <div id="banner" class="banner"></div>
+
+  <!-- TARGETS -->
+  <div class="card section">
+    <div class="section-head">
+      <h2 style="margin:0">Targets</h2>
+      <div class="row">
+        <button class="btn sm" id="addTargetBtn">+ Add target</button>
+        <button class="btn sm primary" id="configCostBtn">⚙ Configure cost</button>
+      </div>
+    </div>
+    <div class="targets-grid" id="targetsGrid"></div>
+    <div class="legend" id="costSummary"></div>
+  </div>
+
+  <!-- WIDGETS -->
+  <div class="card section">
+    <div class="section-head">
+      <h2 style="margin:0">Core metrics <span class="muted" style="text-transform:none;letter-spacing:0;font-weight:400" id="widgetRange"></span></h2>
+      <button class="btn sm" id="addWidgetBtn">+ Add widget</button>
+    </div>
+    <div class="widgets" id="widgetsRow"></div>
+  </div>
+
+  <!-- BUSINESS HEALTH -->
+  <div class="card section">
+    <div class="section-head"><h2 style="margin:0">Business health <span class="muted" id="healthRange" style="text-transform:none;letter-spacing:0;font-weight:400"></span></h2></div>
+    <div class="tablewrap">
+      <table id="healthTable">
+        <thead><tr>
+          <th style="text-align:left">Segment</th><th>Orders</th><th>Revenue</th><th>COGS</th><th>COGS %</th><th>Gross margin</th>
+        </tr></thead>
+        <tbody id="healthBody"></tbody>
+      </table>
+    </div>
+    <div class="legend" id="healthLegend"></div>
+  </div>
+
+  <!-- ADS -->
+  <div class="card section">
+    <div class="section-head">
+      <h2 style="margin:0">Ads</h2>
+      <span class="muted" style="font-size:12px" id="adsRange"></span>
+    </div>
+
+    <div class="subhead">Top 5 ads by spend</div>
+    <div class="tablewrap">
+      <table id="topAdsTable">
+        <thead><tr>
+          <th>Ad</th><th>Launched</th><th>Spend</th><th>Impressions</th><th>CTR</th>
+          <th>CPC</th><th>Purchases</th><th>CPA</th><th>ROAS</th><th>Revenue</th>
+        </tr></thead>
+        <tbody id="topAdsBody"></tbody>
+      </table>
+    </div>
+
+    <div class="subhead">Top risers <span class="tag">launched in last 30 days · ranked by spend</span></div>
+    <div class="tablewrap">
+      <table id="riserAdsTable">
+        <thead><tr>
+          <th>Ad</th><th>Launched</th><th>Days live</th><th>Spend</th><th>Impressions</th><th>CTR</th>
+          <th>CPC</th><th>Purchases</th><th>ROAS</th><th>Revenue</th>
+        </tr></thead>
+        <tbody id="riserAdsBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DEMOGRAPHICS -->
+  <div class="card section">
+    <div class="section-head">
+      <h2 style="margin:0">Demographics <span class="muted" style="text-transform:none;letter-spacing:0;font-weight:400" id="demoRange"></span></h2>
+      <div class="demotabs" id="demoTabs">
+        <button class="demotab active" data-demo="ageGender">Age &amp; Gender</button>
+        <button class="demotab" data-demo="platform">Placement</button>
+        <button class="demotab" data-demo="device">Device</button>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table id="demoTable">
+        <thead><tr id="demoHead"></tr></thead>
+        <tbody id="demoBody"></tbody>
+        <tfoot id="demoFoot"></tfoot>
+      </table>
+    </div>
+    <div class="legend">Breakdowns are reported for the whole snapshot window (not date-filtered). Segment rows may not sum to the campaign total — Meta attributes some impressions to "unknown" and de-dupes reach across segments.</div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card section">
+    <div class="section-head"><h2 style="margin:0">Performance breakdown</h2></div>
+    <div class="controls">
+      <label class="muted" style="font-size:12px">From <input type="date" id="dateFrom"></label>
+      <label class="muted" style="font-size:12px">To <input type="date" id="dateTo"></label>
+      <select id="granularity" title="Granularity">
+        <option value="1">Daily</option>
+        <option value="7">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+      <select id="presetRange" title="Quick range">
+        <option value="">Custom range…</option>
+        <option value="this_month">This month</option>
+        <option value="last_month">Last month</option>
+        <option value="last_7d">Last 7 days</option>
+        <option value="last_30d">Last 30 days</option>
+        <option value="last_90d">Last 90 days</option>
+      </select>
+      <button class="btn sm primary" id="applyBtn">Apply</button>
+      <div class="spacer"></div>
+      <select id="trendMetric" title="Trend metric"></select>
+    </div>
+    <div class="chartbox"><canvas id="trendChart"></canvas></div>
+    <div id="tableStatus" class="loading">Loading…</div>
+    <div class="tablewrap" id="tableWrap" style="display:none">
+      <table id="dataTable"><thead></thead><tbody></tbody><tfoot></tfoot></table>
+    </div>
+    <div class="legend">
+      <strong>Meta Contribution Margin</strong> = Revenue − COGS − Variable costs − Ad spend − Fixed-cost allocation.
+      Revenue is derived from spend × Purchase ROAS. Purchases come from campaign-level pixel purchase data
+      (the account level reports them as "Not available"), summed across campaigns for each row.
+      Fixed monthly cost is allocated to each row by its share of days in the month.
+    </div>
+  </div>
+
+  <p class="muted" style="font-size:11.5px;text-align:center">Data via Meta Ads · Settings saved in your browser · Reload (top of panel) refreshes live data.</p>
+</div>
+
+<!-- COST MODAL -->
+<div class="modal-bg" id="costModal">
+  <div class="modal">
+    <div class="modal-head"><h3>Configure cost</h3><button class="btn ghost" data-close>✕</button></div>
+    <div class="modal-body">
+      <div class="field">
+        <label>Cost of goods (COGS)</label>
+        <div class="input-affix suf"><input type="number" id="cogsPct" min="0" max="100" step="0.5"><span class="affix suf">% of revenue</span></div>
+        <div class="hint">Product/unit cost as a percent of revenue.</div>
+      </div>
+      <div class="field">
+        <label>Other variable costs</label>
+        <div class="input-affix suf"><input type="number" id="varPct" min="0" max="100" step="0.5"><span class="affix suf">% of revenue</span></div>
+        <div class="hint">Shipping, payment processing, fulfillment, etc.</div>
+      </div>
+      <div class="field">
+        <label>Fixed costs</label>
+        <div class="input-affix pre"><span class="affix pre">$</span><input type="number" id="fixedMo" min="0" step="50"></div>
+        <div class="hint">Flat overhead per month (rent, salaries, software). Allocated across the selected range by days.</div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>Cancel</button>
+      <button class="btn primary" id="saveCost">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- TARGET MODAL -->
+<div class="modal-bg" id="targetModal">
+  <div class="modal">
+    <div class="modal-head"><h3 id="targetModalTitle">Add target</h3><button class="btn ghost" data-close>✕</button></div>
+    <div class="modal-body">
+      <div class="field">
+        <label>Label</label>
+        <input type="text" id="tgtLabel" placeholder="e.g. CPA, Spend, Meta Contribution Margin" style="width:100%">
+      </div>
+      <div class="field">
+        <label>Metric</label>
+        <select id="tgtMetric" style="width:100%"></select>
+      </div>
+      <div class="field">
+        <label>Target value</label>
+        <input type="number" id="tgtValue" step="any" style="width:100%">
+        <div class="hint" id="tgtDir"></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>Cancel</button>
+      <button class="btn primary" id="saveTarget">Save target</button>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+const ACCOUNT_ID = "YOUR_AD_ACCOUNT_ID";   // <-- your numeric Meta ad account ID
+const TOOL = "mcp__YOUR_META_ADS_MCP__ads_get_ad_entities"; // <-- your Meta Ads MCP tool name
+const LS = "meta_dash_v1";
+
+/* ---------- metric catalog ---------- */
+// kind: how value is computed from aggregated totals. fmt: display format. better: 'up'|'down' for target eval.
+const METRICS = {
+  spend:      {label:"Ad Spend",     fmt:"money",  better:"down", kind:"sum",   field:"spend"},
+  revenue:    {label:"Revenue",      fmt:"money",  better:"up",   kind:"derived"},
+  impressions:{label:"Impressions",  fmt:"int",    better:"up",   kind:"sum",   field:"impressions"},
+  clicks:     {label:"Clicks",       fmt:"int",    better:"up",   kind:"sum",   field:"clicks"},
+  purchases:  {label:"Purchases",    fmt:"int",    better:"up",   kind:"sum",   field:"results"},
+  roas:       {label:"ROAS",         fmt:"x",      better:"up",   kind:"ratio"},
+  cpm:        {label:"CPM",          fmt:"money2", better:"down", kind:"ratio"},
+  cpc:        {label:"CPC",          fmt:"money2", better:"down", kind:"ratio"},
+  ctr:        {label:"CTR",          fmt:"pct",    better:"up",   kind:"ratio"},
+  cpa:        {label:"CPA",          fmt:"money2", better:"down", kind:"ratio"},
+  reach:      {label:"Reach",        fmt:"int",    better:"up",   kind:"sum",   field:"reach"},
+  frequency:  {label:"Frequency",    fmt:"f2",     better:"down", kind:"ratio"},
+  cm:         {label:"Meta Contribution Margin", fmt:"money", better:"up", kind:"derived"},
+  cm_pct:     {label:"Meta CM %",    fmt:"pct",    better:"up",   kind:"derived"},
+};
+const TABLE_COLS = ["spend","impressions","clicks","cpm","cpc","ctr","purchases","roas","revenue","cm"];
+
+/* ---------- default state ---------- */
+const DEFAULT_STATE = {
+  cost: {cogsPct:35, varPct:10, fixedMo:0},
+  targets: [
+    {id:"t1", label:"CPA (efficiency)", metric:"cpa", value:35},
+    {id:"t2", label:"Spend", metric:"spend", value:20000},
+    {id:"t3", label:"Meta Contribution Margin", metric:"cm", value:15000},
+  ],
+  widgets: [
+    {id:"w1", metric:"spend"},
+    {id:"w2", metric:"purchases"},
+    {id:"w3", metric:"roas"},
+    {id:"w4", metric:"cpm"},
+    {id:"w5", metric:"cpc"},
+  ],
+  granularity:"1",
+  trendMetric:"spend",
+  range:null, // {from,to}
+};
+let state = loadState();
+
+function loadState(){
+  try{ const s = JSON.parse(localStorage.getItem(LS)); if(s && s.cost && s.targets && s.widgets) return s; }catch(e){}
+  return JSON.parse(JSON.stringify(DEFAULT_STATE));
+}
+function saveState(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+
+/* ---------- date helpers ---------- */
+function fmtDateISO(d){ return d.toISOString().slice(0,10); }
+function startOfMonth(d){ return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1)); }
+function daysInMonth(y,m){ return new Date(Date.UTC(y,m+1,0)).getUTCDate(); }
+function todayUTC(){ const n=new Date(); return new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate())); }
+function parseISO(s){ const [y,m,d]=s.split("-").map(Number); return new Date(Date.UTC(y,m-1,d)); }
+function dayspan(a,b){ return Math.round((parseISO(b)-parseISO(a))/86400000)+1; }
+
+function defaultRange(){
+  const t=todayUTC(); const s=startOfMonth(t);
+  return {from:fmtDateISO(s), to:fmtDateISO(t)};
+}
+function presetToRange(p){
+  const t=todayUTC();
+  const end=fmtDateISO(t);
+  if(p==="this_month") return {from:fmtDateISO(startOfMonth(t)), to:end};
+  if(p==="last_month"){ const lm=new Date(Date.UTC(t.getUTCFullYear(),t.getUTCMonth()-1,1));
+    const lmEnd=new Date(Date.UTC(t.getUTCFullYear(),t.getUTCMonth(),0)); return {from:fmtDateISO(lm),to:fmtDateISO(lmEnd)}; }
+  const back=(n)=>{ const d=new Date(t); d.setUTCDate(d.getUTCDate()-(n-1)); return fmtDateISO(d); };
+  if(p==="last_7d") return {from:back(7),to:end};
+  if(p==="last_30d") return {from:back(30),to:end};
+  if(p==="last_90d") return {from:back(90),to:end};
+  return defaultRange();
+}
+
+/* ---------- number formatting ---------- */
+function fmt(v, kind){
+  if(v===null||v===undefined||isNaN(v)) return "—";
+  switch(kind){
+    case "money":  return "$"+Math.round(v).toLocaleString("en-US");
+    case "money2": return "$"+v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+    case "int":    return Math.round(v).toLocaleString("en-US");
+    case "x":      return v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})+"x";
+    case "pct":    return v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})+"%";
+    case "f2":     return v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+    default:       return String(v);
+  }
+}
+
+/* ---------- robust response parsing ---------- */
+function num(v){
+  if(v===null||v===undefined) return 0;
+  if(typeof v==="number") return v;
+  if(Array.isArray(v)){ let s=0; for(const it of v){ if(it&&it.value!==undefined) s+=num(it.value); } return s; }
+  if(typeof v==="object"){ if(v.value!==undefined) return num(v.value); return 0; }
+  const f=parseFloat(String(v).replace(/[^0-9.\-]/g,"")); return isNaN(f)?0:f;
+}
+// Meta returns results as "Not available" (account) or a nested object (ad level). → number|null
+function parseResults(v){
+  if(v===null||v===undefined) return null;
+  if(typeof v==="number") return v;
+  if(typeof v==="string"){ if(/not available/i.test(v)) return null;
+    const c=v.replace(/[^0-9.\-]/g,""); const n=parseFloat(c); return isNaN(n)?null:n; }
+  if(typeof v==="object"){
+    const arr = (v.value!==undefined ? v.value : v);
+    if(Array.isArray(arr)){
+      let total=0, found=false;
+      for(const item of arr){
+        if(item && Array.isArray(item.values)){ for(const vv of item.values){ if(vv&&vv.value!==undefined){ total+=num(vv.value); found=true; } } }
+        else if(item && item.value!==undefined){ total+=num(item.value); found=true; }
+      }
+      return found?total:null;
+    }
+  }
+  return null;
+}
+// Meta dates come as "June 1, 2026" → "2026-06-01"
+function toISO(d){
+  if(!d) return "";
+  if(/^\d{4}-\d{2}-\d{2}/.test(d)) return d.slice(0,10);
+  const dt=new Date(d);
+  if(isNaN(dt.getTime())) return "";
+  return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}-${String(dt.getDate()).padStart(2,"0")}`;
+}
+// recursively locate the array of metric rows in an unknown wrapper shape
+function findRows(obj, depth){
+  if(depth>6||obj===null||typeof obj!=="object") return null;
+  if(Array.isArray(obj)){
+    if(obj.length && typeof obj[0]==="object" && obj[0] &&
+       ("spend" in obj[0] || "impressions" in obj[0] || "date_start" in obj[0] || "amount_spent" in obj[0]))
+      return obj;
+    // array but elements not rows; dig into first few
+    for(let i=0;i<Math.min(obj.length,4);i++){ const r=findRows(obj[i],depth+1); if(r) return r; }
+    return null;
+  }
+  for(const k of Object.keys(obj)){ const r=findRows(obj[k],depth+1); if(r) return r; }
+  return null;
+}
+function unwrap(res){
+  if(!res) return null;
+  let payload=res;
+  if(res.structuredContent) payload=res.structuredContent;
+  else if(res.content && Array.isArray(res.content) && res.content[0] && res.content[0].text){
+    try{ payload=JSON.parse(res.content[0].text); }catch(e){ payload=res.content[0].text; }
+  }
+  if(res.isError) throw new Error(typeof payload==="string"?payload:JSON.stringify(payload).slice(0,300));
+  return payload;
+}
+// the rows live under payload.ad_entities, which itself is a JSON string
+function extractRows(payload){
+  let p=payload;
+  if(typeof p==="string"){ try{ p=JSON.parse(p); }catch(e){ return []; } }
+  if(p && p.ad_entities!==undefined){
+    let ae=p.ad_entities;
+    if(typeof ae==="string"){ try{ ae=JSON.parse(ae); }catch(e){ ae=[]; } }
+    if(Array.isArray(ae)) return ae;
+  }
+  return findRows(p,0)||[];
+}
+
+/* ---------- core: fetch + normalize ---------- */
+let RAW_ROWS=[]; // normalized {date, spend, impressions, clicks, reach, results, roas}
+let AD_ROWS=[];          // live ad-level rows for the Ads section
+let PERIOD_PURCHASES=null; // total purchases for range, summed from ad-level data
+const USE_DUMMY = true; // sample data so the layout previews instantly — set to false once ACCOUNT_ID + TOOL are wired for live data
+
+/* ---------- dummy data generator (deterministic by date) ---------- */
+function seededRand(seedStr){
+  let h=2166136261;
+  for(let i=0;i<seedStr.length;i++){ h^=seedStr.charCodeAt(i); h=Math.imul(h,16777619); }
+  return function(){ h+=0x6D2B79F5; let t=h; t=Math.imul(t^(t>>>15),t|1); t^=t+Math.imul(t^(t>>>7),t|61); return ((t^(t>>>14))>>>0)/4294967296; };
+}
+function dummyDay(dateStr){
+  const rnd=seededRand(dateStr);
+  const dow=parseISO(dateStr).getUTCDay();
+  const weekend=(dow===0||dow===6)?1.15:1.0;
+  const spend=(430+rnd()*520)*weekend;        // ~$430–950/day
+  const cpm=11+rnd()*11;                       // $11–22
+  const impressions=spend/cpm*1000;
+  const ctr=0.9+rnd()*1.3;                      // 0.9–2.2%
+  const clicks=impressions*(ctr/100);
+  const cvr=0.025+rnd()*0.04;                   // 2.5–6.5%
+  const results=Math.max(0,Math.round(clicks*cvr));
+  const roas=1.7+rnd()*1.7;                      // 1.7–3.4x
+  const frequency=1.2+rnd()*0.5;
+  const reach=Math.round(impressions/frequency);
+  return {date:dateStr, spend:+spend.toFixed(2), impressions:Math.round(impressions),
+    clicks:Math.round(clicks), reach, results, roas:+roas.toFixed(2)};
+}
+function eachDay(from,to){
+  const out=[]; let d=parseISO(from); const end=parseISO(to);
+  while(d<=end){ out.push(fmtDateISO(d)); d=new Date(d); d.setUTCDate(d.getUTCDate()+1); }
+  return out;
+}
+function generateDummy(range, gran){
+  const daily=eachDay(range.from, range.to).map(dummyDay);
+  if(gran==="1") return daily;
+  let groups=[];
+  if(gran==="7"){ for(let i=0;i<daily.length;i+=7) groups.push(daily.slice(i,i+7)); }
+  else { const map={}; daily.forEach(r=>{ const k=r.date.slice(0,7); (map[k]=map[k]||[]).push(r); });
+    Object.keys(map).sort().forEach(k=>groups.push(map[k])); }
+  return groups.filter(g=>g.length).map(g=>{
+    const t={spend:0,impressions:0,clicks:0,reach:0,results:0,revenue:0};
+    g.forEach(r=>{ t.spend+=r.spend;t.impressions+=r.impressions;t.clicks+=r.clicks;
+      t.reach+=r.reach;t.results+=r.results;t.revenue+=r.spend*r.roas; });
+    return {date:g[0].date, spend:+t.spend.toFixed(2), impressions:t.impressions, clicks:t.clicks,
+      reach:t.reach, results:t.results, roas:t.spend>0?+(t.revenue/t.spend).toFixed(4):0};
+  });
+}
+
+/* ---------- dummy ad-level roster ---------- */
+// age = days before today the ad launched; w = spend weight; roas/ctr/cpm = profile
+const AD_BASE = [
+  {name:"Brass Helm Keyring — UGC Hook",       age:4,   w:1.6, roas:2.8, ctr:1.8, cpm:14},
+  {name:"Carabiner Closer — Founder VO",        age:9,   w:1.2, roas:2.4, ctr:1.5, cpm:16},
+  {name:"Desk Knife — Lifestyle 15s",           age:6,   w:1.1, roas:2.1, ctr:2.0, cpm:13},
+  {name:"Bottle Opener Bundle — Static",        age:22,  w:1.8, roas:3.0, ctr:1.6, cpm:12},
+  {name:"Travel Wallet — Testimonial",          age:27,  w:1.1, roas:2.6, ctr:1.4, cpm:15},
+  {name:"Keyring Sampler — Whiteboard",         age:3,   w:0.8, roas:1.9, ctr:2.2, cpm:13},
+  {name:"Pocket Tool — Press Quotes",           age:14,  w:1.3, roas:2.5, ctr:1.7, cpm:14},
+  {name:"Magnetic Knife — Demo 30s",            age:11,  w:1.5, roas:2.6, ctr:1.9, cpm:13},
+  {name:"Money Clip — Catalog DPA",             age:70,  w:2.2, roas:3.2, ctr:1.5, cpm:11},
+  {name:"Closer Keyring — Evergreen Static",    age:120, w:2.0, roas:2.9, ctr:1.3, cpm:12},
+  {name:"Notebook Set — UGC Compilation",       age:200, w:1.7, roas:2.7, ctr:1.6, cpm:13},
+  {name:"Venn Puzzle — Gifting Carousel",       age:95,  w:1.4, roas:2.3, ctr:1.5, cpm:15},
+  {name:"Brass Dice — Holiday Static",          age:160, w:1.0, roas:2.0, ctr:1.4, cpm:14},
+  {name:"Key Caddy — Problem/Solution",         age:45,  w:1.6, roas:2.5, ctr:1.6, cpm:14},
+];
+function adRoster(){
+  const t=todayUTC();
+  return AD_BASE.map((a,i)=>{ const c=new Date(t); c.setUTCDate(c.getUTCDate()-a.age);
+    return {id:"ad"+i, name:a.name, created:fmtDateISO(c), w:a.w, roas:a.roas, ctr:a.ctr, cpm:a.cpm}; });
+}
+function adMetrics(ad, range){
+  const start = ad.created>range.from ? ad.created : range.from;
+  if(start>range.to) return null;                       // not yet launched within range
+  const days = dayspan(start, range.to);
+  const rnd = seededRand(ad.id+"|"+range.from+"|"+range.to);
+  const spend = ad.w * days * (52+rnd()*40);
+  const cpm = ad.cpm*(0.9+rnd()*0.2);
+  const impressions = spend/cpm*1000;
+  const ctr = ad.ctr*(0.85+rnd()*0.3);
+  const clicks = impressions*(ctr/100);
+  const cvr = 0.03+rnd()*0.03;
+  const results = Math.max(0, Math.round(clicks*cvr));
+  const roas = ad.roas*(0.8+rnd()*0.4);
+  const revenue = spend*roas;
+  return {id:ad.id, name:ad.name, created:ad.created, daysLive:dayspan(ad.created, range.to),
+    spend, impressions:Math.round(impressions), clicks:Math.round(clicks),
+    ctr, cpc: clicks>0?spend/clicks:0, cpm, results, purchases:results,
+    roas, revenue, cpa: results>0?spend/results:0};
+}
+function computeAds(){
+  const r=currentRange();
+  return adRoster().map(a=>adMetrics(a,r)).filter(Boolean);
+}
+function labelLaunch(d){ return parseISO(d).toLocaleDateString("en-US",{month:"short",day:"numeric",timeZone:"UTC"}); }
+function renderAds(){
+  const r=currentRange();
+  document.getElementById("adsRange").textContent = `${r.from} → ${r.to}`;
+  const rows = USE_DUMMY ? computeAds() : AD_ROWS.slice();
+  const top=[...rows].sort((a,b)=>b.spend-a.spend).slice(0,5);
+  const t=todayUTC(); const cut=new Date(t); cut.setUTCDate(cut.getUTCDate()-30);
+  const cutStr=fmtDateISO(cut);
+  const risers=rows.filter(a=>a.created>=cutStr).sort((a,b)=>b.spend-a.spend).slice(0,5);
+  renderAdTable("topAdsBody", top, false);
+  renderAdTable("riserAdsBody", risers, true);
+}
+function renderAdTable(bodyId, rows, isRiser){
+  const tb=document.getElementById(bodyId);
+  const cols=10;
+  if(!rows.length){ tb.innerHTML=`<tr><td colspan="${cols}" class="muted" style="text-align:left">No matching ads in this date range.</td></tr>`; return; }
+  tb.innerHTML=rows.map((a,i)=>{
+    const badge = isRiser?` <span class="pill good">New</span>`:"";
+    const liveCell = isRiser?`<td>${a.daysLive}d</td>`:"";
+    const cpaCell = isRiser?"":`<td>${fmt(a.cpa,"money2")}</td>`;
+    return `<tr>
+      <td style="text-align:left"><span class="rank">${i+1}</span><span class="adname">${escapeHTML(a.name)}</span>${badge}</td>
+      <td>${labelLaunch(a.created)}</td>
+      ${liveCell}
+      <td>${fmt(a.spend,"money")}</td>
+      <td>${fmt(a.impressions,"int")}</td>
+      <td>${fmt(a.ctr,"pct")}</td>
+      <td>${fmt(a.cpc,"money2")}</td>
+      <td>${fmt(a.purchases,"int")}</td>
+      ${cpaCell}
+      <td>${fmt(a.roas,"x")}</td>
+      <td>${fmt(a.revenue,"money")}</td>
+    </tr>`;
+  }).join("");
+}
+
+/* ---------- business health (real Medusa+BV COGS) ---------- */
+let HEALTH = null;   // {by_class:{funnel,catalog}, total, source} from EMBEDDED_HEALTH
+function renderHealth(){
+  const body = document.getElementById("healthBody"); if(!body) return;
+  document.getElementById("healthRange").textContent =
+    (typeof SNAPSHOT!=="undefined" && SNAPSHOT) ? `· ${SNAPSHOT.since} → ${SNAPSHOT.until} · Medusa actuals` : "";
+  if(!HEALTH || !HEALTH.by_class || !Object.keys(HEALTH.by_class).length){
+    body.innerHTML = `<tr><td colspan="6" class="muted" style="text-align:left">Real COGS unavailable — run ./refresh-meta-dashboard.sh with prod access (cogs.json).</td></tr>`;
+    document.getElementById("healthLegend").textContent = ""; return;
+  }
+  const LABELS = {funnel:"Funnel (FB-driven)", catalog:"Catalog", ppu:"PPU"};
+  const row = (label,a,strong)=>`<tr>
+    <td style="text-align:left">${strong?"<strong>":""}${label}${strong?"</strong>":""}</td>
+    <td>${fmt(a.orders,"int")}</td><td>${fmt(a.revenue,"money")}</td>
+    <td>${fmt(a.cogs,"money")}</td><td>${fmt(a.cogs_pct,"pct")}</td>
+    <td>${strong?"<strong>":""}${fmt(a.margin,"money")}${strong?"</strong>":""}</td></tr>`;
+  let html = Object.keys(HEALTH.by_class).map(k=>row(LABELS[k]||k, HEALTH.by_class[k], false)).join("");
+  if(HEALTH.total) html += row("Total business", HEALTH.total, true);
+  body.innerHTML = html;
+  const spend = (typeof EMBEDDED_DAILY!=="undefined") ? EMBEDDED_DAILY.reduce((s,r)=>s+r.spend,0) : 0;
+  const fn = HEALTH.by_class.funnel;
+  const parts = [`Gross margin = revenue − COGS (live BV print + your dispatch steps).`];
+  if(fn) parts.push(`Funnel margin $${Math.round(fn.margin).toLocaleString()} − FB ad spend $${Math.round(spend).toLocaleString()} = <strong>net from ads $${Math.round(fn.margin-spend).toLocaleString()}</strong>.`);
+  parts.push(`Funnel COGS ${fn?fn.cogs_pct:"—"}% feeds the contribution-margin targets above.`);
+  if(HEALTH.source) parts.push(`Source: ${escapeHTML(HEALTH.source)}.`);
+  document.getElementById("healthLegend").innerHTML = parts.join(" ");
+}
+
+/* ---------- demographics ---------- */
+// DEMO is populated by the baked snapshot (EMBEDDED_DEMO) or dummy data below.
+let DEMO = {ageGender:[], platform:[], device:[]};
+let demoView = "ageGender";
+const DEMO_FIRSTCOL = {ageGender:"Age · Gender", platform:"Platform · Placement", device:"Device"};
+function dummyDemo(){
+  const mk = (seg,w,roas)=>{ const spend=w*900; const cpm=13; const impressions=spend/cpm*1000;
+    const clicks=impressions*0.015; const purchases=Math.round(clicks*0.04); const revenue=spend*roas;
+    return {segment:seg, spend:+spend.toFixed(2), impressions:Math.round(impressions), clicks:Math.round(clicks),
+      ctr:clicks/impressions*100, cpc:spend/clicks, purchases, roas, revenue:+revenue.toFixed(2),
+      cpa:purchases>0?spend/purchases:0}; };
+  return {
+    ageGender:[mk("55-64 · female",1.8,2.1),mk("45-54 · female",1.4,1.9),mk("65+ · female",1.2,2.3),mk("55-64 · male",0.9,1.5),mk("45-54 · male",0.7,1.4)],
+    platform:[mk("facebook · feed",2.6,1.9),mk("instagram · feed",1.1,1.7),mk("facebook · facebook_reels",0.6,1.5),mk("audience_network · classic",0.3,1.1)],
+    device:[mk("Android smartphone",2.1,1.8),mk("iPhone",1.7,2.0),mk("Desktop",0.5,1.6),mk("iPad",0.3,1.7)],
+  };
+}
+function renderDemo(){
+  document.getElementById("demoRange").textContent =
+    (typeof SNAPSHOT!=="undefined" && SNAPSHOT) ? `${SNAPSHOT.since} → ${SNAPSHOT.until}` : "";
+  const rows = (DEMO[demoView]||[]).slice().sort((a,b)=>b.spend-a.spend);
+  document.getElementById("demoHead").innerHTML =
+    `<th style="text-align:left">${DEMO_FIRSTCOL[demoView]}</th><th>Spend</th><th>Impressions</th><th>Clicks</th>`
+    +`<th>CTR</th><th>CPC</th><th>Purchases</th><th>ROAS</th><th>Revenue</th><th>CPA</th>`;
+  const tb=document.getElementById("demoBody");
+  if(!rows.length){ tb.innerHTML=`<tr><td colspan="10" class="muted" style="text-align:left">No demographic data for this breakdown.</td></tr>`;
+    document.getElementById("demoFoot").innerHTML=""; return; }
+  tb.innerHTML = rows.map((r,i)=>`<tr>
+    <td style="text-align:left"><span class="rank">${i+1}</span>${escapeHTML(r.segment)}</td>
+    <td>${fmt(r.spend,"money")}</td><td>${fmt(r.impressions,"int")}</td><td>${fmt(r.clicks,"int")}</td>
+    <td>${fmt(r.ctr,"pct")}</td><td>${fmt(r.cpc,"money2")}</td><td>${fmt(r.purchases,"int")}</td>
+    <td>${fmt(r.roas,"x")}</td><td>${fmt(r.revenue,"money")}</td><td>${fmt(r.cpa,"money2")}</td>
+  </tr>`).join("");
+  const t=rows.reduce((a,r)=>{a.spend+=r.spend;a.impressions+=r.impressions;a.clicks+=r.clicks;a.purchases+=r.purchases;a.revenue+=r.revenue;return a;},
+    {spend:0,impressions:0,clicks:0,purchases:0,revenue:0});
+  document.getElementById("demoFoot").innerHTML=`<tr>
+    <td style="text-align:left"><strong>Total</strong></td>
+    <td><strong>${fmt(t.spend,"money")}</strong></td><td>${fmt(t.impressions,"int")}</td><td>${fmt(t.clicks,"int")}</td>
+    <td>${fmt(t.impressions>0?t.clicks/t.impressions*100:0,"pct")}</td><td>${fmt(t.clicks>0?t.spend/t.clicks:0,"money2")}</td>
+    <td>${fmt(t.purchases,"int")}</td><td>${fmt(t.spend>0?t.revenue/t.spend:0,"x")}</td>
+    <td><strong>${fmt(t.revenue,"money")}</strong></td><td>${fmt(t.purchases>0?t.spend/t.purchases:0,"money2")}</td>
+  </tr>`;
+}
+
+async function fetchData(){
+  const r = currentRange();
+  const gran = state.granularity;
+  if(USE_DUMMY){
+    setStatus("loading","Generating sample data…");
+    RAW_ROWS = generateDummy(r, gran);
+    DEMO = dummyDemo();
+    showBanner("info","Showing sample (dummy) data for layout & testing — not live Meta numbers. Set USE_DUMMY=false to go live.");
+    setStatus("ok","");
+    renderAll();
+    return;
+  }
+  setStatus("loading","Loading live data…");
+  try{
+    // 1) account time-series for table / widgets / targets / trend
+    const acctRes = await window.cowork.callMcpTool(TOOL, {
+      ad_account_id: ACCOUNT_ID, level:"account",
+      fields:["spend","impressions","clicks","cpc","cpm","ctr","reach","purchase_roas","results"],
+      time_range: JSON.stringify({since:r.from, until:r.to}),
+      time_increment: gran
+    });
+    RAW_ROWS = extractRows(unwrap(acctRes)).map(normalizeRow).filter(Boolean)
+                 .sort((a,b)=> a.date<b.date?-1:1);
+
+    // 2) purchases per period from CAMPAIGN level (account level reports "Not available").
+    //    Same time_increment so bucket dates line up with the account rows.
+    const purRes = await window.cowork.callMcpTool(TOOL, {
+      ad_account_id: ACCOUNT_ID, level:"campaign",
+      fields:["name","spend","results"],
+      time_range: JSON.stringify({since:r.from, until:r.to}),
+      time_increment: gran, sort:"spend_descending", limit:100
+    });
+    const purByDate={};
+    extractRows(unwrap(purRes)).forEach(pr=>{
+      const d=toISO(pr.date_start||pr.date||pr.date_stop||"");
+      const n=parseResults(pr.results);
+      if(d && n!=null) purByDate[d]=(purByDate[d]||0)+n;
+    });
+    RAW_ROWS.forEach(row=>{ if(purByDate[row.date]!=null) row.results=purByDate[row.date]; });
+    const purSum=Object.values(purByDate).reduce((a,b)=>a+b,0);
+    PERIOD_PURCHASES = purSum>0 ? purSum : null;
+
+    // 3) ad-level (top spenders) for the Ads section
+    const adRes = await window.cowork.callMcpTool(TOOL, {
+      ad_account_id: ACCOUNT_ID, level:"ad",
+      fields:["name","created_time","spend","impressions","clicks","cpc","cpm","ctr","purchase_roas","results"],
+      time_range: JSON.stringify({since:r.from, until:r.to}),
+      sort:"spend_descending", limit:50
+    });
+    AD_ROWS = extractRows(unwrap(adRes)).map(normalizeAd).filter(Boolean);
+  }catch(err){
+    showBanner("err","Couldn't load live data: "+(err&&err.message?err.message:err)+" · Try Reload or adjust the date range.");
+    setStatus("error","No data loaded.");
+    RAW_ROWS=[]; AD_ROWS=[]; PERIOD_PURCHASES=null; renderAll(); return;
+  }
+  if(!RAW_ROWS.length) showBanner("info","No rows returned for this range. Pick another date range or granularity.");
+  else hideBanner();
+  setStatus("ok","");
+  renderAll();
+}
+function normalizeAd(row){
+  const spend=num(row.amount_spent!==undefined?row.amount_spent:row.spend);
+  const impressions=num(row.impressions), clicks=num(row.clicks);
+  const purchases=parseResults(row.results);
+  const roas=num(row.purchase_roas!==undefined?row.purchase_roas:row.roas);
+  const created=toISO(row.created_time||row.created||"");
+  const today=fmtDateISO(todayUTC());
+  return {id:row.id, name:row.name||"(unnamed ad)", created,
+    daysLive: created ? Math.max(1, dayspan(created, today)) : null,
+    spend, impressions, clicks,
+    purchases: purchases||0, results: purchases||0,
+    roas, revenue: spend*roas,
+    cpc: clicks>0?spend/clicks:0,
+    cpm: impressions>0?spend/impressions*1000:0,
+    ctr: impressions>0?clicks/impressions*100:0,
+    cpa: (purchases&&purchases>0)?spend/purchases:0};
+}
+function normalizeRow(row){
+  const date = toISO(row.date_start || row.date || row.date_stop || row.day || "");
+  return {
+    date,
+    spend: num(row.spend!==undefined?row.spend:row.amount_spent),
+    impressions: num(row.impressions),
+    clicks: num(row.clicks),
+    reach: num(row.reach),
+    results: parseResults(row.results!==undefined?row.results:row.purchases), // number|null
+    roas: num(row.purchase_roas!==undefined?row.purchase_roas:row.roas),
+  };
+}
+
+/* ---------- derived per-row + aggregates ---------- */
+function monthFixedShare(dateStr){
+  // fixed monthly allocated by this row's day-share of its month
+  if(!state.cost.fixedMo) return 0;
+  const d = dateStr?parseISO(dateStr):todayUTC();
+  const dim = daysInMonth(d.getUTCFullYear(), d.getUTCMonth());
+  const span = rowSpanDays(dateStr);
+  return state.cost.fixedMo * (span/dim);
+}
+let CURRENT_GRAN_SPAN=1;
+function rowSpanDays(){ return CURRENT_GRAN_SPAN; }
+
+function enrich(row, spanDays){
+  const revenue = row.spend * row.roas;
+  const cogs = revenue * (state.cost.cogsPct/100);
+  const variable = revenue * (state.cost.varPct/100);
+  let fixed=0;
+  if(state.cost.fixedMo){
+    const d = row.date?parseISO(row.date):todayUTC();
+    const dim = daysInMonth(d.getUTCFullYear(), d.getUTCMonth());
+    fixed = state.cost.fixedMo * (spanDays/dim);
+  }
+  const cm = revenue - cogs - variable - row.spend - fixed;
+  return {...row, revenue, cogs, variable, fixed, cm,
+    purchases: row.results,
+    cm_pct: revenue>0 ? cm/revenue*100 : 0,
+    cpm: row.impressions>0? row.spend/row.impressions*1000 : 0,
+    cpc: row.clicks>0? row.spend/row.clicks : 0,
+    ctr: row.impressions>0? row.clicks/row.impressions*100 : 0,
+    cpa: (row.results&&row.results>0)? row.spend/row.results : 0,
+    frequency: row.reach>0? row.impressions/row.reach : 0,
+  };
+}
+function spanForGran(){
+  const g=state.granularity;
+  if(g==="7") return 7;
+  if(g==="monthly") return 30; // approx; fixed alloc handles month length per row
+  return 1;
+}
+function enrichedRows(){
+  const span = spanForGran();
+  return RAW_ROWS.map(r=> enrich(r, span));
+}
+function aggregate(rows){
+  const t={spend:0,impressions:0,clicks:0,reach:0,results:0,revenue:0,cogs:0,variable:0,fixed:0,cm:0};
+  for(const r of rows){ t.spend+=r.spend;t.impressions+=r.impressions;t.clicks+=r.clicks;t.reach+=r.reach;
+    t.results+=r.results;t.revenue+=r.revenue;t.cogs+=r.cogs;t.variable+=r.variable;t.fixed+=r.fixed;t.cm+=r.cm; }
+  t.cpm = t.impressions>0? t.spend/t.impressions*1000:0;
+  t.cpc = t.clicks>0? t.spend/t.clicks:0;
+  t.ctr = t.impressions>0? t.clicks/t.impressions*100:0;
+  // account level doesn't report purchases per-day → fall back to ad-level period total
+  if((!t.results || t.results===0) && PERIOD_PURCHASES) t.results = PERIOD_PURCHASES;
+  t.purchases = t.results;
+  t.cpa = t.results>0? t.spend/t.results:0;
+  t.roas = t.spend>0? t.revenue/t.spend:0;
+  t.frequency = t.reach>0? t.impressions/t.reach:0;
+  t.cm_pct = t.revenue>0? t.cm/t.revenue*100:0;
+  return t;
+}
+function metricValue(totals, key){
+  if(key in totals) return totals[key];
+  return null;
+}
+
+/* ---------- rendering ---------- */
+function currentRange(){ return state.range || defaultRange(); }
+
+function renderAll(){ renderTargets(); renderWidgets(); renderHealth(); renderAds(); renderDemo(); renderTable(); renderTrend(); renderCostSummary(); }
+
+function renderCostSummary(){
+  const c=state.cost;
+  document.getElementById("costSummary").innerHTML =
+    `Cost model — COGS <strong>${c.cogsPct}%</strong> · Variable <strong>${c.varPct}%</strong> · Fixed <strong>$${(c.fixedMo||0).toLocaleString()}</strong>/mo`;
+}
+
+function targetStatus(metricKey, actual, target){
+  if(actual===null||isNaN(actual)) return {pill:"neutral",txt:"—",pct:0};
+  const m=METRICS[metricKey]; const better=m?m.better:"up";
+  let ratio = better==="up" ? actual/target : target/actual;
+  if(!isFinite(ratio)||isNaN(ratio)) ratio=0;
+  const pct=Math.max(0,Math.min(100,ratio*100));
+  let cls = ratio>=1 ? "good" : ratio>=0.85 ? "warn" : "bad";
+  const sign = better==="up" ? (actual>=target?"on/above":"below") : (actual<=target?"on/under":"over");
+  return {pill:cls, txt:sign+" target", pct};
+}
+
+function renderTargets(){
+  const totals = aggregate(enrichedRows());
+  const grid=document.getElementById("targetsGrid");
+  grid.innerHTML="";
+  state.targets.forEach(t=>{
+    const m=METRICS[t.metric]||{label:t.metric,fmt:"f2",better:"up"};
+    const actual = metricValue(totals,t.metric);
+    const st=targetStatus(t.metric, actual, t.value);
+    const el=document.createElement("div");
+    el.className="target";
+    el.innerHTML=`
+      <button class="x" title="Remove" data-del="${t.id}">✕</button>
+      <div class="lbl">${escapeHTML(t.label)}</div>
+      <div class="big">${fmt(actual,m.fmt)}</div>
+      <div class="meta">Target: ${fmt(t.value,m.fmt)} · <span class="muted">${m.label}</span></div>
+      <div class="barwrap"><div class="bar" style="width:${st.pct}%;background:${barColor(st.pill)}"></div></div>
+      <div class="tgtline"><span class="pill ${st.pill}">${st.txt}</span>
+        <span class="muted">${st.pct.toFixed(0)}% of target</span></div>`;
+    grid.appendChild(el);
+  });
+  grid.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{
+    state.targets=state.targets.filter(x=>x.id!==b.dataset.del); saveState(); renderTargets();
+  });
+}
+function barColor(p){ return p==="good"?"var(--good)":p==="warn"?"var(--warn)":p==="bad"?"var(--bad)":"var(--accent)"; }
+
+function renderWidgets(){
+  const totals = aggregate(enrichedRows());
+  const r=currentRange();
+  document.getElementById("widgetRange").textContent = `· ${r.from} → ${r.to}`;
+  const row=document.getElementById("widgetsRow");
+  row.innerHTML="";
+  state.widgets.forEach(w=>{
+    const m=METRICS[w.metric];
+    const val=metricValue(totals,w.metric);
+    const el=document.createElement("div");
+    el.className="widget";
+    const opts=Object.keys(METRICS).map(k=>`<option value="${k}" ${k===w.metric?"selected":""}>${METRICS[k].label}</option>`).join("");
+    el.innerHTML=`
+      <button class="x" title="Remove" data-del="${w.id}">✕</button>
+      <div class="wlbl"><select data-metric="${w.id}">${opts}</select></div>
+      <div class="wval">${fmt(val,m.fmt)}</div>
+      <div class="wsub">${m.label}</div>`;
+    row.appendChild(el);
+  });
+  row.querySelectorAll("select[data-metric]").forEach(s=>s.onchange=()=>{
+    const w=state.widgets.find(x=>x.id===s.dataset.metric); if(w){ w.metric=s.value; saveState(); renderWidgets(); }
+  });
+  row.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{
+    state.widgets=state.widgets.filter(x=>x.id!==b.dataset.del); saveState(); renderWidgets();
+  });
+}
+
+function renderTable(){
+  const rows = enrichedRows();
+  const wrap=document.getElementById("tableWrap");
+  if(!rows.length){ wrap.style.display="none"; return; }
+  wrap.style.display="block";
+  const thead=document.querySelector("#dataTable thead");
+  const tbody=document.querySelector("#dataTable tbody");
+  const tfoot=document.querySelector("#dataTable tfoot");
+  const heads=["Date"].concat(TABLE_COLS.map(k=>METRICS[k].label));
+  thead.innerHTML="<tr>"+heads.map(h=>`<th>${h}</th>`).join("")+"</tr>";
+  tbody.innerHTML = rows.map(r=>{
+    const cells=TABLE_COLS.map(k=>{
+      const m=METRICS[k]; let v=r[k];
+      let cls="";
+      if(k==="cm") cls = v>=0?"pos":"neg";
+      return `<td class="${cls}">${fmt(v,m.fmt)}</td>`;
+    }).join("");
+    return `<tr><td>${labelForDate(r.date)}</td>${cells}</tr>`;
+  }).join("");
+  const t=aggregate(rows);
+  const foot=TABLE_COLS.map(k=>{
+    const m=METRICS[k]; let v=t[k];
+    let cls = k==="cm" ? (v>=0?"pos":"neg") : "";
+    return `<td class="${cls}">${fmt(v,m.fmt)}</td>`;
+  }).join("");
+  tfoot.innerHTML=`<tr><td>Total</td>${foot}</tr>`;
+}
+function labelForDate(d){
+  if(!d) return "—";
+  if(state.granularity==="monthly"){ const p=parseISO(d); return p.toLocaleDateString("en-US",{month:"short",year:"numeric",timeZone:"UTC"}); }
+  if(state.granularity==="7"){ const p=parseISO(d); const e=new Date(p); e.setUTCDate(e.getUTCDate()+6);
+    return p.toLocaleDateString("en-US",{month:"short",day:"numeric",timeZone:"UTC"})+"–"+e.toLocaleDateString("en-US",{month:"short",day:"numeric",timeZone:"UTC"}); }
+  const p=parseISO(d); return p.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric",timeZone:"UTC"});
+}
+
+let chart=null;
+function renderTrend(){
+  const sel=document.getElementById("trendMetric");
+  if(!sel.options.length){
+    sel.innerHTML=Object.keys(METRICS).map(k=>`<option value="${k}">${METRICS[k].label}</option>`).join("");
+  }
+  sel.value=state.trendMetric;
+  const rows=enrichedRows();
+  const ctx=document.getElementById("trendChart");
+  const m=METRICS[state.trendMetric];
+  const labels=rows.map(r=>labelForDate(r.date));
+  const data=rows.map(r=>r[state.trendMetric]);
+  if(chart) chart.destroy();
+  if(!rows.length){ return; }
+  chart=new Chart(ctx,{type:"line",
+    data:{labels,datasets:[{label:m.label,data,borderColor:"#1b6df0",backgroundColor:"rgba(27,109,240,.08)",
+      fill:true,tension:.25,pointRadius:rows.length>40?0:2,borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>m.label+": "+fmt(c.parsed.y,m.fmt)}}},
+      scales:{x:{grid:{display:false},ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:10,font:{size:10}}},
+              y:{ticks:{font:{size:10},callback:(v)=>fmt(v,m.fmt)},grid:{color:"#eef1f4"}}}}});
+}
+
+/* ---------- UI plumbing ---------- */
+function escapeHTML(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function showBanner(type,msg){ const b=document.getElementById("banner"); b.className="banner show "+(type==="err"?"err":"info"); b.innerHTML="<span>"+escapeHTML(msg)+"</span>"; }
+function hideBanner(){ document.getElementById("banner").className="banner"; }
+function setStatus(kind,msg){
+  const s=document.getElementById("tableStatus");
+  if(kind==="loading"){ s.style.display="block"; s.textContent=msg; }
+  else if(kind==="error"){ s.style.display="block"; s.textContent=msg; }
+  else { s.style.display="none"; }
+}
+
+// modals
+function openModal(id){ document.getElementById(id).classList.add("open"); }
+function closeModal(id){ document.getElementById(id).classList.remove("open"); }
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>{ b.closest(".modal-bg").classList.remove("open"); });
+document.querySelectorAll(".modal-bg").forEach(bg=>bg.addEventListener("click",e=>{ if(e.target===bg) bg.classList.remove("open"); }));
+
+// cost modal
+document.getElementById("configCostBtn").onclick=()=>{
+  document.getElementById("cogsPct").value=state.cost.cogsPct;
+  document.getElementById("varPct").value=state.cost.varPct;
+  document.getElementById("fixedMo").value=state.cost.fixedMo;
+  openModal("costModal");
+};
+document.getElementById("saveCost").onclick=()=>{
+  state.cost.cogsPct=parseFloat(document.getElementById("cogsPct").value)||0;
+  state.cost.varPct=parseFloat(document.getElementById("varPct").value)||0;
+  state.cost.fixedMo=parseFloat(document.getElementById("fixedMo").value)||0;
+  saveState(); closeModal("costModal"); renderAll();
+};
+
+// target modal
+let editingTargetId=null;
+function fillMetricSelect(sel,current){
+  sel.innerHTML=Object.keys(METRICS).map(k=>`<option value="${k}" ${k===current?"selected":""}>${METRICS[k].label}</option>`).join("");
+}
+document.getElementById("addTargetBtn").onclick=()=>{
+  editingTargetId=null;
+  document.getElementById("targetModalTitle").textContent="Add target";
+  document.getElementById("tgtLabel").value="";
+  fillMetricSelect(document.getElementById("tgtMetric"),"cpa");
+  document.getElementById("tgtValue").value="";
+  updateTgtDir(); openModal("targetModal");
+};
+document.getElementById("tgtMetric").onchange=updateTgtDir;
+function updateTgtDir(){
+  const k=document.getElementById("tgtMetric").value; const m=METRICS[k];
+  document.getElementById("tgtDir").textContent = m.better==="up" ? "Higher is better — actual should meet or exceed this." : "Lower is better — actual should stay at or under this.";
+}
+document.getElementById("saveTarget").onclick=()=>{
+  const label=document.getElementById("tgtLabel").value.trim();
+  const metric=document.getElementById("tgtMetric").value;
+  const value=parseFloat(document.getElementById("tgtValue").value);
+  if(!label||isNaN(value)){ alert("Enter a label and a numeric target value."); return; }
+  if(editingTargetId){ const t=state.targets.find(x=>x.id===editingTargetId); if(t){t.label=label;t.metric=metric;t.value=value;} }
+  else state.targets.push({id:"t"+Date.now(),label,metric,value});
+  saveState(); closeModal("targetModal"); renderTargets();
+};
+
+// add widget
+document.getElementById("addWidgetBtn").onclick=()=>{
+  if(state.widgets.length>=8){ alert("Up to 8 widgets."); return; }
+  state.widgets.push({id:"w"+Date.now(),metric:"ctr"}); saveState(); renderWidgets();
+};
+
+// table controls
+document.getElementById("granularity").value=state.granularity;
+document.getElementById("trendMetric").onchange=(e)=>{ state.trendMetric=e.target.value; saveState(); renderTrend(); };
+document.getElementById("presetRange").onchange=(e)=>{
+  if(e.target.value){ const r=presetToRange(e.target.value);
+    document.getElementById("dateFrom").value=r.from; document.getElementById("dateTo").value=r.to; }
+};
+document.getElementById("applyBtn").onclick=()=>{
+  const from=document.getElementById("dateFrom").value, to=document.getElementById("dateTo").value;
+  if(from&&to&&from>to){ alert("From date must be before To date."); return; }
+  state.range={from,to};
+  state.granularity=document.getElementById("granularity").value;
+  saveState(); fetchData();
+};
+
+// demographics breakdown switcher
+document.getElementById("demoTabs").addEventListener("click",(e)=>{
+  const b=e.target.closest(".demotab"); if(!b) return;
+  demoView=b.dataset.demo;
+  document.querySelectorAll("#demoTabs .demotab").forEach(x=>x.classList.toggle("active", x===b));
+  renderDemo();
+});
+
+/* ---------- init ---------- */
+function init(){
+  const r=currentRange();
+  document.getElementById("dateFrom").value=r.from;
+  document.getElementById("dateTo").value=r.to;
+  document.getElementById("granularity").value=state.granularity;
+  renderCostSummary();
+  if(USE_DUMMY || (window.cowork && window.cowork.callMcpTool)){ fetchData(); }
+  else {
+    showBanner("err","Live data bridge unavailable in this preview. Open inside Cowork to load Meta data.");
+    setStatus("error","Live data unavailable in preview.");
+    renderAll();
+  }
+}
+init();
+</script>
+</body>
+</html>
