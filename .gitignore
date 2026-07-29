@@ -36,3 +36,9 @@ docs/api/
 
 # Ignore any local configuration files
 local_settings.py
+
+# Cover rig working state (prod/docs/visual-production-rig-plan.md).
+# The YAML records under _rig/ ARE tracked — they are small, text, diffable, and
+# they are what makes a job resumable. Only the regenerable binaries are ignored.
+novels/**/cover/_rig/*/assets/
+novels/**/cover/_rig/*/prompts/
