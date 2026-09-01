@@ -7,3 +7,8 @@ cogs.json
 *.csv
 *.xlsx
 FB CAPI*.json
+
+# Break-even model — generated output and its PII-bearing input
+breakeven-NOS.html
+pnl-orders.json
+spend.json

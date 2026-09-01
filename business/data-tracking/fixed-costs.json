@@ -1,0 +1,25 @@
+{
+  "_comment": "Monthly fixed operating costs, USD. Edit here — build-breakeven.py reads it.",
+  "_updated": "2026-09-01",
+  "costs": {
+    "Claude": 106.90,
+    "Superscale": 99.00,
+    "DigitalMarketer": 95.00,
+    "n8n": 63.96,
+    "BookFunnel": 31.98,
+    "Vercel Pro": 31.98,
+    "Uni-1": 30.00,
+    "ChatGPT": 21.28,
+    "Resend": 20.00,
+    "Hetzner": 18.50,
+    "Railway": 5.00
+  },
+  "_zero": ["Sanity", "GitHub", "Cloudflare R2", "domains"],
+  "_excluded": {
+    "BookVault": "per-print, lands in COGS",
+    "Stripe": "per-transaction, computed as 2.9% + $0.30",
+    "Meta": "ad spend, pulled live"
+  },
+  "stripe_pct": 0.029,
+  "stripe_fixed": 0.30
+}
