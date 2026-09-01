@@ -291,6 +291,23 @@ def main():
     out = os.path.join(HERE, "breakeven-NOS.html")
     open(out, "w").write(html)
     print("wrote", out)
+
+    # Structured twin of the HTML, so push-to-sheets.py never re-derives anything.
+    g = cfg["goals"]; npm = agg["new_per_month"]
+    ladder = [dict(ltv=v, per_customer=v * margin - cac,
+                   per_month=(v * margin - cac) * npm,
+                   per_year=(v * margin - cac) * npm * 12)
+              for v in sorted(set(g["ltv_ladder"] + [round(agg["ltv"], 2), g["target_ltv"]]))]
+    payload = dict(
+        generated=datetime.datetime.now().isoformat(timespec="seconds"),
+        fixed_month=fixed_month, margin=margin, cac=cac,
+        new_per_month=npm, measured_ltv=agg["ltv"], target_ltv=g["target_ltv"],
+        repeat_aov=agg["repeat_aov"], customers=agg["customers"],
+        windows=[dict(name=n, **w) for n, w in wins if w],
+        cohorts=coh, ladder=ladder)
+    jout = os.path.join(HERE, "breakeven.json")
+    json.dump(payload, open(jout, "w"), indent=1, default=float)
+    print("wrote", jout)
     for n, w in wins:
         if w: print(f"  {n:24} ROAS {w['roas'] or 0:.2f}x  break-even {w['be_roi'] or 0:.2f}x  "
                     f"AOV ${w['aov']:.2f}  COGS {w['cogs_pct']:.1f}%  profit ${w['profit']:,.2f}")

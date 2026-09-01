@@ -12,3 +12,5 @@ FB CAPI*.json
 breakeven-NOS.html
 pnl-orders.json
 spend.json
+breakeven.json
+.venv/

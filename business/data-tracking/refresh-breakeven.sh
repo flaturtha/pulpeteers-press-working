@@ -47,4 +47,17 @@ PYP
 echo "▸ model (live BookVault print costs — takes a moment)"
 python3 build-breakeven.py --orders pnl-orders.json --spend spend.json --since "$SINCE"
 
+# Optional final step: mirror into Google Sheets. Skipped silently until the
+# service account is configured, so the local pipeline never depends on it.
+if [ -n "${GOOGLE_SA_KEY_PATH:-}" ] && [ -n "${BREAKEVEN_SHEET_ID:-}" ]; then
+  echo "▸ pushing to Google Sheets"
+  if [ -x .venv/bin/python ]; then
+    .venv/bin/python push-to-sheets.py || echo "  (push failed — local output is still current)"
+  else
+    echo "  !! .venv missing — run: python3 -m venv .venv && .venv/bin/pip install gspread google-auth"
+  fi
+else
+  echo "▸ Google Sheets push skipped (GOOGLE_SA_KEY_PATH / BREAKEVEN_SHEET_ID unset)"
+fi
+
 echo "▸ done → breakeven-NOS.html"
