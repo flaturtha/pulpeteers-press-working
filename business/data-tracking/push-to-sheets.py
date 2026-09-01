@@ -93,7 +93,18 @@ def main():
         ws.update(values=[hdr] + rows, range_name="A1")
         print(f"  {name}: {len(rows)} rows")
 
-    print(f"  → https://docs.google.com/spreadsheets/d/{sid}")
+    # Put the data tabs first so opening the sheet lands on numbers, not on the
+    # empty default Sheet1. Any tabs of your own keep their relative order at the end.
+    try:
+        want = [n for n in tabs if n in [w.title for w in sh.worksheets()]]
+        ordered = ([sh.worksheet(n) for n in want] +
+                   [w for w in sh.worksheets() if w.title not in want])
+        sh.reorder_worksheets(ordered)
+    except Exception as e:
+        print(f"  (tab reorder skipped: {e})")
+
+    first = sh.worksheets()[0]
+    print(f"  → https://docs.google.com/spreadsheets/d/{sid}/edit#gid={first.id}")
 
 if __name__ == "__main__":
     main()
