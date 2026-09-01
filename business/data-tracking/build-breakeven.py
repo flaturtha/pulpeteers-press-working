@@ -15,7 +15,7 @@ break-even falls as catalog share rises.
   python3 build-breakeven.py --orders pnl-orders.json --spend spend.json
 Writes breakeven-NOS.html.
 """
-import json, os, sys, datetime, importlib.util
+import json, os, sys, datetime, collections, importlib.util
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -50,6 +50,45 @@ def cogs_for(orders):
         total += cc.shipping(len(pb))
     return round(total, 2)
 
+def cohorts(rows):
+    """Measured LTV by cohort age. A customer's first 24h is the entry order plus
+    its same-session upsells; anything later is a genuine return."""
+    by = collections.defaultdict(list)
+    for o in rows:
+        e = (o.get("email") or "").lower()
+        if e: by[e].append(o)
+    for v in by.values():
+        v.sort(key=lambda x: x["created_at"])
+    first = {e: v[0]["created_at"] for e, v in by.items()}
+    ENTRY = 86400
+
+    def age_s(o, e):
+        a = datetime.datetime.fromisoformat(o["created_at"].replace("Z", "+00:00"))
+        b = datetime.datetime.fromisoformat(first[e].replace("Z", "+00:00"))
+        return (a - b).total_seconds()
+
+    groups = collections.defaultdict(list)
+    for e, v in by.items():
+        groups[v[0]["created_at"][:7]].append(e)
+
+    now = datetime.datetime.now(datetime.timezone.utc)
+    out = []
+    for c in sorted(groups):
+        es = groups[c]; n = len(es)
+        entry = sum(o["revenue"] for e in es for o in by[e] if age_s(o, e) <= ENTRY)
+        rep   = sum(o["revenue"] for e in es for o in by[e] if age_s(o, e) >  ENTRY)
+        ret   = sum(1 for e in es if any(age_s(o, e) > ENTRY for o in by[e]))
+        age   = (now - min(datetime.datetime.fromisoformat(first[e].replace("Z","+00:00")) for e in es)).days
+        out.append(dict(cohort=c, n=n, age=age, entry=entry/n, repeat=rep/n,
+                        ltv=(entry+rep)/n, multiple=(entry+rep)/entry if entry else 0,
+                        ret_pct=ret/n*100))
+    total_rev = sum(o["revenue"] for o in rows)
+    repeat_aov = ([o["revenue"] for e in by for o in by[e] if age_s(o, e) > ENTRY] or [0])
+    return out, dict(customers=len(by), ltv=total_rev/len(by) if by else 0,
+                     new_per_month=len(by)/max(1, len(groups)),
+                     repeat_aov=sum(repeat_aov)/len(repeat_aov) if repeat_aov else 0)
+
+
 def model(rows, spend, fixed_month, days, cfg):
     rev = sum(o["revenue"] for o in rows)
     n = len(rows)
@@ -74,7 +113,24 @@ def model(rows, spend, fixed_month, days, cfg):
 def money(v):  return f"${v:,.2f}"
 def pct(v):    return f"{v:.1f}%"
 
-def render(windows, cfg, fixed_month, generated):
+def render(windows, cfg, fixed_month, generated, coh, agg, margin, cac):
+    g   = cfg["goals"]
+    npm = agg["new_per_month"]
+    coh_html = "".join(
+        f'<tr><td>{c["cohort"]}</td><td>{c["n"]}</td><td>{c["age"]}d</td>'
+        f'<td>{money(c["entry"])}</td><td>{money(c["repeat"])}</td>'
+        f'<td><b>{money(c["ltv"])}</b></td><td>{c["ret_pct"]:.1f}%</td></tr>' for c in coh)
+    ladder_html = ""
+    for ltv in sorted(set(g["ltv_ladder"] + [round(agg["ltv"], 2), g["target_ltv"]])):
+        per = ltv * margin - cac
+        tag = (' <span class="muted">&mdash; measured today</span>' if abs(ltv - agg["ltv"]) < 0.01
+               else ' <span class="muted">&mdash; your target</span>' if abs(ltv - g["target_ltv"]) < 0.01
+               else "")
+        cls = "pos" if per > 0 else "neg"
+        ladder_html += (f'<tr><td>{money(ltv)}{tag}</td><td class="{cls}">{money(per)}</td>'
+                        f'<td class="{cls}">{money(per*npm)}</td>'
+                        f'<td class="{cls}">{money(per*npm*12)}</td></tr>')
+
     def card(w, name):
         if not w: return f'<div class="win"><h3>{name}</h3><p class="muted">No orders in window.</p></div>'
         ok = w["profit"] >= 0
@@ -153,14 +209,42 @@ footer{{margin-top:48px;padding-top:16px;border-top:1px solid var(--rule);color:
   Stripe is computed per transaction, so neither appears here.</p>
 </section>
 <section>
+  <h2>Where the profit actually is</h2>
+  <p class="note">Break-even on the front end sounds alarming until you look at the back
+  catalogue. Acquiring a customer at break-even is <em>fine</em> — the profit is the second,
+  third and tenth order, which cost nothing to acquire. That is the whole model, and it is why
+  building the catalogue is the business rather than a side quest.</p>
+
+  <h3 style="margin-top:22px;font-size:1rem">Measured LTV, by cohort age</h3>
+  <div class="win" style="margin-top:10px"><table>
+    <tr><td><b>Cohort</b></td><td><b>n</b></td><td><b>Age</b></td><td><b>Entry</b></td><td><b>Repeat</b></td><td><b>LTV</b></td><td><b>Returned</b></td></tr>
+    {coh_html}
+  </table></div>
+  <p class="note">Repeat revenue is compounding — and every one of these cohorts spent most of
+  its life against a 10-title catalogue. The catalogue doubled on 27 August, so this curve
+  understates what the next cohorts should do.</p>
+
+  <h3 style="margin-top:26px;font-size:1rem">What each LTV level is worth to you</h3>
+  <div class="win" style="margin-top:10px"><table>
+    <tr><td><b>LTV</b></td><td><b>Per customer</b></td><td><b>Per month</b></td><td><b>Per year</b></td></tr>
+    {ladder_html}
+  </table></div>
+  <p class="note">At {npm:.0f} new customers a month, {margin*100:.0f}% contribution margin and a
+  ${cac:,.2f} CAC. <b>Measured repeat orders average ${agg['repeat_aov']:,.2f}</b> — so a single extra
+  catalogue order per customer per year moves LTV from ${agg['ltv']:,.2f} to roughly
+  ${agg['ltv']+agg['repeat_aov']:,.2f}. That one order is the difference between a business that funds itself and
+  one that pays you.</p>
+</section>
+<section>
   <h2>Reading this</h2>
   <p class="note"><b>Break-even ROI is not a fixed target.</b> Catalogue orders cost roughly 28%
   to deliver against the funnel's 35%, so the more the back catalogue sells, the lower the bar
   drops — toward a floor near 1.45&times; at an all-catalogue mix. Compare each window's
   break-even against its own catalogue share rather than carrying one number forward.</p>
-  <p class="note"><b>LTV is deliberately absent.</b> The original sheet assumed $250 and built a
-  twelve-month projection on it; measured LTV is far lower and still moving. Nothing here depends
-  on a number that has not been observed.</p>
+  <p class="note"><b>Measured and target LTV are kept apart on purpose.</b> The original sheet
+  assumed $250 and built a twelve-month projection on it. The cohort table above is observed;
+  the ladder below it is arithmetic on an assumption you set in <code>fixed-costs.json</code>.
+  Never read the second as the first.</p>
 </section>
 <footer>Generated {generated} &middot; <code>refresh-breakeven.sh</code></footer>
 </div></body></html>'''
@@ -197,7 +281,13 @@ def main():
         window("Last 30 complete days", y - datetime.timedelta(days=29), y),
         window("June–August baseline",  datetime.date(2026, 6, 1), datetime.date(2026, 8, 31)),
     ]
-    html = render(wins, cfg, fixed_month, datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+    coh, agg = cohorts(rows)
+    recent = next((w for _, w in wins if w), None)
+    margin = ((recent["revenue"] - recent["cogs"] - recent["fees"]) / recent["revenue"]) if recent else 0.6
+    cac = (recent["spend"] / agg["new_per_month"]) if recent and agg["new_per_month"] else 0
+
+    html = render(wins, cfg, fixed_month, datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+                  coh, agg, margin, cac)
     out = os.path.join(HERE, "breakeven-NOS.html")
     open(out, "w").write(html)
     print("wrote", out)

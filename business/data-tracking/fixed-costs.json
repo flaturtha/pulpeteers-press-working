@@ -1,25 +1,42 @@
 {
-  "_comment": "Monthly fixed operating costs, USD. Edit here — build-breakeven.py reads it.",
+  "_comment": "Monthly fixed costs + goal inputs, USD. Edit here \u2014 build-breakeven.py reads it.",
   "_updated": "2026-09-01",
   "costs": {
-    "Claude": 106.90,
-    "Superscale": 99.00,
-    "DigitalMarketer": 95.00,
+    "Claude": 106.9,
+    "Superscale": 99.0,
+    "DigitalMarketer": 95.0,
     "n8n": 63.96,
     "BookFunnel": 31.98,
     "Vercel Pro": 31.98,
-    "Uni-1": 30.00,
+    "Uni-1": 30.0,
     "ChatGPT": 21.28,
-    "Resend": 20.00,
-    "Hetzner": 18.50,
-    "Railway": 5.00
+    "Resend": 20.0,
+    "Hetzner": 18.5,
+    "Railway": 5.0
   },
-  "_zero": ["Sanity", "GitHub", "Cloudflare R2", "domains"],
+  "_zero": [
+    "Sanity",
+    "GitHub",
+    "Cloudflare R2",
+    "domains"
+  ],
   "_excluded": {
     "BookVault": "per-print, lands in COGS",
     "Stripe": "per-transaction, computed as 2.9% + $0.30",
     "Meta": "ad spend, pulled live"
   },
   "stripe_pct": 0.029,
-  "stripe_fixed": 0.30
+  "stripe_fixed": 0.3,
+  "goals": {
+    "_comment": "Sam's point: front-end break-even is fine IF the back catalogue pays. This is where you set what you're aiming at.",
+    "target_ltv": 250.0,
+    "target_monthly_income": 5000.0,
+    "ltv_ladder": [
+      100,
+      150,
+      200,
+      250,
+      300
+    ]
+  }
 }
