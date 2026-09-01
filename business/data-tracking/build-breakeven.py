@@ -89,7 +89,7 @@ def cohorts(rows):
                      repeat_aov=sum(repeat_aov)/len(repeat_aov) if repeat_aov else 0)
 
 
-def model(rows, spend, fixed_month, days, cfg):
+def model(rows, spend, fixed_month, days, cfg, first_order=None):
     rev = sum(o["revenue"] for o in rows)
     n = len(rows)
     if not n or rev <= 0:
@@ -99,7 +99,16 @@ def model(rows, spend, fixed_month, days, cfg):
     fixed = fixed_month * (days / 30.4)
     be_spend = rev - cogs - fees - fixed
     cat = sum(o["revenue"] for o in rows if o["class"] == "catalog")
+    # New customers = those whose FIRST EVER order falls inside this window.
+    # Counting distinct emails in the window instead would double-count returning
+    # buyers and understate CAC — which is exactly the bug this replaced.
+    lo = min(o["created_at"][:10] for o in rows)
+    hi = max(o["created_at"][:10] for o in rows)
+    new_cust = sum(1 for f in (first_order or {}).values() if lo <= f[:10] <= hi)
     return dict(
+        new_customers=new_cust,
+        cac=(spend / new_cust) if new_cust else 0,
+        new_per_month=(new_cust * 30.4 / days) if days else 0,
         days=days, orders=n, aov=rev / n, revenue=rev,
         cogs=cogs, cogs_pct=cogs / rev * 100, fees=fees, fixed=fixed,
         be_spend=be_spend,
@@ -258,6 +267,13 @@ def main():
     rows = [o for o in json.load(open(orders_f)) if not is_test(o.get("email"))]
     spend = json.load(open(spend_f))            # {"YYYY-MM-DD": float}
 
+    # first-ever order date per customer, computed across ALL pulled rows
+    first_order = {}
+    for o in sorted(rows, key=lambda x: x["created_at"]):
+        e = (o.get("email") or "").lower()
+        if e and e not in first_order:
+            first_order[e] = o["created_at"]
+
     today = datetime.date.today()
     # Compare against the PULL date, not the first order date — a quiet stretch
     # with no orders is not the same as missing data. Clipping a window silently
@@ -273,7 +289,7 @@ def main():
         sel = [o for o in rows if s <= o["created_at"][:10] <= e]
         sp  = sum(v for k, v in spend.items() if s <= k <= e)
         d   = (end - start).days + 1
-        return label, model(sel, sp, fixed_month, d, cfg)
+        return label, model(sel, sp, fixed_month, d, cfg, first_order)
 
     y = today - datetime.timedelta(days=1)      # exclude today (partial)
     wins = [
@@ -284,7 +300,10 @@ def main():
     coh, agg = cohorts(rows)
     recent = next((w for _, w in wins if w), None)
     margin = ((recent["revenue"] - recent["cogs"] - recent["fees"]) / recent["revenue"]) if recent else 0.6
-    cac = (recent["spend"] / agg["new_per_month"]) if recent and agg["new_per_month"] else 0
+    # CAC and the acquisition rate must come from the SAME window, or the ladder
+    # divides one period's spend by another period's customer count.
+    cac = recent["cac"] if recent else 0
+    agg["new_per_month"] = recent["new_per_month"] if recent else agg["new_per_month"]
 
     html = render(wins, cfg, fixed_month, datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
                   coh, agg, margin, cac)

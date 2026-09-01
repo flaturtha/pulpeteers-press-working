@@ -53,11 +53,13 @@ def main():
         "model": (
             ["Window", "Days", "Orders", "AOV", "Revenue", "COGS", "COGS %", "Fees",
              "Fixed", "Break-even ad spend", "Break-even ROI", "Break-even CPA",
-             "Actual ad spend", "Actual ROAS", "Profit", "Catalogue share %"],
+             "Actual ad spend", "Actual ROAS", "Profit", "Catalogue share %",
+             "New customers", "CAC"],
             [[w["name"], w["days"], w["orders"], m2(w["aov"]), m2(w["revenue"]), m2(w["cogs"]),
               m2(w["cogs_pct"]), m2(w["fees"]), m2(w["fixed"]), m2(w["be_spend"]),
               m2(w["be_roi"] or 0), m2(w["be_cpa"]), m2(w["spend"]), m2(w["roas"] or 0),
-              m2(w["profit"]), m2(w["catalog_share"])] for w in d["windows"]]),
+              m2(w["profit"]), m2(w["catalog_share"]), w["new_customers"], m2(w["cac"])]
+             for w in d["windows"]]),
         "cohorts": (
             ["Cohort", "Customers", "Age (days)", "Entry rev", "Repeat rev", "LTV",
              "LTV multiple", "Returned %"],
