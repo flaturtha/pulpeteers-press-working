@@ -42,3 +42,7 @@ local_settings.py
 # they are what makes a job resumable. Only the regenerable binaries are ignored.
 novels/**/cover/_rig/*/assets/
 novels/**/cover/_rig/*/prompts/
+
+# Customer data (names, addresses, emails) — never commit
+customer-service/
+customers/
