@@ -266,6 +266,55 @@ src = rep(src, """async function fetchData(){
 src = rep(src, 'if(USE_DUMMY || (window.cowork && window.cowork.callMcpTool)){ fetchData(); }',
                'if((typeof USE_EMBEDDED!=="undefined" && USE_EMBEDDED) || USE_DUMMY || (window.cowork && window.cowork.callMcpTool)){ fetchData(); }')
 
+# THE VAULT OPENS (BFCM 2026) results — bfcm.json from build-bfcm-results.py.
+BFCM_FILE = os.path.join(HERE, "bfcm.json")
+def bfcm_section():
+    try:
+        b = json.load(open(BFCM_FILE))
+    except Exception:
+        return ""
+    t = b.get("totals", {})
+    if not t.get("orders"):
+        return ""
+    m = lambda v: "$%s" % format(round(v or 0, 2), ",.2f")
+    def table(title, rows, cols):
+        head = "".join("<th%s>%s</th>" % (' style="text-align:left"' if i == 0 else "", c[0]) for i, c in enumerate(cols))
+        body = "".join("<tr>%s</tr>" % "".join(
+            "<td%s>%s</td>" % (' style="text-align:left"' if i == 0 else "", c[1](r)) for i, c in enumerate(cols)) for r in rows)
+        return ('<h3 style="margin:18px 0 6px">%s</h3><div class="tablewrap"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>'
+                % (title, head, body))
+    name = ("", lambda r: r["name"])
+    rev = ("Revenue", lambda r: m(r.get("revenue")))
+    con = ("Contribution", lambda r: m(r.get("contrib")) if "contrib" in r else "")
+    units = ("Units", lambda r: str(r.get("units", "")))
+    orders = ("Orders", lambda r: str(r.get("orders", "")))
+    books = ("Books", lambda r: str(r.get("books", "")))
+    attach = t.get("addon_attach_pct")
+    kpis = [("Orders", str(t["orders"])), ("Net revenue", m(t.get("revenue"))), ("Contribution", "%s (%s%%)" % (m(t.get("contrib")), t.get("contrib_pct"))),
+            ("AOV", m(t.get("aov"))), ("Books sold", str(t.get("books", 0))), ("Returning / new buyers", "%s / %s" % (t.get("returning", 0), t.get("new_buyers", 0))),
+            ("Sampler add-on attach", ("%s%% of %s" % (attach, t.get("sampler_orders"))) if attach is not None else "—"),
+            ("Gift orders", str(t.get("gifts", 0))), ("Codes used", "%s (%s off)" % (t.get("codes", 0), m(t.get("code_discount")))), ("Refunded", m(t.get("refunded")))]
+    kpi_html = "".join('<div style="padding:10px 14px;border:1px solid var(--line,#ddd);border-radius:8px;min-width:150px"><div class="muted" style="font-size:12px">%s</div><div style="font-size:20px;font-weight:600">%s</div></div>' % k for k in kpis)
+    return ("""
+  <!-- THE VAULT OPENS (BFCM 2026) -->
+  <div class="card section">
+    <div class="section-head"><h2 style="margin:0">The Vault Opens: results <span class="muted" style="text-transform:none;letter-spacing:0;font-weight:400">%s · generated %s · contribution before ad spend</span></h2></div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">%s</div>
+    %s%s%s%s%s%s
+  </div>
+""" % (b.get("window", ""), b.get("generated", ""), kpi_html,
+       table("By offer type", b.get("groups", []), [name, units, rev, con]),
+       table("By offer", b.get("offers", []), [name, units, rev, con]),
+       table("New libraries", b.get("libraries", []), [name, books, rev]),
+       table("Format", b.get("formats", []), [name, rev]),
+       table("Traffic source", b.get("sources", []), [name, orders, rev]),
+       table("By day (Central)", b.get("days", []), [name, orders, rev])))
+
+_bf = bfcm_section()
+if _bf:
+    src = rep(src, "  <!-- BUSINESS HEALTH -->", _bf + "\n  <!-- BUSINESS HEALTH -->")
+    print("  BFCM results section: included")
+
 open(OUT, "w").write(src)
 
 tot = sum(d["spend"] for d in DAILY); pur = sum(d["results"] for d in DAILY)
